@@ -396,13 +396,13 @@
           <h3>About</h3>
           <ul>
             <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="terms.html#contact">Contact</a></li>
           </ul>
         </div>
       </div>
       <div class="copyright">
-        <p>&copy; 2025 MeetingCalc. All rights reserved.</p>
+        <p>&copy; <span id="copyright-year">2026</span> MeetingCalc. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -410,6 +410,7 @@
   <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">↑</a>
 
   <script>
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
     // Back to top button functionality
     document.addEventListener('DOMContentLoaded', function() {
       const backToTopButton = document.getElementById('back-to-top');

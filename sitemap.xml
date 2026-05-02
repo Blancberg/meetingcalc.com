@@ -2,86 +2,92 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
   <url>
-    <loc>https://meetingcalc.com/</loc>
-    <lastmod>2025-05-07</lastmod>
+    <loc>https://www.meetingcalc.com/</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://meetingcalc.com/index.html</loc>
-    <lastmod>2025-05-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://meetingcalc.com/resources.html</loc>
-    <lastmod>2025-05-07</lastmod>
+    <loc>https://www.meetingcalc.com/resources.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meetingcalc.com/privacy.html</loc>
-    <lastmod>2025-05-07</lastmod>
+    <loc>https://www.meetingcalc.com/embed.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.meetingcalc.com/terms.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.meetingcalc.com/privacy.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
-  
+
   <!-- Meeting Optimization Guides -->
   <url>
-    <loc>https://meetingcalc.com/meeting-optimization.html</loc>
-    <lastmod>2025-05-07</lastmod>
+    <loc>https://www.meetingcalc.com/meeting-optimization.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://meetingcalc.com/reducing-meeting-costs.html</loc>
-    <lastmod>2025-05-07</lastmod>
+    <loc>https://www.meetingcalc.com/reducing-meeting-costs.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://meetingcalc.com/effective-meeting-agendas.html</loc>
-    <lastmod>2025-05-07</lastmod>
+    <loc>https://www.meetingcalc.com/effective-meeting-agendas.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <!-- Meeting Types and Scenarios -->
   <url>
-    <loc>https://meetingcalc.com/creative-brainstorming-meetings.html</loc>
-    <lastmod>2025-05-07</lastmod>
+    <loc>https://www.meetingcalc.com/creative-brainstorming-meetings.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://meetingcalc.com/decision-making-meetings.html</loc>
-    <lastmod>2025-05-07</lastmod>
+    <loc>https://www.meetingcalc.com/decision-making-meetings.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://meetingcalc.com/one-on-one-meetings.html</loc>
-    <lastmod>2025-05-07</lastmod>
+    <loc>https://www.meetingcalc.com/one-on-one-meetings.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://meetingcalc.com/remote-meeting-guide.html</loc>
-    <lastmod>2025-05-07</lastmod>
+    <loc>https://www.meetingcalc.com/remote-meeting-guide.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <!-- Meeting Skills and Inclusivity -->
   <url>
-    <loc>https://meetingcalc.com/meeting-facilitation-skills.html</loc>
-    <lastmod>2025-05-07</lastmod>
+    <loc>https://www.meetingcalc.com/meeting-facilitation-skills.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://meetingcalc.com/inclusive-meetings.html</loc>
-    <lastmod>2025-05-07</lastmod>
+    <loc>https://www.meetingcalc.com/inclusive-meetings.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

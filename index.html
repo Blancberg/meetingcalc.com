@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MeetingCalc - Free tool to calculate the real cost of your meetings and optimize team productivity. No signup required.">
-  <meta name="keywords" content="meeting calculator, meeting cost calculator, productivity tool, free meeting tool, team productivity, business efficiency">
+  <meta name="description" content="MeetingCalc - Free tool to calculate the real cost of your meetings and optimize team productivity. Live ticker, multi-currency, shareable results. No signup required.">
+  <meta name="keywords" content="meeting calculator, meeting cost calculator, productivity tool, free meeting tool, team productivity, business efficiency, meeting cost ticker">
+  <meta name="theme-color" content="#3366cc">
   <title>MeetingCalc | Free Meeting Cost Calculator | Boost Team Productivity</title>
-  
+
   <!-- Favicon -->
   <link rel="icon" href="https://www.meetingcalc.com/assets/images/icon48.png" sizes="48x48">
+  <link rel="apple-touch-icon" href="https://www.meetingcalc.com/assets/images/icon48.png">
   <!-- Canonical URL -->
   <link rel="canonical" href="https://www.meetingcalc.com/">
-  
+
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="MeetingCalc | Free Meeting Cost Calculator | Boost Team Productivity">
   <meta property="og:description" content="Calculate the real cost of your meetings and boost productivity with MeetingCalc. Free, easy-to-use tool for optimizing meeting efficiency.">
   <meta property="og:image" content="https://www.meetingcalc.com/assets/images/og-image.jpg">
   <meta property="og:url" content="https://www.meetingcalc.com/">
   <meta property="og:type" content="website">
-  
+
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MeetingCalc | Free Meeting Cost Calculator | Boost Team Productivity">
@@ -39,7 +41,7 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "MeetingCalc",
-    "url": "https://www.example.com/",
+    "url": "https://www.meetingcalc.com/",
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://www.meetingcalc.com/?s={search_term_string}",
@@ -47,7 +49,24 @@
     }
   }
   </script>
-  
+
+  <!-- Structured Data: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "MeetingCalc",
+    "url": "https://www.meetingcalc.com/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
   <!-- Structured Data: FAQ -->
   <script type="application/ld+json">
   {
@@ -97,29 +116,53 @@
     ]
   }
   </script>
-  
+
   <style>
     :root {
       --primary: #3366cc;
+      --primary-dark: #2952a3;
       --secondary: #f8f9fa;
       --accent: #ffd700;
-      --text: #333333;
-      --light-text: #6c757d;
+      --text: #1f2937;
+      --light-text: #4b5563;
       --border: #dee2e6;
+      --surface: #ffffff;
+      --success: #16a34a;
+      --warning: #f59e0b;
+      --danger: #dc2626;
     }
-    
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #6b9aff;
+        --primary-dark: #4f7fe6;
+        --secondary: #1f2937;
+        --text: #f3f4f6;
+        --light-text: #d1d5db;
+        --border: #374151;
+        --surface: #111827;
+      }
+      body { background-color: #0b1220; }
+      header { background-color: #111827 !important; }
+      .feature-card, .testimonial-card, .results, .accordion-item { background-color: #1f2937 !important; }
+      .accordion-header { background-color: #111827 !important; }
+      .calculator-container { background-color: #111827 !important; }
+      .form-group input, .form-group select { background-color: #0b1220; color: var(--text); border-color: var(--border); }
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    
+
     body {
       color: var(--text);
       line-height: 1.6;
+      background-color: var(--surface);
     }
-    
+
     /* Skip to content link */
     .skip-link {
       position: absolute;
@@ -134,73 +177,74 @@
     .skip-link:focus {
       top: 0;
     }
-    
+
     header {
-      background-color: white;
+      background-color: var(--surface);
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       padding: 1rem;
       position: sticky;
       top: 0;
       z-index: 100;
     }
-    
+
     .container {
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1rem;
     }
-    
+
     .header-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    
+
     .logo {
       font-size: 1.5rem;
       font-weight: bold;
       color: var(--primary);
     }
-    
+
     nav ul {
       display: flex;
       list-style: none;
     }
-    
+
     nav ul li {
       margin-left: 1.5rem;
     }
-    
+
     nav ul li a {
       text-decoration: none;
       color: var(--text);
       transition: color 0.3s;
     }
-    
+
     nav ul li a:hover {
       color: var(--primary);
     }
-    
+
     .hero {
       background-color: var(--secondary);
       padding: 4rem 0;
       text-align: center;
     }
-    
+
     .hero h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
-    
+
     .hero p {
       font-size: 1.2rem;
       color: var(--light-text);
       margin-bottom: 2rem;
       max-width: 800px;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
     }
-    
+
     .cta-button {
       display: inline-block;
       background-color: var(--primary);
@@ -210,149 +254,297 @@
       text-decoration: none;
       font-weight: bold;
       transition: background-color 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
     }
-    
+
     .cta-button:hover {
-      background-color: #2952a3;
+      background-color: var(--primary-dark);
     }
-    
+
+    .cta-button.secondary {
+      background-color: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    .cta-button.secondary:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
     .calculator {
       padding: 3rem 0;
-      background-color: white;
+      background-color: var(--surface);
     }
-    
+
     .calculator h2 {
       text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .calculator .subtitle {
+      text-align: center;
+      color: var(--light-text);
       margin-bottom: 2rem;
     }
-    
+
     .calculator-container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 2rem;
       background-color: var(--secondary);
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    
+
     .calculator-form {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
     }
-    
+
     @media (max-width: 768px) {
       .calculator-form {
         grid-template-columns: 1fr;
       }
     }
-    
+
     .form-group {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
-    
+
     .form-group label {
       display: block;
       margin-bottom: 0.5rem;
       font-weight: 500;
     }
-    
+
     .form-group input, .form-group select {
       width: 100%;
       padding: 0.75rem;
       border: 1px solid var(--border);
       border-radius: 4px;
       font-size: 1rem;
+      background-color: var(--surface);
+      color: var(--text);
     }
-    
+
+    .toggle-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin: 1rem 0 0.5rem;
+      padding: 0.75rem 1rem;
+      background-color: var(--surface);
+      border-radius: 6px;
+    }
+    .toggle-row label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .toggle-row input[type="checkbox"] {
+      width: auto;
+      margin: 0;
+    }
+    .toggle-row .hint {
+      color: var(--light-text);
+      font-size: 0.875rem;
+    }
+
     .results {
       margin-top: 2rem;
       padding: 1.5rem;
-      background-color: white;
+      background-color: var(--surface);
       border-radius: 4px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
-    
+
     .results h3 {
       margin-bottom: 1rem;
       text-align: center;
     }
-    
+
     .results-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
-    
+
     @media (max-width: 768px) {
       .results-grid {
         grid-template-columns: 1fr;
       }
     }
-    
+
     .result-item {
       background-color: var(--secondary);
       padding: 1rem;
       border-radius: 4px;
       text-align: center;
     }
-    
+
     .result-value {
       font-size: 1.5rem;
       font-weight: bold;
       color: var(--primary);
       margin: 0.5rem 0;
     }
-    
+
+    .equivalents {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background-color: var(--secondary);
+      border-radius: 4px;
+      border-left: 4px solid var(--primary);
+    }
+    .equivalents h4 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    .equivalents ul {
+      list-style: none;
+      padding: 0;
+    }
+    .equivalents li {
+      padding: 0.25rem 0;
+      color: var(--light-text);
+    }
+    .equivalents li::before {
+      content: "→ ";
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .action-row button {
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      border: 1px solid var(--primary);
+      background-color: var(--surface);
+      color: var(--primary);
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .action-row button:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+    .action-row .copied {
+      background-color: var(--success);
+      color: white;
+      border-color: var(--success);
+    }
+
+    /* Live ticker */
+    .ticker {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .ticker h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+    .ticker-display {
+      font-size: 3rem;
+      font-weight: bold;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+      margin: 0.5rem 0;
+    }
+    .ticker-elapsed {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .ticker-controls {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .ticker-controls button {
+      padding: 0.6rem 1.4rem;
+      border-radius: 4px;
+      border: 2px solid white;
+      background-color: transparent;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .ticker-controls button:hover {
+      background-color: white;
+      color: var(--primary);
+    }
+
     .features {
       padding: 4rem 0;
       background-color: var(--secondary);
     }
-    
+
     .features h2 {
       text-align: center;
       margin-bottom: 3rem;
     }
-    
+
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
     }
-    
+
     @media (max-width: 768px) {
       .features-grid {
         grid-template-columns: 1fr;
       }
     }
-    
+
     .feature-card {
-      background-color: white;
+      background-color: var(--surface);
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
     }
-    
+
     .feature-icon {
       font-size: 2.5rem;
       color: var(--primary);
       margin-bottom: 1rem;
     }
-    
+
     .feature-card h3 {
       margin-bottom: 1rem;
     }
-    
+
     .how-to {
       padding: 4rem 0;
     }
-    
+
     .how-to h2 {
       text-align: center;
       margin-bottom: 3rem;
     }
-    
+
     .steps {
       display: flex;
       flex-direction: column;
@@ -360,13 +552,13 @@
       max-width: 800px;
       margin: 0 auto;
     }
-    
+
     .step {
       display: flex;
       gap: 1.5rem;
       align-items: flex-start;
     }
-    
+
     .step-number {
       background-color: var(--primary);
       color: white;
@@ -379,156 +571,107 @@
       font-weight: bold;
       flex-shrink: 0;
     }
-    
-    .testimonials {
+
+    .faq {
       padding: 4rem 0;
       background-color: var(--secondary);
     }
-    
-    .testimonials h2 {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-    
-    @media (max-width: 768px) {
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    .testimonial-card {
-      background-color: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    
-    .testimonial-text {
-      font-style: italic;
-      margin-bottom: 1rem;
-    }
-    
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-    }
-    
-    .author-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-right: 1rem;
-    }
-    
-    .author-info h4 {
-      margin-bottom: 0.25rem;
-    }
-    
-    .faq {
-      padding: 4rem 0;
-    }
-    
+
     .faq h2 {
       text-align: center;
       margin-bottom: 3rem;
     }
-    
+
     .accordion {
       max-width: 800px;
       margin: 0 auto;
     }
-    
+
     .accordion-item {
       margin-bottom: 1rem;
       border: 1px solid var(--border);
       border-radius: 4px;
       overflow: hidden;
+      background-color: var(--surface);
     }
-    
-    .accordion-header {
-      background-color: var(--secondary);
+
+    .accordion-trigger {
+      background-color: var(--surface);
       padding: 1rem;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-weight: 500;
-    }
-    
-    .accordion-header button {
-      background: none;
+      width: 100%;
+      text-align: left;
       border: none;
       font-size: 1rem;
       color: var(--text);
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-      padding: 0;
     }
-    
+    .accordion-trigger:hover {
+      background-color: var(--secondary);
+    }
+
     .accordion-content {
-      padding: 1rem;
-      display: none;
+      padding: 0 1rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease, padding 0.25s ease;
     }
-    
+
     .accordion-content.active {
-      display: block;
+      padding: 1rem;
+      max-height: 500px;
     }
-    
+
     footer {
-      background-color: var(--text);
+      background-color: #1f2937;
       color: white;
       padding: 3rem 0;
     }
-    
+
     .footer-content {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       gap: 2rem;
     }
-    
+
     @media (max-width: 768px) {
       .footer-content {
         grid-template-columns: 1fr;
       }
     }
-    
+
     .footer-logo {
       font-size: 1.8rem;
       font-weight: bold;
       margin-bottom: 1rem;
     }
-    
+
     .footer-links h3 {
       margin-bottom: 1rem;
       font-size: 1.2rem;
     }
-    
+
     .footer-links ul {
       list-style: none;
     }
-    
+
     .footer-links ul li {
       margin-bottom: 0.5rem;
     }
-    
+
     .footer-links ul li a {
       text-decoration: none;
       color: #ddd;
       transition: color 0.3s;
     }
-    
+
     .footer-links ul li a:hover {
       color: white;
     }
-    
+
     .copyright {
       margin-top: 2rem;
       text-align: center;
@@ -541,7 +684,7 @@
 <body>
   <!-- Skip to content for accessibility -->
   <a href="#main-content" class="skip-link">Skip to content</a>
-  
+
   <header>
     <div class="container">
       <div class="header-content">
@@ -549,8 +692,8 @@
         <nav>
           <ul>
             <li><a href="#calculator">Calculator</a></li>
+            <li><a href="#ticker">Live Ticker</a></li>
             <li><a href="#features">Features</a></li>
-            <li><a href="#how-to">How It Works</a></li>
             <li><a href="resources.html">Resources</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
@@ -565,12 +708,14 @@
         <h1>Calculate the Real Cost of Your Meetings</h1>
         <p>MeetingCalc helps you understand the true financial impact of your meetings and make data-driven decisions to optimize team productivity. 100% free. No signup required.</p>
         <a href="#calculator" class="cta-button">Calculate Now</a>
+        <a href="#ticker" class="cta-button secondary" style="margin-left: 0.5rem;">Start Live Ticker</a>
       </div>
     </section>
 
     <section id="calculator" class="calculator">
       <div class="container">
         <h2>Meeting Cost Calculator</h2>
+        <p class="subtitle">Estimate the real cost of any meeting in seconds.</p>
         <div class="calculator-container">
           <form id="calculator-form" class="calculator-form">
             <div class="form-group">
@@ -593,31 +738,93 @@
               <input type="number" id="attendees" min="1" max="100" value="5" required>
             </div>
             <div class="form-group">
-              <label for="avg-salary">Average Hourly Rate ($)</label>
+              <label for="avg-salary">Average Hourly Rate</label>
               <input type="number" id="avg-salary" min="1" max="1000" value="50" required>
             </div>
+            <div class="form-group">
+              <label for="currency">Currency</label>
+              <select id="currency">
+                <option value="USD" selected>USD ($)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="JPY">JPY (¥)</option>
+                <option value="CAD">CAD (C$)</option>
+                <option value="AUD">AUD (A$)</option>
+                <option value="CHF">CHF (Fr)</option>
+                <option value="INR">INR (₹)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="loaded-multiplier">Loaded Cost Multiplier</label>
+              <select id="loaded-multiplier">
+                <option value="1">None (1.0×) — base salary only</option>
+                <option value="1.25">Light (1.25×) — basic benefits</option>
+                <option value="1.4" selected>Standard (1.4×) — benefits + overhead</option>
+                <option value="1.6">Heavy (1.6×) — benefits + overhead + opportunity</option>
+              </select>
+            </div>
           </form>
-          <div class="results">
+
+          <div class="toggle-row">
+            <label>
+              <input type="checkbox" id="prep-toggle" checked>
+              Add 15 min prep + 10 min context-switch per attendee
+            </label>
+            <span class="hint">More realistic total impact</span>
+          </div>
+
+          <div class="results" aria-live="polite">
             <h3>Meeting Cost Summary</h3>
             <div class="results-grid">
               <div class="result-item">
                 <p>Single Meeting Cost</p>
-                <p class="result-value" id="single-meeting-cost">$250.00</p>
+                <p class="result-value" id="single-meeting-cost">$350.00</p>
               </div>
               <div class="result-item">
                 <p>Annual Meeting Cost</p>
-                <p class="result-value" id="annual-meeting-cost">$13,000.00</p>
+                <p class="result-value" id="annual-meeting-cost">$18,200.00</p>
               </div>
               <div class="result-item">
-                <p>Total Staff Hours Per Year</p>
-                <p class="result-value" id="annual-hours">260</p>
+                <p>Total Staff Hours / Year</p>
+                <p class="result-value" id="annual-hours">364</p>
               </div>
               <div class="result-item">
                 <p>Productivity Impact</p>
                 <p class="result-value" id="productivity-impact">Medium</p>
               </div>
             </div>
+
+            <div class="equivalents">
+              <h4>That annual cost equals…</h4>
+              <ul id="equivalents-list"></ul>
+            </div>
+
+            <div class="action-row">
+              <button type="button" id="copy-link-btn" aria-label="Copy shareable link">🔗 Copy Shareable Link</button>
+              <button type="button" id="email-btn" aria-label="Email these results">✉️ Email to a Colleague</button>
+              <button type="button" id="csv-btn" aria-label="Download CSV">⬇️ Download CSV</button>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ticker" class="calculator" style="background-color: var(--secondary);">
+      <div class="container">
+        <h2>Live Meeting Cost Ticker</h2>
+        <p class="subtitle">Start it at the top of your meeting. Watch the cost climb in real time.</p>
+        <div class="calculator-container" style="background-color: var(--surface);">
+          <div class="ticker">
+            <h3>Cost so far</h3>
+            <div class="ticker-display" id="ticker-cost">$0.00</div>
+            <div class="ticker-elapsed" id="ticker-elapsed">00:00:00</div>
+            <div class="ticker-controls">
+              <button type="button" id="ticker-start">▶ Start</button>
+              <button type="button" id="ticker-pause">⏸ Pause</button>
+              <button type="button" id="ticker-reset">↺ Reset</button>
+            </div>
+          </div>
+          <p style="text-align: center; color: var(--light-text); margin-top: 1rem; font-size: 0.9rem;">Uses the values from the calculator above. Adjust attendees and hourly rate there.</p>
         </div>
       </div>
     </section>
@@ -653,53 +860,21 @@
             <div class="step-number">1</div>
             <div class="step-content">
               <h3>Enter Meeting Details</h3>
-              <p>Provide the duration, frequency, number of attendees, and average hourly rate for your meeting. For hourly rate, use the fully loaded cost (salary + benefits) for most accurate results.</p>
+              <p>Provide the duration, frequency, number of attendees, and average hourly rate for your meeting. Pick a loaded-cost multiplier to factor in benefits and overhead for the most realistic number.</p>
             </div>
           </div>
           <div class="step">
             <div class="step-number">2</div>
             <div class="step-content">
               <h3>Review the Results</h3>
-              <p>See the calculated cost for a single meeting and the projected annual cost. We also provide the total number of staff hours spent annually and a productivity impact assessment.</p>
+              <p>See the calculated cost for a single meeting and the projected annual cost. We also show total staff hours per year, a productivity impact rating, and what that money could buy instead.</p>
             </div>
           </div>
           <div class="step">
             <div class="step-number">3</div>
             <div class="step-content">
-              <h3>Make Data-Driven Decisions</h3>
-              <p>Use the insights to optimize your meeting schedule, adjust attendee lists, or reimagine your meeting format to improve efficiency and reduce costs.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonials">
-      <div class="container">
-        <h2>What Users Are Saying</h2>
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <p class="testimonial-text">"MeetingCalc helped us realize we were spending over $50,000 annually on one recurring status meeting. We redesigned it and saved 20 hours per week across the team."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <img src="/api/placeholder/50/50" alt="Sarah Johnson avatar">
-              </div>
-              <div class="author-info">
-                <h4>Sarah Johnson</h4>
-                <p>Product Manager, Tech Company</p>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <p class="testimonial-text">"As a startup founder, every minute counts. This calculator showed us exactly where our meeting time was being wasted. Simple but incredibly impactful tool!"</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <img src="/api/placeholder/50/50" alt="Michael Chen avatar">
-              </div>
-              <div class="author-info">
-                <h4>Michael Chen</h4>
-                <p>CEO, Startup</p>
-              </div>
+              <h3>Share &amp; Decide</h3>
+              <p>Copy a shareable link, email the result to your team, or run the live ticker during your next meeting to make the cost visceral. Then optimize.</p>
             </div>
           </div>
         </div>
@@ -711,46 +886,46 @@
         <h2>Frequently Asked Questions</h2>
         <div class="accordion">
           <div class="accordion-item">
-            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="faq1">
-              <button type="button">How accurate is the meeting cost calculator?</button>
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq1">
+              <span>How accurate is the meeting cost calculator?</span>
               <span class="accordion-icon" aria-hidden="true">+</span>
-            </div>
+            </button>
             <div class="accordion-content" id="faq1">
-              <p>The calculator provides a good estimate based on the information you provide. For the most accurate results, use the fully loaded employee cost (salary + benefits) rather than just the base salary. Keep in mind that the true cost of meetings also includes less tangible factors like context switching and meeting preparation time.</p>
+              <p>The calculator provides a good estimate based on the information you provide. For the most accurate results, use the fully loaded employee cost (salary + benefits) rather than just the base salary — or pick a multiplier from the dropdown. Keep in mind that the true cost of meetings also includes less tangible factors like context switching and meeting preparation time, which our optional toggle accounts for.</p>
             </div>
           </div>
           <div class="accordion-item">
-            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="faq2">
-              <button type="button">Is my data kept private?</button>
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq2">
+              <span>Is my data kept private?</span>
               <span class="accordion-icon" aria-hidden="true">+</span>
-            </div>
+            </button>
             <div class="accordion-content" id="faq2">
               <p>Absolutely. All calculations are performed entirely in your browser. We don't collect, store, or transmit any of the data you enter. There are no cookies, trackers, or user accounts.</p>
             </div>
           </div>
           <div class="accordion-item">
-            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="faq3">
-              <button type="button">Does this mean I should eliminate all meetings?</button>
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq3">
+              <span>Does this mean I should eliminate all meetings?</span>
               <span class="accordion-icon" aria-hidden="true">+</span>
-            </div>
+            </button>
             <div class="accordion-content" id="faq3">
-              <p>Not at all! Meetings are essential for collaboration, alignment, and building relationships. The goal is to make your meetings more effective and intentional. Use the calculator to identify which meetings might need restructuring, fewer attendees, or could be replaced with asynchronous communication.</p>
+              <p>Not at all. Meetings are essential for collaboration, alignment, and building relationships. The goal is to make your meetings more effective and intentional. Use the calculator to identify which meetings might need restructuring, fewer attendees, or could be replaced with asynchronous communication.</p>
             </div>
           </div>
           <div class="accordion-item">
-            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="faq4">
-              <button type="button">How can I reduce my meeting costs?</button>
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq4">
+              <span>How can I reduce my meeting costs?</span>
               <span class="accordion-icon" aria-hidden="true">+</span>
-            </div>
+            </button>
             <div class="accordion-content" id="faq4">
-              <p>There are several effective strategies: reduce meeting frequency, shorten meeting duration, limit attendees to only those who truly need to be there, have clear agendas and objectives, consider asynchronous alternatives, and implement meeting-free days.</p>
+              <p>There are several effective strategies: reduce meeting frequency, shorten meeting duration, limit attendees to only those who truly need to be there, have clear agendas and objectives, consider asynchronous alternatives, and implement meeting-free days. See our <a href="reducing-meeting-costs.html">Reducing Meeting Costs guide</a> for a deeper playbook.</p>
             </div>
           </div>
           <div class="accordion-item">
-            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="faq5">
-              <button type="button">Is MeetingCalc really free?</button>
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq5">
+              <span>Is MeetingCalc really free?</span>
               <span class="accordion-icon" aria-hidden="true">+</span>
-            </div>
+            </button>
             <div class="accordion-content" id="faq5">
               <p>Yes, MeetingCalc is completely free to use. There are no premium features, subscriptions, or "free trials" that later require payment. We built this tool to help teams work more efficiently.</p>
             </div>
@@ -771,8 +946,7 @@
           <h3>Resources</h3>
           <ul>
             <li><a href="#calculator">Calculator</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#how-to">How It Works</a></li>
+            <li><a href="#ticker">Live Ticker</a></li>
             <li><a href="meeting-optimization.html">Meeting Optimization</a></li>
             <li><a href="remote-meeting-guide.html">Remote Meeting Guide</a></li>
             <li><a href="effective-meeting-agendas.html">Meeting Agendas</a></li>
@@ -784,111 +958,252 @@
         <div class="footer-links">
           <h3>About</h3>
           <ul>
-            <li><a href="https://meetingcalc.com/privacy.html">Privacy Policy</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="https://www.meetingcalc.com/privacy.html">Privacy Policy</a></li>
+            <li><a href="https://www.meetingcalc.com/privacy.html#contact">Contact</a></li>
           </ul>
         </div>
       </div>
       <div class="copyright">
-        <p>&copy; 2025 MeetingCalc. All rights reserved.</p>
+        <p>&copy; <span id="copyright-year">2026</span> MeetingCalc. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <script>
-    // Calculator functionality
+    // Auto copyright year
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+    const CURRENCY_SYMBOLS = {
+      USD: '$', EUR: '€', GBP: '£', JPY: '¥',
+      CAD: 'C$', AUD: 'A$', CHF: 'Fr ', INR: '₹'
+    };
+
     document.addEventListener('DOMContentLoaded', function() {
       const form = document.getElementById('calculator-form');
       const durationInput = document.getElementById('meeting-duration');
       const frequencySelect = document.getElementById('meeting-frequency');
       const attendeesInput = document.getElementById('attendees');
       const salaryInput = document.getElementById('avg-salary');
-      
+      const currencySelect = document.getElementById('currency');
+      const loadedSelect = document.getElementById('loaded-multiplier');
+      const prepToggle = document.getElementById('prep-toggle');
+
       const singleCostOutput = document.getElementById('single-meeting-cost');
       const annualCostOutput = document.getElementById('annual-meeting-cost');
       const annualHoursOutput = document.getElementById('annual-hours');
       const productivityOutput = document.getElementById('productivity-impact');
-      
-      // Update calculations on input change
-      form.addEventListener('input', calculateCost);
-      
-      function calculateCost() {
-        const duration = parseInt(durationInput.value) || 0;
-        const frequency = frequencySelect.value;
-        const attendees = parseInt(attendeesInput.value) || 0;
-        const hourlyRate = parseInt(salaryInput.value) || 0;
-        
-        // Calculate single meeting cost
-        const durationHours = duration / 60;
-        const singleCost = durationHours * attendees * hourlyRate;
-        
-        // Calculate annual meeting cost based on frequency
-        let meetingsPerYear = 0;
-        switch(frequency) {
-          case 'once':
-            meetingsPerYear = 1;
-            break;
-          case 'daily':
-            meetingsPerYear = 260; // Approx. working days in a year
-            break;
-          case 'weekly':
-            meetingsPerYear = 52;
-            break;
-          case 'biweekly':
-            meetingsPerYear = 26;
-            break;
-          case 'monthly':
-            meetingsPerYear = 12;
-            break;
-          case 'quarterly':
-            meetingsPerYear = 4;
-            break;
+      const equivalentsList = document.getElementById('equivalents-list');
+
+      // Restore from URL
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('d')) durationInput.value = params.get('d');
+      if (params.get('f')) frequencySelect.value = params.get('f');
+      if (params.get('a')) attendeesInput.value = params.get('a');
+      if (params.get('r')) salaryInput.value = params.get('r');
+      if (params.get('c')) currencySelect.value = params.get('c');
+      if (params.get('m')) loadedSelect.value = params.get('m');
+      if (params.get('p') === '0') prepToggle.checked = false;
+
+      function formatMoney(value, currency) {
+        try {
+          return new Intl.NumberFormat(undefined, {
+            style: 'currency',
+            currency: currency,
+            maximumFractionDigits: currency === 'JPY' ? 0 : 2
+          }).format(value);
+        } catch (e) {
+          return (CURRENCY_SYMBOLS[currency] || '$') + value.toFixed(2);
         }
-        
-        const annualCost = singleCost * meetingsPerYear;
-        const annualHours = durationHours * attendees * meetingsPerYear;
-        
-        // Determine productivity impact
-        let productivityImpact = 'Low';
-        if (annualHours > 500) {
-          productivityImpact = 'High';
-        } else if (annualHours > 100) {
-          productivityImpact = 'Medium';
-        }
-        
-        // Update UI
-        singleCostOutput.textContent = '$' + singleCost.toFixed(2);
-        annualCostOutput.textContent = '$' + annualCost.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
-        annualHoursOutput.textContent = annualHours.toFixed(0);
-        productivityOutput.textContent = productivityImpact;
       }
-      
-      // Initialize with default values
+
+      function getInputs() {
+        return {
+          duration: parseInt(durationInput.value) || 0,
+          frequency: frequencySelect.value,
+          attendees: parseInt(attendeesInput.value) || 0,
+          hourlyRate: parseFloat(salaryInput.value) || 0,
+          currency: currencySelect.value,
+          loaded: parseFloat(loadedSelect.value) || 1,
+          prep: prepToggle.checked
+        };
+      }
+
+      function meetingsPerYear(freq) {
+        return { once: 1, daily: 260, weekly: 52, biweekly: 26, monthly: 12, quarterly: 4 }[freq] || 0;
+      }
+
+      function calculateCost() {
+        const i = getInputs();
+        const prepMinutes = i.prep ? 25 : 0;
+        const effectiveMinutes = i.duration + prepMinutes;
+        const durationHours = effectiveMinutes / 60;
+        const effectiveRate = i.hourlyRate * i.loaded;
+
+        const singleCost = durationHours * i.attendees * effectiveRate;
+        const perYear = meetingsPerYear(i.frequency);
+        const annualCost = singleCost * perYear;
+        const annualHours = durationHours * i.attendees * perYear;
+
+        let impact = 'Low';
+        if (annualHours > 500) impact = 'High';
+        else if (annualHours > 100) impact = 'Medium';
+
+        singleCostOutput.textContent = formatMoney(singleCost, i.currency);
+        annualCostOutput.textContent = formatMoney(annualCost, i.currency);
+        annualHoursOutput.textContent = annualHours.toFixed(0);
+        productivityOutput.textContent = impact;
+
+        // Opportunity cost equivalents (USD-anchored, rough)
+        const annual = annualCost;
+        const equivalents = [];
+        const engYearly = i.currency === 'JPY' ? 18000000 : (i.currency === 'INR' ? 2500000 : 150000);
+        const saaSeat = i.currency === 'JPY' ? 1800 : (i.currency === 'INR' ? 1200 : 15);
+        const laptop = i.currency === 'JPY' ? 250000 : (i.currency === 'INR' ? 150000 : 2000);
+
+        const engYears = annual / engYearly;
+        if (engYears >= 0.05) equivalents.push(`<strong>${engYears.toFixed(2)}</strong> years of an engineer's fully-loaded salary`);
+        const seats = annual / (saaSeat * 12);
+        if (seats >= 1) equivalents.push(`<strong>${seats.toFixed(0)}</strong> annual seats of a typical SaaS tool (~${formatMoney(saaSeat, i.currency)}/mo)`);
+        const laptops = annual / laptop;
+        if (laptops >= 0.5) equivalents.push(`<strong>${laptops.toFixed(1)}</strong> brand-new laptops`);
+        const coffees = annual / (i.currency === 'JPY' ? 500 : (i.currency === 'INR' ? 250 : 5));
+        if (coffees >= 50) equivalents.push(`<strong>${Math.round(coffees).toLocaleString()}</strong> cups of coffee for the team`);
+        if (equivalents.length === 0) equivalents.push('Adjust the inputs to see real-world equivalents');
+        equivalentsList.innerHTML = equivalents.map(e => `<li>${e}</li>`).join('');
+      }
+
+      form.addEventListener('input', calculateCost);
+      currencySelect.addEventListener('change', calculateCost);
+      loadedSelect.addEventListener('change', calculateCost);
+      prepToggle.addEventListener('change', calculateCost);
       calculateCost();
-      
-      // FAQ Accordion functionality with ARIA support
-      const accordionHeaders = document.querySelectorAll('.accordion-header');
-      
-      accordionHeaders.forEach(header => {
-        header.addEventListener('click', function() {
+
+      // Share link
+      function buildShareUrl() {
+        const i = getInputs();
+        const p = new URLSearchParams({
+          d: i.duration, f: i.frequency, a: i.attendees,
+          r: i.hourlyRate, c: i.currency, m: i.loaded,
+          p: i.prep ? '1' : '0'
+        });
+        return `${window.location.origin}${window.location.pathname}?${p.toString()}#calculator`;
+      }
+
+      const copyBtn = document.getElementById('copy-link-btn');
+      copyBtn.addEventListener('click', async () => {
+        const url = buildShareUrl();
+        try {
+          await navigator.clipboard.writeText(url);
+          const original = copyBtn.textContent;
+          copyBtn.textContent = '✓ Copied!';
+          copyBtn.classList.add('copied');
+          setTimeout(() => {
+            copyBtn.textContent = original;
+            copyBtn.classList.remove('copied');
+          }, 2000);
+        } catch (e) {
+          prompt('Copy this link:', url);
+        }
+      });
+
+      document.getElementById('email-btn').addEventListener('click', () => {
+        const url = buildShareUrl();
+        const single = singleCostOutput.textContent;
+        const annual = annualCostOutput.textContent;
+        const hours = annualHoursOutput.textContent;
+        const subject = encodeURIComponent('Meeting cost: this is what we are spending');
+        const body = encodeURIComponent(
+          `Hi,\n\nI ran our meeting through MeetingCalc:\n\n` +
+          `• Single meeting cost: ${single}\n` +
+          `• Annual cost: ${annual}\n` +
+          `• Staff hours per year: ${hours}\n\n` +
+          `See the breakdown: ${url}\n`
+        );
+        window.location.href = `mailto:?subject=${subject}&body=${body}`;
+      });
+
+      document.getElementById('csv-btn').addEventListener('click', () => {
+        const i = getInputs();
+        const rows = [
+          ['Field', 'Value'],
+          ['Duration (min)', i.duration],
+          ['Frequency', i.frequency],
+          ['Attendees', i.attendees],
+          ['Hourly rate', i.hourlyRate],
+          ['Currency', i.currency],
+          ['Loaded multiplier', i.loaded],
+          ['Prep/context-switch included', i.prep ? 'yes' : 'no'],
+          ['Single meeting cost', singleCostOutput.textContent],
+          ['Annual cost', annualCostOutput.textContent],
+          ['Annual staff hours', annualHoursOutput.textContent],
+          ['Productivity impact', productivityOutput.textContent]
+        ];
+        const csv = rows.map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\n');
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'meeting-cost.csv';
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+
+      // Live ticker
+      const tickerCost = document.getElementById('ticker-cost');
+      const tickerElapsed = document.getElementById('ticker-elapsed');
+      let tickerStartedAt = null;
+      let tickerAccumMs = 0;
+      let tickerInterval = null;
+
+      function tickerCostPerMs() {
+        const i = getInputs();
+        const ratePerHour = i.attendees * i.hourlyRate * i.loaded;
+        return ratePerHour / 3600000;
+      }
+
+      function renderTicker() {
+        const i = getInputs();
+        let elapsedMs = tickerAccumMs;
+        if (tickerStartedAt !== null) elapsedMs += Date.now() - tickerStartedAt;
+        const cost = elapsedMs * tickerCostPerMs();
+        tickerCost.textContent = formatMoney(cost, i.currency);
+        const totalSec = Math.floor(elapsedMs / 1000);
+        const h = String(Math.floor(totalSec / 3600)).padStart(2, '0');
+        const m = String(Math.floor((totalSec % 3600) / 60)).padStart(2, '0');
+        const s = String(totalSec % 60).padStart(2, '0');
+        tickerElapsed.textContent = `${h}:${m}:${s}`;
+      }
+
+      document.getElementById('ticker-start').addEventListener('click', () => {
+        if (tickerStartedAt !== null) return;
+        tickerStartedAt = Date.now();
+        tickerInterval = setInterval(renderTicker, 100);
+        renderTicker();
+      });
+      document.getElementById('ticker-pause').addEventListener('click', () => {
+        if (tickerStartedAt === null) return;
+        tickerAccumMs += Date.now() - tickerStartedAt;
+        tickerStartedAt = null;
+        clearInterval(tickerInterval);
+        renderTicker();
+      });
+      document.getElementById('ticker-reset').addEventListener('click', () => {
+        tickerStartedAt = null;
+        tickerAccumMs = 0;
+        clearInterval(tickerInterval);
+        renderTicker();
+      });
+      renderTicker();
+
+      // FAQ Accordion (single-button pattern, ARIA-correct)
+      document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+        trigger.addEventListener('click', function() {
           const content = this.nextElementSibling;
           const icon = this.querySelector('.accordion-icon');
-          const isActive = content.classList.contains('active');
-          
-          // Toggle active state and aria-expanded attribute
-          content.classList.toggle('active');
-          this.setAttribute('aria-expanded', !isActive);
-          
-          // Update icon
-          icon.textContent = content.classList.contains('active') ? '-' : '+';
-        });
-        
-        // Also support "Enter" key for keyboard navigation
-        header.addEventListener('keypress', function(e) {
-          if (e.key === 'Enter' || e.keyCode === 13) {
-            this.click();
-          }
+          const willOpen = !content.classList.contains('active');
+          content.classList.toggle('active', willOpen);
+          this.setAttribute('aria-expanded', willOpen);
+          icon.textContent = willOpen ? '−' : '+';
         });
       });
     });

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Embeddable MeetingCalc widget — drop the meeting cost calculator into any site.">
+  <title>MeetingCalc — Embed Widget</title>
+  <link rel="canonical" href="https://www.meetingcalc.com/embed.html">
+  <link rel="icon" href="https://www.meetingcalc.com/assets/images/icon48.png" sizes="48x48">
+  <style>
+    :root {
+      --primary: #3366cc;
+      --primary-dark: #2952a3;
+      --secondary: #f8f9fa;
+      --text: #1f2937;
+      --light-text: #4b5563;
+      --border: #dee2e6;
+      --surface: #ffffff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #6b9aff;
+        --primary-dark: #4f7fe6;
+        --secondary: #1f2937;
+        --text: #f3f4f6;
+        --light-text: #d1d5db;
+        --border: #374151;
+        --surface: #111827;
+      }
+      body { background-color: #0b1220; }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { color: var(--text); background-color: var(--surface); padding: 1rem; }
+    .widget {
+      max-width: 480px; margin: 0 auto;
+      background-color: var(--secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+    .widget h2 { font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--primary); }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.5rem; }
+    .field label { display: block; font-size: 0.85rem; margin-bottom: 0.25rem; color: var(--light-text); }
+    .field input, .field select {
+      width: 100%; padding: 0.5rem; border: 1px solid var(--border);
+      border-radius: 4px; font-size: 0.9rem; background-color: var(--surface); color: var(--text);
+    }
+    .results {
+      margin-top: 0.75rem; padding: 0.75rem;
+      background-color: var(--surface); border-radius: 6px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;
+    }
+    .result { text-align: center; padding: 0.5rem; }
+    .result .label { font-size: 0.75rem; color: var(--light-text); }
+    .result .value { font-size: 1.15rem; font-weight: bold; color: var(--primary); margin-top: 0.15rem; font-variant-numeric: tabular-nums; }
+    .footer-link {
+      display: block; margin-top: 0.75rem; text-align: center;
+      font-size: 0.78rem; color: var(--light-text); text-decoration: none;
+    }
+    .footer-link strong { color: var(--primary); }
+    .footer-link:hover strong { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="widget">
+    <h2>Meeting Cost Calculator</h2>
+    <div class="row">
+      <div class="field">
+        <label for="d">Duration (min)</label>
+        <input type="number" id="d" min="5" max="480" value="60">
+      </div>
+      <div class="field">
+        <label for="a">Attendees</label>
+        <input type="number" id="a" min="1" max="100" value="5">
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label for="r">Hourly rate</label>
+        <input type="number" id="r" min="1" max="1000" value="50">
+      </div>
+      <div class="field">
+        <label for="c">Currency</label>
+        <select id="c">
+          <option value="USD" selected>USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="JPY">JPY</option>
+          <option value="CAD">CAD</option>
+          <option value="AUD">AUD</option>
+          <option value="INR">INR</option>
+        </select>
+      </div>
+    </div>
+    <div class="results" aria-live="polite">
+      <div class="result">
+        <div class="label">This meeting</div>
+        <div class="value" id="cost-single">$250.00</div>
+      </div>
+      <div class="result">
+        <div class="label">Per year (weekly)</div>
+        <div class="value" id="cost-annual">$13,000.00</div>
+      </div>
+    </div>
+    <a class="footer-link" href="https://www.meetingcalc.com/" target="_blank" rel="noopener">
+      Powered by <strong>MeetingCalc</strong> — full calculator, ticker &amp; export
+    </a>
+  </div>
+
+  <script>
+    function fmt(value, currency) {
+      try {
+        return new Intl.NumberFormat(undefined, {
+          style: 'currency', currency,
+          maximumFractionDigits: currency === 'JPY' ? 0 : 2
+        }).format(value);
+      } catch (e) { return '$' + value.toFixed(2); }
+    }
+    const d = document.getElementById('d');
+    const a = document.getElementById('a');
+    const r = document.getElementById('r');
+    const c = document.getElementById('c');
+    const single = document.getElementById('cost-single');
+    const annual = document.getElementById('cost-annual');
+    function calc() {
+      const dur = (parseInt(d.value) || 0) / 60;
+      const att = parseInt(a.value) || 0;
+      const rate = parseFloat(r.value) || 0;
+      const s = dur * att * rate;
+      single.textContent = fmt(s, c.value);
+      annual.textContent = fmt(s * 52, c.value);
+    }
+    [d, a, r, c].forEach(el => el.addEventListener('input', calc));
+    calc();
+  </script>
+</body>
+</html>
