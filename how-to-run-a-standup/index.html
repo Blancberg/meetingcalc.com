@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to run a daily standup that's fast and useful: the purpose, the format, the three questions, common mistakes, timeboxing, and when to switch to an async standup.">
+  <meta name="keywords" content="how to run a daily standup, daily standup meeting, standup format, daily scrum, standup meeting tips, async standup">
+  <meta name="theme-color" content="#3366cc">
+  <title>How to Run a Daily Standup (That People Don't Dread) | MeetingCalc</title>
+  <link rel="icon" href="https://meetingcalc.com/assets/images/icon48.png" sizes="48x48">
+  <link rel="apple-touch-icon" href="https://meetingcalc.com/assets/images/icon48.png">
+  <link rel="canonical" href="https://meetingcalc.com/how-to-run-a-standup/">
+  <meta property="og:title" content="How to Run a Daily Standup (That People Don't Dread) | MeetingCalc">
+  <meta property="og:description" content="How to run a daily standup that's fast and useful: the purpose, the format, the three questions, common mistakes, timeboxing, and when to switch to an async standup.">
+  <meta property="og:image" content="https://meetingcalc.com/assets/images/og-image.jpg">
+  <meta property="og:url" content="https://meetingcalc.com/how-to-run-a-standup/">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Run a Daily Standup (That People Don't Dread) | MeetingCalc">
+  <meta name="twitter:description" content="How to run a daily standup that's fast and useful: the purpose, the format, the three questions, common mistakes, timeboxing, and when to switch to an async standup.">
+  <meta name="twitter:image" content="https://meetingcalc.com/assets/images/og-image.jpg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ8E3R1SZR"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NZ8E3R1SZR');</script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "Article", "headline": "How to Run a Daily Standup", "description": "How to run a daily standup that's fast and useful: the purpose, the format, the three questions, common mistakes, timeboxing, and when to switch to an async standup.", "image": "https://meetingcalc.com/assets/images/og-image.jpg", "author": {"@type": "Organization", "name": "MeetingCalc", "url": "https://meetingcalc.com"}, "publisher": {"@type": "Organization", "name": "MeetingCalc", "logo": {"@type": "ImageObject", "url": "https://meetingcalc.com/assets/images/icon48.png"}}, "datePublished": "2026-06-04", "dateModified": "2026-06-04", "mainEntityOfPage": "https://meetingcalc.com/how-to-run-a-standup/"}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://meetingcalc.com/"}, {"@type": "ListItem", "position": 2, "name": "How to Run a Standup", "item": "https://meetingcalc.com/how-to-run-a-standup/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long should a daily standup be?", "acceptedAnswer": {"@type": "Answer", "text": "No more than 15 minutes. If it regularly runs longer, it's drifting into problem-solving \u2014 park those discussions and have the few relevant people continue after the standup."}}, {"@type": "Question", "name": "What are the three standup questions?", "acceptedAnswer": {"@type": "Answer", "text": "What did I do since the last standup, what will I do before the next one, and what's blocking me? Many teams now prefer to 'walk the board' instead, reviewing work items rather than going person by person."}}, {"@type": "Question", "name": "Should standups be daily?", "acceptedAnswer": {"@type": "Answer", "text": "Daily suits fast-moving teams, but the right cadence depends on how often coordination is actually needed. Some teams do well with two or three a week, or with async written updates that remove the scheduling problem entirely."}}]}
+  </script>
+  <style>
+    :root { --primary: #3366cc; --primary-dark: #2952a3; --secondary: #f8f9fa; --accent: #ffd700; --text: #1f2937; --light-text: #4b5563; --border: #dee2e6; --surface: #ffffff; --success: #16a34a; }
+    @media (prefers-color-scheme: dark) { :root { --primary: #6b9aff; --primary-dark: #4f7fe6; --secondary: #1f2937; --text: #f3f4f6; --light-text: #d1d5db; --border: #374151; --surface: #111827; } body { background-color: #0b1220; } header { background-color: #111827 !important; } .accordion-item, .related-card, .callout-soft { background-color: #1f2937 !important; } .accordion-trigger { background-color: #1f2937 !important; } }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { color: var(--text); line-height: 1.6; background-color: var(--surface); }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: #fff; padding: 8px; z-index: 100; transition: top 0.3s; }
+    .skip-link:focus { top: 0; }
+    header { background-color: var(--surface); box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1rem; position: sticky; top: 0; z-index: 100; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+    nav ul { display: flex; list-style: none; flex-wrap: wrap; }
+    nav ul li { margin-left: 1.5rem; }
+    nav ul li a { text-decoration: none; color: var(--text); }
+    nav ul li a:hover { color: var(--primary); }
+    .breadcrumb { max-width: 1100px; margin: 0 auto; padding: 0.75rem 1rem; font-size: 0.9rem; color: var(--light-text); }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    .hero { background-color: var(--secondary); padding: 3rem 0 2.5rem; text-align: center; }
+    .hero h1 { font-size: 2.3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.15rem; color: var(--light-text); max-width: 760px; margin: 0 auto; }
+    .prose { max-width: 760px; margin: 2.5rem auto; padding: 0 1rem; }
+    .prose h2 { margin: 2rem 0 0.75rem; font-size: 1.5rem; }
+    .prose h3 { margin: 1.5rem 0 0.5rem; }
+    .prose p { margin-bottom: 1rem; }
+    .prose ul, .prose ol { margin: 0 0 1rem 1.25rem; }
+    .prose li { margin-bottom: 0.4rem; }
+    .prose a { color: var(--primary); }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .prose th, .prose td { border: 1px solid var(--border); padding: 0.6rem 0.8rem; text-align: left; }
+    .prose th { background-color: var(--secondary); }
+    .tmpl { background: var(--secondary); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1rem 0; }
+    .tmpl h4 { color: var(--primary); margin-bottom: 0.5rem; }
+    .callout-soft { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; text-align: center; }
+    .callout-soft a.btn { display: inline-block; margin-top: 0.75rem; background: var(--primary); color: #fff; padding: 0.65rem 1.4rem; border-radius: 4px; text-decoration: none; font-weight: 700; }
+    .related { background-color: var(--secondary); padding: 2.5rem 0; }
+    .related h2 { text-align: center; margin-bottom: 1.5rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1000px; margin: 0 auto; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+    .related-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .related-card a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .accordion { max-width: 760px; margin: 0 auto; }
+    .accordion-item { margin-bottom: 0.75rem; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--surface); }
+    .accordion-trigger { background: var(--surface); padding: 1rem; cursor: pointer; display: flex; justify-content: space-between; width: 100%; text-align: left; border: none; font-size: 1rem; font-weight: 500; color: var(--text); }
+    .accordion-content { padding: 0 1rem; max-height: 0; overflow: hidden; transition: max-height 0.25s ease, padding 0.25s ease; }
+    .accordion-content.active { padding: 1rem; max-height: 560px; }
+    .faq { padding: 2.5rem 0; }
+    .faq h2 { text-align: center; margin-bottom: 1.5rem; }
+    footer { background-color: #1f2937; color: #fff; padding: 3rem 0; }
+    .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    @media (max-width: 768px) { .footer-content { grid-template-columns: 1fr; } }
+    .footer-logo { font-size: 1.8rem; font-weight: bold; margin-bottom: 1rem; }
+    .footer-links h3 { margin-bottom: 1rem; font-size: 1.2rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links ul li { margin-bottom: 0.5rem; }
+    .footer-links ul li a { text-decoration: none; color: #ddd; }
+    .footer-links ul li a:hover { color: #fff; }
+    .copyright { margin-top: 2rem; text-align: center; color: #ddd; font-size: 0.9rem; }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3842191947397990" crossorigin="anonymous"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">MeetingCalc</a>
+        <nav><ul>
+          <li><a href="/#calculator">Meeting Cost</a></li>
+          <li><a href="/salary-to-hourly/">Salary &rarr; Hourly</a></li>
+          <li><a href="/resources/">Resources</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul></nav>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; How to Run a Standup</nav>
+  <main id="main-content">
+    <section class="hero"><div class="container"><h1>How to Run a Daily Standup</h1><p>Done well, a standup is a 15-minute sync that surfaces blockers and keeps the team aligned. Done badly, it's a status meeting everyone dreads. Here's how to keep it the former.</p></div></section>
+    <div class="prose">
+      <h2>What a standup is for</h2>
+      <p>A daily standup (or daily scrum) exists to coordinate and surface blockers &mdash; not to report status to a manager. The whole team gets a quick shared picture of where things stand and where someone is stuck, so help can be arranged. If it feels like a roll-call of updates, it has drifted from its purpose.</p>
+      <h2>The classic format</h2>
+      <p>Keep it short, literally standing if you're co-located, and give each person a moment to answer three questions:</p>
+      <ul>
+        <li>What did I do since the last standup?</li>
+        <li>What will I do before the next one?</li>
+        <li>What's blocking me?</li>
+      </ul>
+      <p>Some teams replace this with "walk the board" &mdash; reviewing the work items themselves rather than going person by person, which keeps focus on the work instead of individuals.</p>
+      <div class="callout-soft"><strong>That daily 15 minutes adds up</strong><p>A standup runs ~260 times a year. See what yours costs across the team.</p><a class="btn" href="/standup-cost-calculator/">Open the Standup Cost Calculator →</a></div>
+      <h2>Timebox it ruthlessly</h2>
+      <p>Fifteen minutes, maximum. The fastest way to ruin a standup is to let it slide into problem-solving. When a real discussion surfaces, "take it offline" &mdash; note it and have the two or three people who care meet after.</p>
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Turning it into a status report for the manager.</li>
+        <li>Solving problems live instead of parking them.</li>
+        <li>Including people who don't need to be there.</li>
+        <li>Letting it creep past 15 minutes.</li>
+        <li>Holding it at a time that fragments everyone's morning focus.</li>
+      </ul>
+      <h2>When to go async</h2>
+      <p>For distributed or multi-timezone teams, a live standup is often the wrong tool. An async written standup &mdash; each person posts their update to a channel at the start of their day &mdash; removes the scheduling problem and leaves a searchable trail. See <a href="/async-vs-meetings/">async vs meetings</a> and <a href="/meetings-across-time-zones/">meetings across time zones</a>.</p>
+    </div>
+    <section class="faq"><div class="container"><h2>Frequently Asked Questions</h2><div class="accordion">
+          <div class="accordion-item"><button type="button" class="accordion-trigger"><span>How long should a daily standup be?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>No more than 15 minutes. If it regularly runs longer, it's drifting into problem-solving — park those discussions and have the few relevant people continue after the standup.</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-trigger"><span>What are the three standup questions?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>What did I do since the last standup, what will I do before the next one, and what's blocking me? Many teams now prefer to 'walk the board' instead, reviewing work items rather than going person by person.</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-trigger"><span>Should standups be daily?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Daily suits fast-moving teams, but the right cadence depends on how often coordination is actually needed. Some teams do well with two or three a week, or with async written updates that remove the scheduling problem entirely.</p></div></div>
+    </div></div></section>
+  </main>
+  <section class="related"><h2>More free tools &amp; guides</h2><div class="related-grid">
+      <div class="related-card"><h3>🧍 Standup Cost Calculator</h3><p>See what your daily standup costs per day, week, and year.</p><a href="/standup-cost-calculator/">Use calculator →</a></div>
+      <div class="related-card"><h3>🔁 Async vs Meetings</h3><p>When a written standup beats a live one.</p><a href="/async-vs-meetings/">Read the guide →</a></div>
+      <div class="related-card"><h3>🏃 Sprint Planning Cost</h3><p>Add up the cost of all your agile ceremonies.</p><a href="/sprint-planning-cost-calculator/">Use calculator →</a></div>
+    </div></section>
+  <footer><div class="container"><div class="footer-content">
+        <div class="footer-info"><div class="footer-logo">MeetingCalc</div><p>Free tools to help teams understand the cost of their time and run more effective meetings.</p></div>
+        <div class="footer-links"><h3>Tools &amp; Guides</h3><ul>
+            <li><a href="/#calculator">Meeting Cost Calculator</a></li>
+            <li><a href="/standup-cost-calculator/">Standup Cost Calculator</a></li>
+            <li><a href="/how-to-run-a-standup/">How to Run a Standup</a></li>
+            <li><a href="/retrospective-meetings/">Retrospective Meetings</a></li>
+            <li><a href="/resources/">All Resources</a></li>
+        </ul></div>
+        <div class="footer-links"><h3>About</h3><ul>
+            <li><a href="/about/">About MeetingCalc</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Use</a></li>
+        </ul></div>
+      </div><div class="copyright"><p>&copy; <span id="yr">2026</span> MeetingCalc. All rights reserved.</p></div></div></footer>
+  <script>document.getElementById('yr').textContent=new Date().getFullYear();
+    document.querySelectorAll('.accordion-trigger').forEach(function(t){t.addEventListener('click',function(){var c=this.nextElementSibling;var i=this.querySelector('.accordion-icon');var o=!c.classList.contains('active');c.classList.toggle('active',o);if(i)i.textContent=o?'\u2212':'+';});});
+  </script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free time zone meeting planner. Pick a meeting time and see it instantly in every team member's time zone, with a working-hours indicator so you can find a slot that's fair for everyone.">
+  <meta name="keywords" content="time zone meeting planner, meeting time zone converter, working hours overlap, world clock meeting planner, schedule across time zones, best meeting time across time zones">
+  <meta name="theme-color" content="#3366cc">
+  <title>Time Zone Meeting Planner | Find a Fair Meeting Time | MeetingCalc</title>
+
+  <link rel="icon" href="https://meetingcalc.com/assets/images/icon48.png" sizes="48x48">
+  <link rel="apple-touch-icon" href="https://meetingcalc.com/assets/images/icon48.png">
+  <link rel="canonical" href="https://meetingcalc.com/meeting-timezone-planner/">
+
+  <meta property="og:title" content="Time Zone Meeting Planner | Find a Fair Meeting Time">
+  <meta property="og:description" content="See a meeting time in every team member's time zone, with a working-hours indicator. Free, no signup.">
+  <meta property="og:image" content="https://meetingcalc.com/assets/images/og-image.jpg">
+  <meta property="og:url" content="https://meetingcalc.com/meeting-timezone-planner/">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Time Zone Meeting Planner | Find a Fair Meeting Time">
+  <meta name="twitter:description" content="See a meeting time in every team member's time zone, with a working-hours indicator. Free, no signup.">
+  <meta name="twitter:image" content="https://meetingcalc.com/assets/images/og-image.jpg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ8E3R1SZR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NZ8E3R1SZR');
+  </script>
+
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "WebApplication", "name": "Time Zone Meeting Planner", "url": "https://meetingcalc.com/meeting-timezone-planner/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }
+  </script>
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://meetingcalc.com/" }, { "@type": "ListItem", "position": 2, "name": "Time Zone Meeting Planner", "item": "https://meetingcalc.com/meeting-timezone-planner/" } ] }
+  </script>
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+    { "@type": "Question", "name": "How do I find a fair meeting time across time zones?", "acceptedAnswer": { "@type": "Answer", "text": "Pick a candidate time and check it against each participant's local time. A fair slot falls inside everyone's working hours; when no such overlap exists, rotate the inconvenient time between regions and record the meeting for anyone who can't attend live." } },
+    { "@type": "Question", "name": "Does this planner handle daylight saving time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It uses your browser's built-in time-zone database, which accounts for daylight saving in each region automatically, so the local times shown are accurate for today's date." } },
+    { "@type": "Question", "name": "Is the time zone planner free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, completely free with no signup. Everything runs in your browser; nothing you enter is sent anywhere." } }
+  ] }
+  </script>
+
+  <style>
+    :root { --primary: #3366cc; --primary-dark: #2952a3; --secondary: #f8f9fa; --accent: #ffd700; --text: #1f2937; --light-text: #4b5563; --border: #dee2e6; --surface: #ffffff; --green: #16a34a; --amber: #f59e0b; --red: #dc2626; }
+    @media (prefers-color-scheme: dark) { :root { --primary: #6b9aff; --primary-dark: #4f7fe6; --secondary: #1f2937; --text: #f3f4f6; --light-text: #d1d5db; --border: #374151; --surface: #111827; --green: #4ade80; --amber: #fbbf24; --red: #f87171; } body { background-color: #0b1220; } header { background-color: #111827 !important; } .panel, .accordion-item, .related-card, .zrow { background-color: #1f2937 !important; } .accordion-trigger { background-color: #1f2937 !important; } input, select { background:#0b1220; color:var(--text); border-color:var(--border); } }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { color: var(--text); line-height: 1.6; background-color: var(--surface); }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: #fff; padding: 8px; z-index: 100; transition: top 0.3s; }
+    .skip-link:focus { top: 0; }
+    header { background-color: var(--surface); box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1rem; position: sticky; top: 0; z-index: 100; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+    nav ul { display: flex; list-style: none; flex-wrap: wrap; }
+    nav ul li { margin-left: 1.5rem; }
+    nav ul li a { text-decoration: none; color: var(--text); }
+    nav ul li a:hover { color: var(--primary); }
+    .breadcrumb { max-width: 1100px; margin: 0 auto; padding: 0.75rem 1rem; font-size: 0.9rem; color: var(--light-text); }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    .hero { background-color: var(--secondary); padding: 2.5rem 0 1.5rem; text-align: center; }
+    .hero h1 { font-size: 2.3rem; margin-bottom: 0.75rem; }
+    .hero p { font-size: 1.1rem; color: var(--light-text); max-width: 720px; margin: 0 auto; }
+    .wrap { max-width: 820px; margin: 2rem auto; padding: 0 1rem; }
+    .panel { background: var(--secondary); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; }
+    .base-row { display: grid; grid-template-columns: 2fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem; }
+    @media (max-width: 560px) { .base-row { grid-template-columns: 1fr; } }
+    label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem; }
+    select, input[type=time] { width: 100%; padding: 0.6rem; border: 1px solid var(--border); border-radius: 4px; font-size: 1rem; background: var(--surface); color: var(--text); }
+    .zrow { display: flex; align-items: center; gap: 0.75rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.6rem; }
+    .zrow .dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .zrow .zsel { flex: 1 1 auto; min-width: 0; }
+    .zrow .zsel select { border: none; background: transparent; padding: 0.2rem 0; font-weight: 600; }
+    .zrow .ztime { text-align: right; font-variant-numeric: tabular-nums; }
+    .zrow .ztime .big { font-size: 1.2rem; font-weight: 700; }
+    .zrow .ztime .day { font-size: 0.78rem; color: var(--light-text); }
+    .zrow .del { background: none; border: none; color: var(--light-text); cursor: pointer; font-size: 1.1rem; }
+    .legend { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.82rem; color: var(--light-text); margin-top: 0.75rem; }
+    .legend span::before { content: "● "; }
+    .add-btn { margin-top: 0.5rem; background: none; border: 1px dashed var(--primary); color: var(--primary); border-radius: 4px; padding: 0.5rem 1rem; cursor: pointer; font-weight: 600; }
+    .prose { max-width: 760px; margin: 2.5rem auto; padding: 0 1rem; }
+    .prose h2 { margin: 2rem 0 0.75rem; font-size: 1.5rem; }
+    .prose p { margin-bottom: 1rem; }
+    .prose a { color: var(--primary); }
+    .related { background-color: var(--secondary); padding: 2.5rem 0; }
+    .related h2 { text-align: center; margin-bottom: 1.5rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1000px; margin: 0 auto; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+    .related-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .related-card a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .accordion { max-width: 760px; margin: 0 auto; }
+    .accordion-item { margin-bottom: 0.75rem; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--surface); }
+    .accordion-trigger { background: var(--surface); padding: 1rem; cursor: pointer; display: flex; justify-content: space-between; width: 100%; text-align: left; border: none; font-size: 1rem; font-weight: 500; color: var(--text); }
+    .accordion-content { padding: 0 1rem; max-height: 0; overflow: hidden; transition: max-height 0.25s ease, padding 0.25s ease; }
+    .accordion-content.active { padding: 1rem; max-height: 400px; }
+    .faq { padding: 2.5rem 0; }
+    .faq h2 { text-align: center; margin-bottom: 1.5rem; }
+    footer { background-color: #1f2937; color: #fff; padding: 3rem 0; }
+    .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    @media (max-width: 768px) { .footer-content { grid-template-columns: 1fr; } }
+    .footer-logo { font-size: 1.8rem; font-weight: bold; margin-bottom: 1rem; }
+    .footer-links h3 { margin-bottom: 1rem; font-size: 1.2rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links ul li { margin-bottom: 0.5rem; }
+    .footer-links ul li a { text-decoration: none; color: #ddd; }
+    .footer-links ul li a:hover { color: #fff; }
+    .copyright { margin-top: 2rem; text-align: center; color: #ddd; font-size: 0.9rem; }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3842191947397990" crossorigin="anonymous"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">MeetingCalc</a>
+        <nav><ul>
+          <li><a href="/#calculator">Meeting Cost</a></li>
+          <li><a href="/salary-to-hourly/">Salary → Hourly</a></li>
+          <li><a href="/resources/">Resources</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul></nav>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; Time Zone Meeting Planner</nav>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container">
+        <h1>Time Zone Meeting Planner</h1>
+        <p>Pick a meeting time and instantly see it in everyone's time zone, with a colour that tells you whose day it lands in. Find a slot that's fair for the whole team. Free, private, no signup.</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="panel">
+        <div class="base-row">
+          <div>
+            <label for="base-zone">Your time zone</label>
+            <select id="base-zone"></select>
+          </div>
+          <div>
+            <label for="base-time">Meeting time</label>
+            <input type="time" id="base-time" value="10:00">
+          </div>
+        </div>
+        <label>Participants' time zones</label>
+        <div id="zones"></div>
+        <button type="button" class="add-btn" id="add">+ Add a location</button>
+        <div class="legend">
+          <span style="color:var(--green)">Working hours (9–5)</span>
+          <span style="color:var(--amber)">Early / late (7–9, 5–8)</span>
+          <span style="color:var(--red)">Outside hours</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <h2>How to find a fair meeting time</h2>
+      <p>Move the meeting time until the dots turn green for as many people as possible. A green dot means the meeting lands in that person's normal working hours; amber is an early start or late finish; red is genuinely outside their day. The goal is a slot inside everyone's overlap &mdash; and when no overlap exists, to share the inconvenience fairly rather than always pushing it onto the same region.</p>
+      <p>When there's no good shared time at all, rotate which region takes the awkward slot, record the session, and lean on writing. Our guide to <a href="/meetings-across-time-zones/">running meetings across time zones</a> goes deeper, and <a href="/async-vs-meetings/">async vs meetings</a> covers when you can skip the live call entirely.</p>
+      <h2>Remember the meeting still costs money</h2>
+      <p>Whatever time you pick, the meeting bills everyone's salary. See what a cross-timezone sync costs with the <a href="/remote-team-meeting-cost-calculator/">remote team meeting cost calculator</a>.</p>
+    </div>
+
+    <section class="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+          <div class="accordion-item"><button type="button" class="accordion-trigger"><span>How do I find a fair meeting time across time zones?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Pick a candidate time and check it against each participant's local time. A fair slot falls inside everyone's working hours; when none exists, rotate the inconvenient time between regions and record the meeting for anyone who can't attend live.</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-trigger"><span>Does this planner handle daylight saving time?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Yes. It uses your browser's built-in time-zone database, which accounts for daylight saving in each region automatically, so the local times shown are accurate for today.</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-trigger"><span>Is the time zone planner free?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Yes, completely free with no signup. Everything runs in your browser; nothing you enter is sent anywhere.</p></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="related">
+    <h2>More free tools &amp; guides</h2>
+    <div class="related-grid">
+      <div class="related-card"><h3>🌍 Meetings Across Time Zones</h3><p>The full guide to scheduling fairly for distributed teams.</p><a href="/meetings-across-time-zones/">Read the guide →</a></div>
+      <div class="related-card"><h3>💻 Remote Team Meeting Cost</h3><p>See what a cross-timezone video call costs per year.</p><a href="/remote-team-meeting-cost-calculator/">Use calculator →</a></div>
+      <div class="related-card"><h3>🔄 Async vs Meetings</h3><p>When you can skip the live call entirely.</p><a href="/async-vs-meetings/">Read the guide →</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <div class="footer-logo">MeetingCalc</div>
+          <p>Free tools to help teams understand the cost of their time and run more effective meetings.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Tools &amp; Guides</h3>
+          <ul>
+            <li><a href="/#calculator">Meeting Cost Calculator</a></li>
+            <li><a href="/meeting-timezone-planner/">Time Zone Meeting Planner</a></li>
+            <li><a href="/meetings-across-time-zones/">Meetings Across Time Zones</a></li>
+            <li><a href="/remote-team-meeting-cost-calculator/">Remote Team Meeting Cost</a></li>
+            <li><a href="/resources/">All Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>About</h3>
+          <ul>
+            <li><a href="/about/">About MeetingCalc</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright"><p>&copy; <span id="yr">2026</span> MeetingCalc. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', function () {
+      var ZONES = [
+        ['Pacific (Los Angeles)', 'America/Los_Angeles'],
+        ['Mountain (Denver)', 'America/Denver'],
+        ['Central (Chicago)', 'America/Chicago'],
+        ['Eastern (New York)', 'America/New_York'],
+        ['São Paulo', 'America/Sao_Paulo'],
+        ['London', 'Europe/London'],
+        ['Berlin / Paris', 'Europe/Berlin'],
+        ['Cairo', 'Africa/Cairo'],
+        ['Dubai', 'Asia/Dubai'],
+        ['India (Kolkata)', 'Asia/Kolkata'],
+        ['Singapore', 'Asia/Singapore'],
+        ['Tokyo', 'Asia/Tokyo'],
+        ['Sydney', 'Australia/Sydney'],
+        ['Auckland', 'Pacific/Auckland']
+      ];
+      function tzOffsetMin(tz, date) {
+        var dtf = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour12: false, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        var p = {}; dtf.formatToParts(date).forEach(function (x) { p[x.type] = x.value; });
+        var asUTC = Date.UTC(p.year, p.month - 1, p.day, p.hour === '24' ? 0 : p.hour, p.minute, p.second);
+        return (asUTC - date.getTime()) / 60000;
+      }
+      function optionsHtml(sel) { return ZONES.map(function (z) { return '<option value="' + z[1] + '"' + (z[1] === sel ? ' selected' : '') + '>' + z[0] + '</option>'; }).join(''); }
+      var baseSel = document.getElementById('base-zone');
+      baseSel.innerHTML = optionsHtml('');
+      var guess = (Intl.DateTimeFormat().resolvedOptions().timeZone) || 'America/New_York';
+      if (ZONES.some(function (z) { return z[1] === guess; })) baseSel.value = guess; else baseSel.value = 'America/New_York';
+
+      var zonesEl = document.getElementById('zones');
+      function addZone(sel) {
+        var div = document.createElement('div');
+        div.className = 'zrow';
+        div.innerHTML = '<span class="dot"></span><span class="zsel"><select>' + optionsHtml(sel) + '</select></span><span class="ztime"><div class="big">--:--</div><div class="day"></div></span><button type="button" class="del" aria-label="Remove">×</button>';
+        div.querySelector('select').addEventListener('change', render);
+        div.querySelector('.del').addEventListener('click', function () { div.remove(); render(); });
+        zonesEl.appendChild(div);
+      }
+      function statusColor(h) {
+        if (h >= 9 && h < 17) return 'var(--green)';
+        if ((h >= 7 && h < 9) || (h >= 17 && h < 20)) return 'var(--amber)';
+        return 'var(--red)';
+      }
+      function render() {
+        var baseTz = baseSel.value;
+        var t = document.getElementById('base-time').value || '10:00';
+        var hh = parseInt(t.split(':')[0]) || 0, mm = parseInt(t.split(':')[1]) || 0;
+        // today's date in the base zone
+        var now = new Date();
+        var bp = {}; new Intl.DateTimeFormat('en-US', { timeZone: baseTz, year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(now).forEach(function (x) { bp[x.type] = x.value; });
+        var baseWallUTC = Date.UTC(bp.year, bp.month - 1, bp.day, hh, mm, 0);
+        var instant = new Date(baseWallUTC - tzOffsetMin(baseTz, new Date(baseWallUTC)) * 60000);
+        var baseDayNum = new Date(Date.UTC(bp.year, bp.month - 1, bp.day)).getUTCDate();
+        zonesEl.querySelectorAll('.zrow').forEach(function (row) {
+          var tz = row.querySelector('select').value;
+          var parts = {}; new Intl.DateTimeFormat('en-US', { timeZone: tz, hour12: false, weekday: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' }).formatToParts(instant).forEach(function (x) { parts[x.type] = x.value; });
+          var hourNum = parseInt(parts.hour === '24' ? '0' : parts.hour);
+          row.querySelector('.big').textContent = (parts.hour === '24' ? '00' : parts.hour) + ':' + parts.minute;
+          var dn = parseInt(parts.day);
+          var dayLabel = parts.weekday;
+          if (dn > baseDayNum || (baseDayNum > 27 && dn < 5 && dn !== baseDayNum)) dayLabel += ' (next day)';
+          else if (dn < baseDayNum || (dn > 27 && baseDayNum < 5)) dayLabel += ' (prev day)';
+          row.querySelector('.day').textContent = dayLabel;
+          row.querySelector('.dot').style.background = statusColor(hourNum);
+        });
+      }
+      document.getElementById('add').addEventListener('click', function () { addZone('Europe/London'); render(); });
+      baseSel.addEventListener('change', render);
+      document.getElementById('base-time').addEventListener('input', render);
+      addZone('America/New_York'); addZone('Europe/London'); addZone('Asia/Singapore');
+      render();
+
+      document.querySelectorAll('.accordion-trigger').forEach(function (t) { t.addEventListener('click', function () { var c = this.nextElementSibling; var i = this.querySelector('.accordion-icon'); var o = !c.classList.contains('active'); c.classList.toggle('active', o); if (i) i.textContent = o ? '−' : '+'; }); });
+    });
+  </script>
+</body>
+</html>

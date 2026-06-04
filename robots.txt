@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.meetingcalc.com/sitemap.xml
+Sitemap: https://meetingcalc.com/sitemap.xml

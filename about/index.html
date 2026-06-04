@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About MeetingCalc — a free, privacy-first suite of meeting cost calculators and guides that help teams put a real number on their time and run better meetings.">
+  <meta name="keywords" content="about meetingcalc, meeting cost calculator, who made meetingcalc, free meeting tools">
+  <meta name="theme-color" content="#3366cc">
+  <title>About MeetingCalc | Free Meeting Cost Tools &amp; Guides</title>
+
+  <link rel="icon" href="https://meetingcalc.com/assets/images/icon48.png" sizes="48x48">
+  <link rel="apple-touch-icon" href="https://meetingcalc.com/assets/images/icon48.png">
+  <link rel="canonical" href="https://meetingcalc.com/about/">
+
+  <meta property="og:title" content="About MeetingCalc | Free Meeting Cost Tools &amp; Guides">
+  <meta property="og:description" content="A free, privacy-first suite of meeting cost calculators and guides that help teams put a real number on their time.">
+  <meta property="og:image" content="https://meetingcalc.com/assets/images/og-image.jpg">
+  <meta property="og:url" content="https://meetingcalc.com/about/">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About MeetingCalc">
+  <meta name="twitter:description" content="A free, privacy-first suite of meeting cost calculators and guides.">
+  <meta name="twitter:image" content="https://meetingcalc.com/assets/images/og-image.jpg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ8E3R1SZR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NZ8E3R1SZR');
+  </script>
+
+  <!-- Structured Data: AboutPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About MeetingCalc",
+    "url": "https://meetingcalc.com/about/",
+    "publisher": { "@type": "Organization", "name": "MeetingCalc", "url": "https://meetingcalc.com/", "logo": { "@type": "ImageObject", "url": "https://meetingcalc.com/assets/images/icon48.png" } }
+  }
+  </script>
+
+  <!-- Structured Data: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://meetingcalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "About", "item": "https://meetingcalc.com/about/" }
+    ]
+  }
+  </script>
+
+  <style>
+    :root { --primary: #3366cc; --primary-dark: #2952a3; --secondary: #f8f9fa; --accent: #ffd700; --text: #1f2937; --light-text: #4b5563; --border: #dee2e6; --surface: #ffffff; --success: #16a34a; }
+    @media (prefers-color-scheme: dark) {
+      :root { --primary: #6b9aff; --primary-dark: #4f7fe6; --secondary: #1f2937; --text: #f3f4f6; --light-text: #d1d5db; --border: #374151; --surface: #111827; }
+      body { background-color: #0b1220; }
+      header { background-color: #111827 !important; }
+      .related-card, .value-card { background-color: #1f2937 !important; }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { color: var(--text); line-height: 1.6; background-color: var(--surface); }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: #fff; padding: 8px; z-index: 100; transition: top 0.3s; }
+    .skip-link:focus { top: 0; }
+    header { background-color: var(--surface); box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1rem; position: sticky; top: 0; z-index: 100; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+    nav ul { display: flex; list-style: none; flex-wrap: wrap; }
+    nav ul li { margin-left: 1.5rem; }
+    nav ul li a { text-decoration: none; color: var(--text); }
+    nav ul li a:hover { color: var(--primary); }
+    .breadcrumb { max-width: 1100px; margin: 0 auto; padding: 0.75rem 1rem; font-size: 0.9rem; color: var(--light-text); }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    .hero { background-color: var(--secondary); padding: 3rem 0 2.5rem; text-align: center; }
+    .hero h1 { font-size: 2.3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.15rem; color: var(--light-text); max-width: 760px; margin: 0 auto; }
+    .prose { max-width: 760px; margin: 2.5rem auto; padding: 0 1rem; }
+    .prose h2 { margin: 2rem 0 0.75rem; font-size: 1.5rem; }
+    .prose p { margin-bottom: 1rem; }
+    .prose ul { margin: 0 0 1rem 1.25rem; }
+    .prose li { margin-bottom: 0.4rem; }
+    .prose a { color: var(--primary); }
+    .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1000px; margin: 1.5rem auto; padding: 0 1rem; }
+    @media (max-width: 768px) { .values { grid-template-columns: 1fr; } }
+    .value-card { background: var(--secondary); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; text-align: center; }
+    .value-card .ic { font-size: 2rem; }
+    .value-card h3 { margin: 0.5rem 0; font-size: 1.1rem; color: var(--primary); }
+    .value-card p { font-size: 0.95rem; color: var(--light-text); }
+    .related { background-color: var(--secondary); padding: 2.5rem 0; }
+    .related h2 { text-align: center; margin-bottom: 1.5rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1000px; margin: 0 auto; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+    .related-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .related-card a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    footer { background-color: #1f2937; color: #fff; padding: 3rem 0; }
+    .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    @media (max-width: 768px) { .footer-content { grid-template-columns: 1fr; } }
+    .footer-logo { font-size: 1.8rem; font-weight: bold; margin-bottom: 1rem; }
+    .footer-links h3 { margin-bottom: 1rem; font-size: 1.2rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links ul li { margin-bottom: 0.5rem; }
+    .footer-links ul li a { text-decoration: none; color: #ddd; }
+    .footer-links ul li a:hover { color: #fff; }
+    .copyright { margin-top: 2rem; text-align: center; color: #ddd; font-size: 0.9rem; }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3842191947397990" crossorigin="anonymous"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">MeetingCalc</a>
+        <nav>
+          <ul>
+            <li><a href="/#calculator">Meeting Cost</a></li>
+            <li><a href="/salary-to-hourly/">Salary → Hourly</a></li>
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> &rsaquo; About
+  </nav>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container">
+        <h1>About MeetingCalc</h1>
+        <p>We build free, privacy-first tools that help teams see what their meetings actually cost — and run fewer, better ones.</p>
+      </div>
+    </section>
+
+    <div class="prose">
+      <h2>Why we built this</h2>
+      <p>Meetings feel free because no invoice ever arrives. But every meeting quietly bills the salaries of everyone in the room, and those hours add up to real money and lost focus. MeetingCalc started as a simple idea: if you could see that number, you'd make better decisions about how your team spends its time.</p>
+      <p>So we built a <a href="/#calculator">meeting cost calculator</a> that turns duration, attendees, and pay into an honest figure — and then kept going, adding calculators for <a href="/standup-cost-calculator/">standups</a>, <a href="/all-hands-meeting-cost-calculator/">all-hands</a>, <a href="/sprint-planning-cost-calculator/">sprint planning</a>, <a href="/interview-cost-calculator/">interviews</a>, and more, alongside practical guides on running meetings well.</p>
+    </div>
+
+    <div class="values">
+      <div class="value-card"><div class="ic">🔒</div><h3>Private by design</h3><p>Every calculation runs in your browser. We never see, store, or transmit anything you type.</p></div>
+      <div class="value-card"><div class="ic">🆓</div><h3>Free, no signup</h3><p>No accounts, no trials, no paywalls. The tools are supported by unobtrusive ads.</p></div>
+      <div class="value-card"><div class="ic">🎯</div><h3>Genuinely useful</h3><p>Practical numbers and advice you can act on, not vanity metrics or fluff.</p></div>
+    </div>
+
+    <div class="prose">
+      <h2>What we believe about meetings</h2>
+      <p>We're not anti-meeting. Meetings are essential for decisions, debate, sensitive conversations, and building trust. The goal isn't zero meetings — it's <em>intentional</em> ones: the right people, for the right reason, for no longer than needed. Our <a href="/meeting-statistics/">research-backed statistics</a> and guides like <a href="/reducing-meeting-costs/">reducing meeting costs</a> and <a href="/async-vs-meetings/">async vs meetings</a> are all aimed at that balance.</p>
+
+      <h2>How the calculators work</h2>
+      <p>The core formula is simple: <strong>cost = length (hours) × attendees × loaded hourly rate</strong>. The "loaded" rate adds benefits, taxes, and overhead on top of base salary — typically 1.25× to 1.4× — so the number reflects the true cost to the business. Recurring meetings multiply that by how often they happen across the year. Everything is an estimate, but a useful one for making decisions.</p>
+
+      <h2>Privacy &amp; how we're funded</h2>
+      <p>MeetingCalc is free and supported by advertising. We don't sell data — in fact, the calculators don't send your inputs anywhere at all. For the full details, see our <a href="/privacy/">privacy policy</a> and <a href="/terms/">terms of use</a>.</p>
+
+      <h2>Get in touch</h2>
+      <p>Have feedback, a correction, or an idea for a tool you'd like to see? We'd love to hear it — reach us via the details on our <a href="/privacy/#contact">contact section</a>.</p>
+    </div>
+  </main>
+
+  <section class="related">
+    <h2>Start here</h2>
+    <div class="related-grid">
+      <div class="related-card"><h3>🧮 Meeting Cost Calculator</h3><p>The tool that started it all — see what any meeting really costs.</p><a href="/#calculator">Open calculator →</a></div>
+      <div class="related-card"><h3>📈 Meeting Cost Statistics</h3><p>The research behind why meeting time is worth measuring.</p><a href="/meeting-statistics/">See the data →</a></div>
+      <div class="related-card"><h3>📚 All Resources</h3><p>Every calculator and guide in one place.</p><a href="/resources/">Browse resources →</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <div class="footer-logo">MeetingCalc</div>
+          <p>Free tools to help teams understand the cost of their time and run more effective meetings.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Tools &amp; Guides</h3>
+          <ul>
+            <li><a href="/#calculator">Meeting Cost Calculator</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/meeting-statistics/">Meeting Statistics</a></li>
+            <li><a href="/resources/">All Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>About</h3>
+          <ul>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Use</a></li>
+            <li><a href="/privacy/#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright"><p>&copy; <span id="yr">2026</span> MeetingCalc. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

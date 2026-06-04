@@ -2,85 +2,91 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
   <url>
-    <loc>https://www.meetingcalc.com/</loc>
+    <loc>https://meetingcalc.com/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/salary-to-hourly/</loc>
+    <loc>https://meetingcalc.com/salary-to-hourly/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/standup-cost-calculator/</loc>
+    <loc>https://meetingcalc.com/standup-cost-calculator/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/meeting-roi-calculator/</loc>
+    <loc>https://meetingcalc.com/meeting-roi-calculator/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/could-have-been-an-email/</loc>
+    <loc>https://meetingcalc.com/could-have-been-an-email/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/meeting-statistics/</loc>
+    <loc>https://meetingcalc.com/meeting-statistics/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/hourly-to-salary/</loc>
+    <loc>https://meetingcalc.com/hourly-to-salary/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/all-hands-meeting-cost-calculator/</loc>
+    <loc>https://meetingcalc.com/all-hands-meeting-cost-calculator/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/how-much-do-meetings-cost/</loc>
+    <loc>https://meetingcalc.com/how-much-do-meetings-cost/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/meeting-free-days/</loc>
+    <loc>https://meetingcalc.com/meeting-free-days/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/resources/</loc>
+    <loc>https://meetingcalc.com/resources/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/embed/</loc>
+    <loc>https://meetingcalc.com/about/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://meetingcalc.com/embed/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/terms/</loc>
+    <loc>https://meetingcalc.com/terms/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/privacy/</loc>
+    <loc>https://meetingcalc.com/privacy/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
@@ -88,19 +94,19 @@
 
   <!-- Meeting Optimization Guides -->
   <url>
-    <loc>https://www.meetingcalc.com/meeting-optimization/</loc>
+    <loc>https://meetingcalc.com/meeting-optimization/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/reducing-meeting-costs/</loc>
+    <loc>https://meetingcalc.com/reducing-meeting-costs/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/effective-meeting-agendas/</loc>
+    <loc>https://meetingcalc.com/effective-meeting-agendas/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -108,25 +114,25 @@
 
   <!-- Meeting Types and Scenarios -->
   <url>
-    <loc>https://www.meetingcalc.com/creative-brainstorming-meetings/</loc>
+    <loc>https://meetingcalc.com/creative-brainstorming-meetings/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/decision-making-meetings/</loc>
+    <loc>https://meetingcalc.com/decision-making-meetings/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/one-on-one-meetings/</loc>
+    <loc>https://meetingcalc.com/one-on-one-meetings/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/remote-meeting-guide/</loc>
+    <loc>https://meetingcalc.com/remote-meeting-guide/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -134,69 +140,135 @@
 
   <!-- Meeting Skills and Inclusivity -->
   <url>
-    <loc>https://www.meetingcalc.com/meeting-facilitation-skills/</loc>
+    <loc>https://meetingcalc.com/meeting-facilitation-skills/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/inclusive-meetings/</loc>
+    <loc>https://meetingcalc.com/inclusive-meetings/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/weekly-meeting-cost-calculator/</loc>
+    <loc>https://meetingcalc.com/weekly-meeting-cost-calculator/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/sprint-planning-cost-calculator/</loc>
+    <loc>https://meetingcalc.com/sprint-planning-cost-calculator/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/interview-cost-calculator/</loc>
+    <loc>https://meetingcalc.com/interview-cost-calculator/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/async-vs-meetings/</loc>
+    <loc>https://meetingcalc.com/async-vs-meetings/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/walking-meetings/</loc>
+    <loc>https://meetingcalc.com/walking-meetings/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/meeting-icebreakers/</loc>
+    <loc>https://meetingcalc.com/meeting-icebreakers/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/meetings-across-time-zones/</loc>
+    <loc>https://meetingcalc.com/meetings-across-time-zones/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/remote-team-meeting-cost-calculator/</loc>
+    <loc>https://meetingcalc.com/remote-team-meeting-cost-calculator/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.meetingcalc.com/hybrid-meetings/</loc>
+    <loc>https://meetingcalc.com/hybrid-meetings/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://meetingcalc.com/meeting-agenda-template/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://meetingcalc.com/meeting-timer/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://meetingcalc.com/meeting-timezone-planner/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://meetingcalc.com/how-to-take-meeting-minutes/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://meetingcalc.com/how-to-run-a-standup/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://meetingcalc.com/retrospective-meetings/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://meetingcalc.com/project-kickoff-meeting/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://meetingcalc.com/town-hall-meeting/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://meetingcalc.com/meeting-etiquette/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://meetingcalc.com/meeting-fatigue/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://meetingcalc.com/how-to-decline-a-meeting/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

@@ -8,20 +8,20 @@
   <meta name="theme-color" content="#3366cc">
   <title>Embed the Meeting Cost Calculator on Your Site (Free Widget) | MeetingCalc</title>
 
-  <link rel="icon" href="https://www.meetingcalc.com/assets/images/icon48.png" sizes="48x48">
-  <link rel="apple-touch-icon" href="https://www.meetingcalc.com/assets/images/icon48.png">
-  <link rel="canonical" href="https://www.meetingcalc.com/embed/">
+  <link rel="icon" href="https://meetingcalc.com/assets/images/icon48.png" sizes="48x48">
+  <link rel="apple-touch-icon" href="https://meetingcalc.com/assets/images/icon48.png">
+  <link rel="canonical" href="https://meetingcalc.com/embed/">
 
   <meta property="og:title" content="Embed the Meeting Cost Calculator on Your Site (Free Widget)">
   <meta property="og:description" content="Copy one line of embed code to drop the MeetingCalc widget into any site. Free, responsive, light & dark themes.">
-  <meta property="og:image" content="https://www.meetingcalc.com/assets/images/og-image.jpg">
-  <meta property="og:url" content="https://www.meetingcalc.com/embed/">
+  <meta property="og:image" content="https://meetingcalc.com/assets/images/og-image.jpg">
+  <meta property="og:url" content="https://meetingcalc.com/embed/">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Embed the Meeting Cost Calculator on Your Site (Free Widget)">
   <meta name="twitter:description" content="Copy one line of embed code to drop the MeetingCalc widget into any site. Free, responsive, light & dark themes.">
-  <meta name="twitter:image" content="https://www.meetingcalc.com/assets/images/og-image.jpg">
+  <meta name="twitter:image" content="https://meetingcalc.com/assets/images/og-image.jpg">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ8E3R1SZR"></script>
@@ -38,8 +38,8 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.meetingcalc.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Embed the Calculator", "item": "https://www.meetingcalc.com/embed/" }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://meetingcalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Embed the Calculator", "item": "https://meetingcalc.com/embed/" }
     ]
   }
   </script>
@@ -294,7 +294,7 @@
       var theme = 'auto', width = '100%';
       var codeEl = document.getElementById('embed-code');
       var preview = document.getElementById('preview');
-      var base = 'https://www.meetingcalc.com/widget/';
+      var base = 'https://meetingcalc.com/widget/';
 
       function widthAttr() { return width === '100%' ? 'width="100%"' : 'width="' + width + '"'; }
       function update() {
@@ -303,7 +303,7 @@
           '<iframe src="' + src + '" ' + widthAttr() + ' height="430" frameborder="0" ' +
           'style="border:1px solid #dee2e6;border-radius:8px;max-width:100%;" ' +
           'title="Meeting Cost Calculator" loading="lazy"></iframe>\n' +
-          '<p style="font-size:13px;margin-top:6px;">Free <a href="https://www.meetingcalc.com/" target="_blank" rel="noopener">meeting cost calculator</a> by MeetingCalc</p>';
+          '<p style="font-size:13px;margin-top:6px;">Free <a href="https://meetingcalc.com/" target="_blank" rel="noopener">meeting cost calculator</a> by MeetingCalc</p>';
         codeEl.value = code;
         preview.src = '/widget/?theme=' + theme;
         preview.style.maxWidth = width === '100%' ? '100%' : (width + 'px');

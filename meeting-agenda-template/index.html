@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free meeting agenda template and builder. Add topics, owners, and times, see the total length, and copy a clean agenda in one click. Plus ready-to-use templates for common meetings.">
+  <meta name="keywords" content="meeting agenda template, agenda builder, meeting agenda example, team meeting agenda, one on one agenda template, agenda maker">
+  <meta name="theme-color" content="#3366cc">
+  <title>Free Meeting Agenda Template &amp; Builder | MeetingCalc</title>
+
+  <link rel="icon" href="https://meetingcalc.com/assets/images/icon48.png" sizes="48x48">
+  <link rel="apple-touch-icon" href="https://meetingcalc.com/assets/images/icon48.png">
+  <link rel="canonical" href="https://meetingcalc.com/meeting-agenda-template/">
+
+  <meta property="og:title" content="Free Meeting Agenda Template &amp; Builder">
+  <meta property="og:description" content="Build a timed agenda and copy it in one click — plus ready-to-use templates for common meetings.">
+  <meta property="og:image" content="https://meetingcalc.com/assets/images/og-image.jpg">
+  <meta property="og:url" content="https://meetingcalc.com/meeting-agenda-template/">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Meeting Agenda Template &amp; Builder">
+  <meta name="twitter:description" content="Build a timed agenda and copy it in one click — plus ready-to-use templates for common meetings.">
+  <meta name="twitter:image" content="https://meetingcalc.com/assets/images/og-image.jpg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ8E3R1SZR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NZ8E3R1SZR');
+  </script>
+
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "WebApplication", "name": "Meeting Agenda Template & Builder", "url": "https://meetingcalc.com/meeting-agenda-template/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }
+  </script>
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://meetingcalc.com/" }, { "@type": "ListItem", "position": 2, "name": "Meeting Agenda Template", "item": "https://meetingcalc.com/meeting-agenda-template/" } ] }
+  </script>
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+    { "@type": "Question", "name": "What should a meeting agenda include?", "acceptedAnswer": { "@type": "Answer", "text": "A good agenda lists each topic, who's leading it, and how long it should take, plus the meeting's overall goal and any pre-reading. Assigning minutes to each item is what keeps the meeting on time." } },
+    { "@type": "Question", "name": "How do I write a meeting agenda?", "acceptedAnswer": { "@type": "Answer", "text": "Start from the meeting's goal, list only the topics that serve it, assign an owner and a time box to each, and share it in advance so people come prepared. Order items by priority so the most important ones happen while attention is highest." } },
+    { "@type": "Question", "name": "Is this agenda builder free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It runs entirely in your browser, nothing is stored or sent anywhere, and there's no signup. Build your agenda and copy it out in one click." } }
+  ] }
+  </script>
+
+  <style>
+    :root { --primary: #3366cc; --primary-dark: #2952a3; --secondary: #f8f9fa; --accent: #ffd700; --text: #1f2937; --light-text: #4b5563; --border: #dee2e6; --surface: #ffffff; --success: #16a34a; }
+    @media (prefers-color-scheme: dark) { :root { --primary: #6b9aff; --primary-dark: #4f7fe6; --secondary: #1f2937; --text: #f3f4f6; --light-text: #d1d5db; --border: #374151; --surface: #111827; } body { background-color: #0b1220; } header { background-color: #111827 !important; } .builder, .accordion-item, .related-card, .tmpl { background-color: #1f2937 !important; } .accordion-trigger { background-color: #1f2937 !important; } .row input { background:#0b1220; color:var(--text); border-color:var(--border); } }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { color: var(--text); line-height: 1.6; background-color: var(--surface); }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: #fff; padding: 8px; z-index: 100; transition: top 0.3s; }
+    .skip-link:focus { top: 0; }
+    header { background-color: var(--surface); box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1rem; position: sticky; top: 0; z-index: 100; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+    nav ul { display: flex; list-style: none; flex-wrap: wrap; }
+    nav ul li { margin-left: 1.5rem; }
+    nav ul li a { text-decoration: none; color: var(--text); }
+    nav ul li a:hover { color: var(--primary); }
+    .breadcrumb { max-width: 1100px; margin: 0 auto; padding: 0.75rem 1rem; font-size: 0.9rem; color: var(--light-text); }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    .hero { background-color: var(--secondary); padding: 3rem 0 2.5rem; text-align: center; }
+    .hero h1 { font-size: 2.3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.15rem; color: var(--light-text); max-width: 760px; margin: 0 auto; }
+    .wrap { max-width: 820px; margin: 2.5rem auto; padding: 0 1rem; }
+    .builder { background: var(--secondary); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; }
+    .builder h2 { font-size: 1.3rem; margin-bottom: 0.25rem; }
+    .builder .meta-row { display: grid; grid-template-columns: 2fr 1fr; gap: 0.75rem; margin: 1rem 0; }
+    @media (max-width: 560px) { .builder .meta-row { grid-template-columns: 1fr; } }
+    .builder input { width: 100%; padding: 0.6rem; border: 1px solid var(--border); border-radius: 4px; font-size: 0.95rem; background: var(--surface); color: var(--text); }
+    .agenda-head, .row { display: grid; grid-template-columns: 1fr 0.8fr 70px 36px; gap: 0.5rem; align-items: center; }
+    .agenda-head { font-size: 0.8rem; color: var(--light-text); margin-bottom: 0.4rem; font-weight: 600; }
+    .row { margin-bottom: 0.5rem; }
+    .row .del { background: none; border: 1px solid var(--border); border-radius: 4px; cursor: pointer; color: var(--light-text); height: 36px; }
+    .row .del:hover { border-color: #dc2626; color: #dc2626; }
+    .add-btn { margin-top: 0.25rem; background: none; border: 1px dashed var(--primary); color: var(--primary); border-radius: 4px; padding: 0.5rem 1rem; cursor: pointer; font-weight: 600; }
+    .total { margin-top: 1rem; font-weight: 700; color: var(--primary); font-size: 1.1rem; }
+    .actions { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1rem; }
+    .actions button { background: var(--primary); color: #fff; border: none; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: 700; cursor: pointer; }
+    .actions button.sec { background: var(--surface); color: var(--primary); border: 1px solid var(--primary); }
+    .actions button.copied { background: var(--success); }
+    .out { width: 100%; height: 160px; margin-top: 1rem; padding: 0.85rem; border: 1px solid var(--border); border-radius: 8px; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.82rem; background: var(--surface); color: var(--text); }
+    .prose { max-width: 760px; margin: 2.5rem auto; padding: 0 1rem; }
+    .prose h2 { margin: 2rem 0 0.75rem; font-size: 1.5rem; }
+    .prose p { margin-bottom: 1rem; }
+    .prose a { color: var(--primary); }
+    .tmpl { background: var(--secondary); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.3rem; margin: 1rem 0; }
+    .tmpl h4 { color: var(--primary); margin-bottom: 0.4rem; }
+    .tmpl ul { margin: 0 0 0 1.1rem; }
+    .related { background-color: var(--secondary); padding: 2.5rem 0; }
+    .related h2 { text-align: center; margin-bottom: 1.5rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1000px; margin: 0 auto; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+    .related-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .related-card a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .accordion { max-width: 760px; margin: 0 auto; }
+    .accordion-item { margin-bottom: 0.75rem; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--surface); }
+    .accordion-trigger { background: var(--surface); padding: 1rem; cursor: pointer; display: flex; justify-content: space-between; width: 100%; text-align: left; border: none; font-size: 1rem; font-weight: 500; color: var(--text); }
+    .accordion-content { padding: 0 1rem; max-height: 0; overflow: hidden; transition: max-height 0.25s ease, padding 0.25s ease; }
+    .accordion-content.active { padding: 1rem; max-height: 400px; }
+    .faq { padding: 2.5rem 0; }
+    .faq h2 { text-align: center; margin-bottom: 1.5rem; }
+    footer { background-color: #1f2937; color: #fff; padding: 3rem 0; }
+    .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    @media (max-width: 768px) { .footer-content { grid-template-columns: 1fr; } }
+    .footer-logo { font-size: 1.8rem; font-weight: bold; margin-bottom: 1rem; }
+    .footer-links h3 { margin-bottom: 1rem; font-size: 1.2rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links ul li { margin-bottom: 0.5rem; }
+    .footer-links ul li a { text-decoration: none; color: #ddd; }
+    .footer-links ul li a:hover { color: #fff; }
+    .copyright { margin-top: 2rem; text-align: center; color: #ddd; font-size: 0.9rem; }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3842191947397990" crossorigin="anonymous"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">MeetingCalc</a>
+        <nav><ul>
+          <li><a href="/#calculator">Meeting Cost</a></li>
+          <li><a href="/salary-to-hourly/">Salary → Hourly</a></li>
+          <li><a href="/resources/">Resources</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul></nav>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; Meeting Agenda Template</nav>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container">
+        <h1>Meeting Agenda Template &amp; Builder</h1>
+        <p>Build a timed agenda in seconds — add your topics, owners, and minutes, watch the total, and copy a clean agenda to paste into your invite. Free, private, no signup.</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="builder">
+        <h2>Build your agenda</h2>
+        <div class="meta-row">
+          <input type="text" id="m-title" placeholder="Meeting title (e.g. Weekly team sync)" value="Weekly Team Sync">
+          <input type="text" id="m-goal" placeholder="Goal / desired outcome" value="Align on priorities & unblock work">
+        </div>
+        <div class="agenda-head"><span>Topic</span><span>Owner</span><span>Min</span><span></span></div>
+        <div id="rows"></div>
+        <button type="button" class="add-btn" id="add">+ Add agenda item</button>
+        <div class="total">Total meeting time: <span id="total">0</span> min</div>
+        <div class="actions">
+          <button type="button" id="copy">📋 Copy agenda</button>
+          <button type="button" class="sec" id="reset">↺ Reset</button>
+        </div>
+        <textarea class="out" id="out" readonly onclick="this.select()" aria-label="Generated agenda"></textarea>
+      </div>
+    </div>
+
+    <div class="prose">
+      <h2>What makes a good meeting agenda</h2>
+      <p>An agenda is a contract for how the meeting will use everyone's time. The best ones share four things: the <strong>goal</strong> (what we'll have decided or produced by the end), the <strong>topics</strong> that serve that goal and nothing else, an <strong>owner</strong> for each item, and a <strong>time box</strong> so the meeting stays on track. Send it in advance so people arrive prepared rather than warming up live. For the deeper how-to, see our <a href="/effective-meeting-agendas/">effective meeting agendas guide</a>.</p>
+
+      <h2>Ready-to-use agenda templates</h2>
+      <div class="tmpl"><h4>Weekly team meeting (30 min)</h4>
+        <ul><li>Wins &amp; updates — 5 min</li><li>Metrics / progress to goals — 5 min</li><li>Priorities for the week — 10 min</li><li>Blockers &amp; decisions — 8 min</li><li>Actions &amp; wrap-up — 2 min</li></ul></div>
+      <div class="tmpl"><h4>One-on-one (30 min)</h4>
+        <ul><li>How are you? Check-in — 5 min</li><li>Their topics &amp; updates — 10 min</li><li>Feedback (both directions) — 8 min</li><li>Growth &amp; goals — 5 min</li><li>Action items — 2 min</li></ul>
+        <p style="margin-top:0.4rem;font-size:0.9rem;">See the <a href="/one-on-one-meetings/">1:1 meetings guide</a>.</p></div>
+      <div class="tmpl"><h4>Project kickoff (60 min)</h4>
+        <ul><li>Purpose &amp; background — 5 min</li><li>Goals &amp; success metrics — 10 min</li><li>Scope (in &amp; out) — 10 min</li><li>Roles &amp; responsibilities — 10 min</li><li>Timeline &amp; risks — 15 min</li><li>Next steps — 10 min</li></ul>
+        <p style="margin-top:0.4rem;font-size:0.9rem;">See the <a href="/project-kickoff-meeting/">kickoff guide</a>.</p></div>
+      <div class="tmpl"><h4>Brainstorm (45 min)</h4>
+        <ul><li>Frame the problem — 5 min</li><li>Silent idea generation — 10 min</li><li>Share &amp; build on ideas — 15 min</li><li>Cluster &amp; vote — 10 min</li><li>Next steps &amp; owners — 5 min</li></ul>
+        <p style="margin-top:0.4rem;font-size:0.9rem;">See the <a href="/creative-brainstorming-meetings/">brainstorming guide</a>.</p></div>
+
+      <h2>Before you book it…</h2>
+      <p>An agenda keeps a meeting efficient, but the cheapest meeting is the one you don't hold. Check it's worth the time with the <a href="/#calculator">meeting cost calculator</a> or the <a href="/could-have-been-an-email/">"could this have been an email?" tool</a>.</p>
+    </div>
+
+    <section class="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+          <div class="accordion-item"><button type="button" class="accordion-trigger"><span>What should a meeting agenda include?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Each topic, who's leading it, and how long it should take, plus the meeting's overall goal and any pre-reading. Assigning minutes to each item is what keeps the meeting on time.</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-trigger"><span>How do I write a meeting agenda?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Start from the goal, list only the topics that serve it, assign an owner and a time box to each, and share it in advance. Order items by priority so the most important happen while attention is highest.</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-trigger"><span>Is this agenda builder free?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Yes — it runs entirely in your browser, nothing is stored or sent anywhere, and there's no signup. Build your agenda and copy it out in one click.</p></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="related">
+    <h2>More free tools &amp; guides</h2>
+    <div class="related-grid">
+      <div class="related-card"><h3>📋 Effective Meeting Agendas</h3><p>The full guide to agendas that actually keep meetings on track.</p><a href="/effective-meeting-agendas/">Read the guide →</a></div>
+      <div class="related-card"><h3>📝 How to Take Meeting Minutes</h3><p>Turn the meeting into a record people can act on.</p><a href="/how-to-take-meeting-minutes/">Read the guide →</a></div>
+      <div class="related-card"><h3>🧮 Meeting Cost Calculator</h3><p>Check the meeting is worth holding before you send the invite.</p><a href="/#calculator">Open calculator →</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <div class="footer-logo">MeetingCalc</div>
+          <p>Free tools to help teams understand the cost of their time and run more effective meetings.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Tools &amp; Guides</h3>
+          <ul>
+            <li><a href="/#calculator">Meeting Cost Calculator</a></li>
+            <li><a href="/meeting-agenda-template/">Meeting Agenda Template</a></li>
+            <li><a href="/effective-meeting-agendas/">Meeting Agendas Guide</a></li>
+            <li><a href="/how-to-take-meeting-minutes/">Meeting Minutes</a></li>
+            <li><a href="/resources/">All Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>About</h3>
+          <ul>
+            <li><a href="/about/">About MeetingCalc</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright"><p>&copy; <span id="yr">2026</span> MeetingCalc. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', function () {
+      var rows = document.getElementById('rows');
+      var DEFAULTS = [['Wins & updates','', '5'], ['Priorities this week','', '10'], ['Blockers & decisions','', '10'], ['Actions & wrap-up','', '5']];
+      function addRow(topic, owner, mins) {
+        var div = document.createElement('div');
+        div.className = 'row';
+        div.innerHTML = '<input type="text" class="t" placeholder="Topic"><input type="text" class="o" placeholder="Owner"><input type="number" class="mn" min="0" max="480" placeholder="min"><button type="button" class="del" aria-label="Remove">×</button>';
+        div.querySelector('.t').value = topic || '';
+        div.querySelector('.o').value = owner || '';
+        div.querySelector('.mn').value = mins || '';
+        div.querySelector('.del').addEventListener('click', function () { div.remove(); update(); });
+        div.querySelectorAll('input').forEach(function (i) { i.addEventListener('input', update); });
+        rows.appendChild(div);
+      }
+      function update() {
+        var total = 0;
+        rows.querySelectorAll('.row').forEach(function (r) { total += parseInt(r.querySelector('.mn').value) || 0; });
+        document.getElementById('total').textContent = total;
+        var title = document.getElementById('m-title').value || 'Meeting';
+        var goal = document.getElementById('m-goal').value;
+        var lines = [title.toUpperCase()];
+        if (goal) lines.push('Goal: ' + goal);
+        lines.push('Total: ' + total + ' min');
+        lines.push('');
+        var n = 1;
+        rows.querySelectorAll('.row').forEach(function (r) {
+          var t = r.querySelector('.t').value.trim();
+          if (!t) return;
+          var o = r.querySelector('.o').value.trim();
+          var m = r.querySelector('.mn').value.trim();
+          lines.push(n + '. ' + t + (m ? ' (' + m + ' min)' : '') + (o ? ' — ' + o : ''));
+          n++;
+        });
+        document.getElementById('out').value = lines.join('\n');
+      }
+      document.getElementById('add').addEventListener('click', function () { addRow('', '', ''); update(); });
+      document.getElementById('m-title').addEventListener('input', update);
+      document.getElementById('m-goal').addEventListener('input', update);
+      document.getElementById('reset').addEventListener('click', function () {
+        rows.innerHTML = ''; DEFAULTS.forEach(function (d) { addRow(d[0], d[1], d[2]); }); update();
+      });
+      var copyBtn = document.getElementById('copy');
+      copyBtn.addEventListener('click', async function () {
+        try { await navigator.clipboard.writeText(document.getElementById('out').value); copyBtn.textContent = '✓ Copied!'; copyBtn.classList.add('copied'); setTimeout(function () { copyBtn.textContent = '📋 Copy agenda'; copyBtn.classList.remove('copied'); }, 2000); }
+        catch (e) { document.getElementById('out').select(); }
+      });
+      DEFAULTS.forEach(function (d) { addRow(d[0], d[1], d[2]); });
+      update();
+
+      document.querySelectorAll('.accordion-trigger').forEach(function (t) { t.addEventListener('click', function () { var c = this.nextElementSibling; var i = this.querySelector('.accordion-icon'); var o = !c.classList.contains('active'); c.classList.toggle('active', o); if (i) i.textContent = o ? '−' : '+'; }); });
+    });
+  </script>
+</body>
+</html>
