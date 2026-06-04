@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to run meetings across time zones: how to pick fair times, find overlap windows, handle standups, and lean on async so distributed teams stay aligned without burning anyone out.">
+  <meta name="keywords" content="meetings across time zones, scheduling across time zones, remote team time zones, time zone meeting tips, global team meetings, async across time zones">
+  <meta name="theme-color" content="#3366cc">
+  <title>How to Run Meetings Across Time Zones (2026 Guide) | MeetingCalc</title>
+
+  <link rel="icon" href="https://www.meetingcalc.com/assets/images/icon48.png" sizes="48x48">
+  <link rel="apple-touch-icon" href="https://www.meetingcalc.com/assets/images/icon48.png">
+  <link rel="canonical" href="https://www.meetingcalc.com/meetings-across-time-zones/">
+
+  <meta property="og:title" content="How to Run Meetings Across Time Zones (2026 Guide)">
+  <meta property="og:description" content="Pick fair times, find overlap windows, handle standups, and lean on async so distributed teams stay aligned across time zones.">
+  <meta property="og:image" content="https://www.meetingcalc.com/assets/images/og-image.jpg">
+  <meta property="og:url" content="https://www.meetingcalc.com/meetings-across-time-zones/">
+  <meta property="og:type" content="article">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Run Meetings Across Time Zones (2026 Guide)">
+  <meta name="twitter:description" content="Pick fair times, find overlap windows, handle standups, and lean on async so distributed teams stay aligned across time zones.">
+  <meta name="twitter:image" content="https://www.meetingcalc.com/assets/images/og-image.jpg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ8E3R1SZR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NZ8E3R1SZR');
+  </script>
+
+  <!-- Structured Data: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Run Meetings Across Time Zones",
+    "description": "Practical strategies for scheduling and running meetings across time zones: fair times, overlap windows, async habits, and standups for distributed teams.",
+    "image": "https://www.meetingcalc.com/assets/images/og-image.jpg",
+    "author": { "@type": "Organization", "name": "MeetingCalc", "url": "https://www.meetingcalc.com" },
+    "publisher": { "@type": "Organization", "name": "MeetingCalc", "logo": { "@type": "ImageObject", "url": "https://www.meetingcalc.com/assets/images/icon48.png" } },
+    "datePublished": "2026-06-04",
+    "dateModified": "2026-06-04",
+    "mainEntityOfPage": "https://www.meetingcalc.com/meetings-across-time-zones/"
+  }
+  </script>
+
+  <!-- Structured Data: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.meetingcalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Meetings Across Time Zones", "item": "https://www.meetingcalc.com/meetings-across-time-zones/" }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you schedule a meeting across time zones?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Find the overlap window when everyone's working hours intersect, agree on one reference time zone (often UTC) to avoid confusion, and use a scheduling tool that shows the meeting in each person's local time. For teams spread too far to share working hours, rotate the meeting time so the same region isn't always inconvenienced." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a fair meeting time for a global team?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A fair time falls inside the shared overlap of everyone's working hours. When no overlap exists, fairness means rotating the burden: alternate between times that suit different regions so the same people aren't always taking calls at dawn or late at night, and record sessions for those who genuinely can't attend." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you run a daily standup across time zones?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Many distributed teams replace the live standup with an async written standup: each person posts their update in a shared channel at the start of their own day. It removes the time-zone problem entirely, creates a searchable record, and tends to be cheaper than pulling everyone into a synchronized call." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root { --primary: #3366cc; --primary-dark: #2952a3; --secondary: #f8f9fa; --accent: #ffd700; --text: #1f2937; --light-text: #4b5563; --border: #dee2e6; --surface: #ffffff; --success: #16a34a; }
+    @media (prefers-color-scheme: dark) {
+      :root { --primary: #6b9aff; --primary-dark: #4f7fe6; --secondary: #1f2937; --text: #f3f4f6; --light-text: #d1d5db; --border: #374151; --surface: #111827; }
+      body { background-color: #0b1220; }
+      header { background-color: #111827 !important; }
+      .accordion-item, .related-card, .callout-soft { background-color: #1f2937 !important; }
+      .accordion-trigger { background-color: #1f2937 !important; }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { color: var(--text); line-height: 1.6; background-color: var(--surface); }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: #fff; padding: 8px; z-index: 100; transition: top 0.3s; }
+    .skip-link:focus { top: 0; }
+    header { background-color: var(--surface); box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1rem; position: sticky; top: 0; z-index: 100; }
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+    nav ul { display: flex; list-style: none; flex-wrap: wrap; }
+    nav ul li { margin-left: 1.5rem; }
+    nav ul li a { text-decoration: none; color: var(--text); }
+    nav ul li a:hover { color: var(--primary); }
+    .breadcrumb { max-width: 1100px; margin: 0 auto; padding: 0.75rem 1rem; font-size: 0.9rem; color: var(--light-text); }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    .hero { background-color: var(--secondary); padding: 3rem 0 2.5rem; text-align: center; }
+    .hero h1 { font-size: 2.3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.15rem; color: var(--light-text); max-width: 760px; margin: 0 auto; }
+    .prose { max-width: 760px; margin: 2.5rem auto; padding: 0 1rem; }
+    .prose h2 { margin: 2rem 0 0.75rem; font-size: 1.5rem; }
+    .prose h3 { margin: 1.5rem 0 0.5rem; }
+    .prose p { margin-bottom: 1rem; }
+    .prose ul, .prose ol { margin: 0 0 1rem 1.25rem; }
+    .prose li { margin-bottom: 0.4rem; }
+    .prose a { color: var(--primary); }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .prose th, .prose td { border: 1px solid var(--border); padding: 0.6rem 0.8rem; text-align: left; }
+    .prose th { background-color: var(--secondary); }
+    .callout-soft { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; text-align: center; }
+    .callout-soft a.btn { display: inline-block; margin-top: 0.75rem; background: var(--primary); color: #fff; padding: 0.65rem 1.4rem; border-radius: 4px; text-decoration: none; font-weight: 700; }
+    .related { background-color: var(--secondary); padding: 2.5rem 0; }
+    .related h2 { text-align: center; margin-bottom: 1.5rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1000px; margin: 0 auto; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+    .related-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .related-card a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .accordion { max-width: 760px; margin: 0 auto; }
+    .accordion-item { margin-bottom: 0.75rem; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--surface); }
+    .accordion-trigger { background: var(--surface); padding: 1rem; cursor: pointer; display: flex; justify-content: space-between; width: 100%; text-align: left; border: none; font-size: 1rem; font-weight: 500; color: var(--text); }
+    .accordion-content { padding: 0 1rem; max-height: 0; overflow: hidden; transition: max-height 0.25s ease, padding 0.25s ease; }
+    .accordion-content.active { padding: 1rem; max-height: 520px; }
+    .faq { padding: 2.5rem 0; }
+    .faq h2 { text-align: center; margin-bottom: 1.5rem; }
+    footer { background-color: #1f2937; color: #fff; padding: 3rem 0; }
+    .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    @media (max-width: 768px) { .footer-content { grid-template-columns: 1fr; } }
+    .footer-logo { font-size: 1.8rem; font-weight: bold; margin-bottom: 1rem; }
+    .footer-links h3 { margin-bottom: 1rem; font-size: 1.2rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links ul li { margin-bottom: 0.5rem; }
+    .footer-links ul li a { text-decoration: none; color: #ddd; }
+    .footer-links ul li a:hover { color: #fff; }
+    .copyright { margin-top: 2rem; text-align: center; color: #ddd; font-size: 0.9rem; }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3842191947397990" crossorigin="anonymous"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">MeetingCalc</a>
+        <nav>
+          <ul>
+            <li><a href="/#calculator">Meeting Cost</a></li>
+            <li><a href="/salary-to-hourly/">Salary → Hourly</a></li>
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> &rsaquo; Meetings Across Time Zones
+  </nav>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container">
+        <h1>How to Run Meetings Across Time Zones</h1>
+        <p>When your team is spread across the world, the hardest part of a meeting is finding a time that doesn't ask someone to join at midnight. Here's how to schedule fairly, find overlap, and lean on async so distributed teams stay aligned.</p>
+      </div>
+    </section>
+
+    <div class="prose">
+      <h2>Why time zones make meetings hard</h2>
+      <p>A meeting only works when everyone can actually attend at a reasonable hour. Across two or three time zones that's manageable; across a global team it quickly becomes a zero-sum problem, where any time that suits one region pushes another to the edge of their day. Handled badly, the same people always take the awkward calls — and resentment and burnout follow.</p>
+
+      <h2>Find the overlap window first</h2>
+      <p>Before picking a time, map everyone's working hours in a single reference zone and look for where they intersect. That shared band — the <strong>overlap window</strong> — is the only humane place to put a synchronous meeting. The wider your team is spread, the narrower it gets, which is exactly why distributed teams should protect it for the conversations that genuinely need to be live.</p>
+      <ul>
+        <li>Agree on one reference time zone (UTC is the common neutral choice) so no one mis-converts.</li>
+        <li>Use a scheduler that shows the proposed time in each attendee's local clock.</li>
+        <li>Treat the overlap window as scarce — don't fill it with status updates that could be written.</li>
+      </ul>
+
+      <h2>Coordinating across U.S. time zones</h2>
+      <p>Even a U.S.-only team isn't on one clock. The continental United States spans four zones — Eastern, Central, Mountain, and Pacific — so a 9&nbsp;a.m. start on the East Coast is 6&nbsp;a.m. on the West Coast, before you add Alaska and Hawaii. If you need a quick reference for which states sit in which zone when scheduling, this <a href="https://usamap.net/time-zones/" target="_blank" rel="noopener">map of U.S. time zones</a> lays out the boundaries clearly. Aim for late morning Pacific / early afternoon Eastern to keep a coast-to-coast call inside everyone's normal hours.</p>
+
+      <h2>When there's no overlap: rotate and record</h2>
+      <p>For teams spanning, say, San Francisco and Singapore, there may be no comfortable shared hour at all. Fairness then means sharing the inconvenience rather than eliminating it:</p>
+      <ul>
+        <li><strong>Rotate meeting times</strong> so the same region isn't always taking the early-morning or late-night slot.</li>
+        <li><strong>Record every session</strong> and post notes, so anyone who can't attend live isn't penalized.</li>
+        <li><strong>Keep a written decision log</strong> so the outcome doesn't live only in someone's memory of a call.</li>
+      </ul>
+
+      <div class="callout-soft">
+        <strong>Pulling people into off-hours calls has a cost</strong>
+        <p>Before you schedule another all-team sync across zones, see what an hour of everyone's time actually adds up to.</p>
+        <a class="btn" href="/#calculator">Open the Meeting Cost Calculator →</a>
+      </div>
+
+      <h2>Default to async for everything that can be</h2>
+      <p>The most reliable fix for time-zone pain is to need fewer synchronous meetings in the first place. Status updates, FYIs, and most decisions work better as written threads people pick up during their own day. Our guide on <a href="/async-vs-meetings/">async communication vs meetings</a> covers when to go async and when a live meeting still earns its place.</p>
+      <h3>Run an async standup</h3>
+      <p>The classic example is the daily standup. Instead of forcing a synchronized call, each person posts a short written update to a shared channel at the start of their own workday. It removes the time-zone problem completely, leaves a searchable trail, and usually costs less than a live call — see the <a href="/standup-cost-calculator/">standup cost calculator</a> to compare.</p>
+
+      <h2>Quick reference: common overlap by region pair</h2>
+      <table>
+        <thead><tr><th>Region pair</th><th>Approx. gap</th><th>Best shared window</th></tr></thead>
+        <tbody>
+          <tr><td>US East ↔ US West</td><td>3 hours</td><td>Late morning Pacific</td></tr>
+          <tr><td>US East ↔ London</td><td>5 hours</td><td>Morning Eastern / afternoon London</td></tr>
+          <tr><td>London ↔ India</td><td>4.5–5.5 hours</td><td>Early afternoon London</td></tr>
+          <tr><td>US West ↔ Central Europe</td><td>8–9 hours</td><td>Very early Pacific / late afternoon CET</td></tr>
+          <tr><td>US West ↔ Singapore</td><td>15–16 hours</td><td>Rotate; lean async</td></tr>
+        </tbody>
+      </table>
+      <p>For broader remote-team tactics, see our <a href="/remote-meeting-guide/">remote meeting guide</a> and <a href="/inclusive-meetings/">inclusive meetings guide</a>.</p>
+    </div>
+
+    <section class="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger"><span>How do you schedule a meeting across time zones?</span><span class="accordion-icon">+</span></button>
+            <div class="accordion-content"><p>Find the overlap window where everyone's working hours intersect, agree on one reference time zone (often UTC), and use a scheduler that shows the time in each person's local clock. When no overlap exists, rotate the meeting time so the same region isn't always inconvenienced.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger"><span>What is a fair meeting time for a global team?</span><span class="accordion-icon">+</span></button>
+            <div class="accordion-content"><p>A fair time sits inside the shared overlap of everyone's working hours. When there's no overlap, fairness means rotating the burden between regions and recording sessions for those who genuinely can't attend.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger"><span>How do you run a daily standup across time zones?</span><span class="accordion-icon">+</span></button>
+            <div class="accordion-content"><p>Replace the live standup with an async written one: each person posts their update to a shared channel at the start of their own day. It removes the time-zone problem, creates a searchable record, and is usually cheaper than a synchronized call.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="related">
+    <h2>More free tools &amp; guides</h2>
+    <div class="related-grid">
+      <div class="related-card"><h3>🔄 Async vs Meetings</h3><p>When asynchronous communication beats a meeting — essential for distributed teams.</p><a href="/async-vs-meetings/">Read the guide →</a></div>
+      <div class="related-card"><h3>🌐 Remote Meeting Guide</h3><p>Keep distributed teams engaged, productive, and connected over video.</p><a href="/remote-meeting-guide/">Read the guide →</a></div>
+      <div class="related-card"><h3>🧮 Meeting Cost Calculator</h3><p>See what an all-team cross-timezone sync actually costs.</p><a href="/#calculator">Open calculator →</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <div class="footer-logo">MeetingCalc</div>
+          <p>Free tools to help teams understand the cost of their time and run more effective meetings.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Tools &amp; Guides</h3>
+          <ul>
+            <li><a href="/#calculator">Meeting Cost Calculator</a></li>
+            <li><a href="/remote-meeting-guide/">Remote Meeting Guide</a></li>
+            <li><a href="/meetings-across-time-zones/">Meetings Across Time Zones</a></li>
+            <li><a href="/async-vs-meetings/">Async vs Meetings</a></li>
+            <li><a href="/resources/">All Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>About</h3>
+          <ul>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Use</a></li>
+            <li><a href="/privacy/#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright"><p>&copy; <span id="yr">2026</span> MeetingCalc. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.querySelectorAll('.accordion-trigger').forEach(function (t) {
+      t.addEventListener('click', function () {
+        var content = this.nextElementSibling;
+        var icon = this.querySelector('.accordion-icon');
+        var open = !content.classList.contains('active');
+        content.classList.toggle('active', open);
+        if (icon) icon.textContent = open ? '−' : '+';
+      });
+    });
+  </script>
+</body>
+</html>

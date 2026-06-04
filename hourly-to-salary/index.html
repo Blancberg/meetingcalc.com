@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free hourly to salary calculator. Convert any hourly wage into an annual, monthly, weekly, and daily salary instantly. Adjust hours per week and paid time off. No signup.">
+  <meta name="keywords" content="hourly to salary calculator, hourly wage to annual salary, convert hourly to salary, hourly to yearly, what is my annual salary, wage to salary calculator">
+  <meta name="theme-color" content="#3366cc">
+  <title>Hourly to Salary Calculator | Convert Hourly Wage to Annual Salary | MeetingCalc</title>
+
+  <link rel="icon" href="https://www.meetingcalc.com/assets/images/icon48.png" sizes="48x48">
+  <link rel="apple-touch-icon" href="https://www.meetingcalc.com/assets/images/icon48.png">
+  <link rel="canonical" href="https://www.meetingcalc.com/hourly-to-salary/">
+
+  <meta property="og:title" content="Hourly to Salary Calculator | Convert Hourly Wage to Annual Salary">
+  <meta property="og:description" content="Convert any hourly wage into an annual, monthly, weekly, or daily salary in seconds. Free, private, no signup.">
+  <meta property="og:image" content="https://www.meetingcalc.com/assets/images/og-image.jpg">
+  <meta property="og:url" content="https://www.meetingcalc.com/hourly-to-salary/">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hourly to Salary Calculator | Convert Hourly Wage to Annual Salary">
+  <meta name="twitter:description" content="Convert any hourly wage into an annual, monthly, weekly, or daily salary in seconds. Free, private, no signup.">
+  <meta name="twitter:image" content="https://www.meetingcalc.com/assets/images/og-image.jpg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ8E3R1SZR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NZ8E3R1SZR');
+  </script>
+
+  <!-- Structured Data: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hourly to Salary Calculator",
+    "url": "https://www.meetingcalc.com/hourly-to-salary/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <!-- Structured Data: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.meetingcalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Hourly to Salary Calculator", "item": "https://www.meetingcalc.com/hourly-to-salary/" }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you convert an hourly wage to an annual salary?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Multiply the hourly rate by the hours worked per week, then by the number of weeks worked per year. For standard full-time work that is 40 hours x 52 weeks = 2,080 hours, so $25 per hour equals $52,000 a year before taxes." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is $20 an hour annually?",
+        "acceptedAnswer": { "@type": "Answer", "text": "At 40 hours per week for 52 weeks (2,080 hours), $20 per hour is about $41,600 per year before taxes." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this account for paid time off?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It can. By default it assumes you are paid for all 52 weeks. If you toggle paid time off, the annual figure stays the same but reflects fewer actual worked weeks, which is useful when comparing a salaried role to an hourly contract that is not paid for holidays." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this calculator free and private?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every calculation runs entirely in your browser. Nothing you type is sent to a server, stored, or shared. There is no signup." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #3366cc; --primary-dark: #2952a3; --secondary: #f8f9fa;
+      --accent: #ffd700; --text: #1f2937; --light-text: #4b5563;
+      --border: #dee2e6; --surface: #ffffff; --success: #16a34a;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #6b9aff; --primary-dark: #4f7fe6; --secondary: #1f2937;
+        --text: #f3f4f6; --light-text: #d1d5db; --border: #374151; --surface: #111827;
+      }
+      body { background-color: #0b1220; }
+      header { background-color: #111827 !important; }
+      .results, .accordion-item, .related-card { background-color: #1f2937 !important; }
+      .accordion-trigger { background-color: #1f2937 !important; }
+      .calculator-container { background-color: #111827 !important; }
+      .form-group input, .form-group select { background-color: #0b1220; color: var(--text); border-color: var(--border); }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { color: var(--text); line-height: 1.6; background-color: var(--surface); }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: #fff; padding: 8px; z-index: 100; transition: top 0.3s; }
+    .skip-link:focus { top: 0; }
+    header { background-color: var(--surface); box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1rem; position: sticky; top: 0; z-index: 100; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+    nav ul { display: flex; list-style: none; flex-wrap: wrap; }
+    nav ul li { margin-left: 1.5rem; }
+    nav ul li a { text-decoration: none; color: var(--text); transition: color 0.3s; }
+    nav ul li a:hover { color: var(--primary); }
+    .breadcrumb { max-width: 1200px; margin: 0 auto; padding: 0.75rem 1rem; font-size: 0.9rem; color: var(--light-text); }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    .hero { background-color: var(--secondary); padding: 3rem 0 2.5rem; text-align: center; }
+    .hero h1 { font-size: 2.25rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.15rem; color: var(--light-text); max-width: 760px; margin: 0 auto; }
+    .calculator { padding: 2.5rem 0; }
+    .calculator-container { max-width: 760px; margin: 0 auto; padding: 2rem; background-color: var(--secondary); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .calculator-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 680px) { .calculator-form { grid-template-columns: 1fr; } }
+    .form-group label { display: block; margin-bottom: 0.4rem; font-weight: 500; }
+    .form-group input, .form-group select { width: 100%; padding: 0.7rem; border: 1px solid var(--border); border-radius: 4px; font-size: 1rem; background-color: var(--surface); color: var(--text); }
+    .toggle-row { display: flex; gap: 0.75rem; align-items: center; margin-top: 1rem; padding: 0.75rem 1rem; background-color: var(--surface); border-radius: 6px; }
+    .toggle-row label { display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 500; }
+    .toggle-row input { width: auto; }
+    .results { margin-top: 1.75rem; padding: 1.5rem; background-color: var(--surface); border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .headline-rate { text-align: center; margin-bottom: 1.25rem; }
+    .headline-rate .big { font-size: 3rem; font-weight: 700; color: var(--primary); font-variant-numeric: tabular-nums; }
+    .headline-rate .lbl { color: var(--light-text); }
+    .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+    @media (max-width: 680px) { .results-grid { grid-template-columns: 1fr 1fr; } }
+    .result-item { background-color: var(--secondary); padding: 0.9rem; border-radius: 6px; text-align: center; }
+    .result-item .v { font-size: 1.2rem; font-weight: 700; color: var(--primary); display: block; margin-top: 0.25rem; font-variant-numeric: tabular-nums; }
+    .result-item .k { font-size: 0.85rem; color: var(--light-text); }
+    .cross-promo { max-width: 760px; margin: 1.5rem auto 0; padding: 1.5rem; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; border-radius: 8px; text-align: center; }
+    .cross-promo h3 { margin-bottom: 0.5rem; }
+    .cross-promo a { display: inline-block; margin-top: 0.75rem; background: #fff; color: var(--primary); padding: 0.6rem 1.3rem; border-radius: 4px; text-decoration: none; font-weight: 700; }
+    .prose { max-width: 760px; margin: 2.5rem auto; padding: 0 1rem; }
+    .prose h2 { margin: 1.75rem 0 0.75rem; }
+    .prose p { margin-bottom: 1rem; color: var(--text); }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .prose th, .prose td { border: 1px solid var(--border); padding: 0.6rem 0.8rem; text-align: left; }
+    .prose th { background-color: var(--secondary); }
+    .related { background-color: var(--secondary); padding: 2.5rem 0; }
+    .related h2 { text-align: center; margin-bottom: 1.5rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1000px; margin: 0 auto; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+    .related-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .related-card a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .accordion { max-width: 760px; margin: 0 auto; }
+    .accordion-item { margin-bottom: 0.75rem; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--surface); }
+    .accordion-trigger { background: var(--surface); padding: 1rem; cursor: pointer; display: flex; justify-content: space-between; width: 100%; text-align: left; border: none; font-size: 1rem; font-weight: 500; color: var(--text); }
+    .accordion-content { padding: 0 1rem; max-height: 0; overflow: hidden; transition: max-height 0.25s ease, padding 0.25s ease; }
+    .accordion-content.active { padding: 1rem; max-height: 400px; }
+    .faq { padding: 2.5rem 0; }
+    .faq h2 { text-align: center; margin-bottom: 1.5rem; }
+    footer { background-color: #1f2937; color: #fff; padding: 3rem 0; }
+    .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    @media (max-width: 768px) { .footer-content { grid-template-columns: 1fr; } }
+    .footer-logo { font-size: 1.8rem; font-weight: bold; margin-bottom: 1rem; }
+    .footer-links h3 { margin-bottom: 1rem; font-size: 1.2rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links ul li { margin-bottom: 0.5rem; }
+    .footer-links ul li a { text-decoration: none; color: #ddd; }
+    .footer-links ul li a:hover { color: #fff; }
+    .copyright { margin-top: 2rem; text-align: center; color: #ddd; font-size: 0.9rem; }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3842191947397990" crossorigin="anonymous"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">MeetingCalc</a>
+        <nav>
+          <ul>
+            <li><a href="/#calculator">Meeting Cost</a></li>
+            <li><a href="/salary-to-hourly/">Salary → Hourly</a></li>
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> &rsaquo; Hourly to Salary Calculator
+  </nav>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container">
+        <h1>Hourly to Salary Calculator</h1>
+        <p>Convert any hourly wage into an annual, monthly, weekly, or daily salary in seconds. Adjust hours per week and paid time off for an exact figure. 100% free, private, no signup.</p>
+      </div>
+    </section>
+
+    <section class="calculator">
+      <div class="container">
+        <div class="calculator-container">
+          <form id="calc-form" class="calculator-form">
+            <div class="form-group">
+              <label for="hourly">Hourly Rate</label>
+              <input type="number" id="hourly" min="0" step="0.25" value="25" required>
+            </div>
+            <div class="form-group">
+              <label for="currency">Currency</label>
+              <select id="currency">
+                <option value="USD" selected>USD ($)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="CAD">CAD (C$)</option>
+                <option value="AUD">AUD (A$)</option>
+                <option value="INR">INR (₹)</option>
+                <option value="JPY">JPY (¥)</option>
+                <option value="CHF">CHF (Fr)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="hpw">Hours per Week</label>
+              <input type="number" id="hpw" min="1" max="100" step="0.5" value="40" required>
+            </div>
+            <div class="form-group">
+              <label for="wpy">Weeks Worked per Year</label>
+              <input type="number" id="wpy" min="1" max="52" step="1" value="52" required>
+            </div>
+          </form>
+
+          <div class="toggle-row">
+            <label>
+              <input type="checkbox" id="pto-toggle">
+              Paid for only 50 weeks (2 weeks unpaid time off)
+            </label>
+          </div>
+
+          <div class="results" aria-live="polite">
+            <div class="headline-rate">
+              <div class="big" id="annual">$52,000</div>
+              <div class="lbl">per year</div>
+            </div>
+            <div class="results-grid">
+              <div class="result-item"><span class="k">Per month</span><span class="v" id="permonth">$4,333</span></div>
+              <div class="result-item"><span class="k">Per week</span><span class="v" id="perweek">$1,000</span></div>
+              <div class="result-item"><span class="k">Per day (8h)</span><span class="v" id="perday">$200.00</span></div>
+              <div class="result-item"><span class="k">Per hour</span><span class="v" id="perhour">$25.00</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cross-promo">
+          <h3>Need to go the other way?</h3>
+          <p>Already know the salary and want the hourly rate instead? Use the reverse tool — handy for working out what an employee's time costs in a meeting.</p>
+          <a href="/salary-to-hourly/">Salary → Hourly Calculator →</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="prose">
+      <h2>How to convert hourly pay to an annual salary</h2>
+      <p>The formula is: <strong>annual salary = hourly rate × hours per week × weeks worked per year</strong>. For standard full-time work that's 40 hours across 52 weeks, or 2,080 hours a year. So $25 an hour works out to $52,000 a year before taxes.</p>
+      <p>If your hourly role isn't paid for holidays, reduce the weeks worked (or use the toggle) to compare it fairly against a salaried job that is paid year-round.</p>
+
+      <h2>Quick reference: common hourly rates at 2,080 hours/year</h2>
+      <table>
+        <thead><tr><th>Hourly rate</th><th>Annual salary</th><th>Monthly</th></tr></thead>
+        <tbody>
+          <tr><td>$15</td><td>$31,200</td><td>$2,600</td></tr>
+          <tr><td>$20</td><td>$41,600</td><td>$3,467</td></tr>
+          <tr><td>$25</td><td>$52,000</td><td>$4,333</td></tr>
+          <tr><td>$30</td><td>$62,400</td><td>$5,200</td></tr>
+          <tr><td>$40</td><td>$83,200</td><td>$6,933</td></tr>
+          <tr><td>$50</td><td>$104,000</td><td>$8,667</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Why this matters for meetings</h2>
+      <p>Once you know the hourly value of the people in a room, the cost of a meeting becomes obvious. A one-hour meeting with eight people earning $40/hour is $320 of paid time — before any benefits or overhead. Drop your numbers into the <a href="/#calculator">meeting cost calculator</a> to see the full picture, or check <a href="/standup-cost-calculator/">what a recurring standup costs</a>.</p>
+    </div>
+
+    <section class="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger"><span>How do you convert an hourly wage to an annual salary?</span><span class="accordion-icon">+</span></button>
+            <div class="accordion-content"><p>Multiply the hourly rate by hours per week, then by weeks worked per year. Standard full-time is 40 × 52 = 2,080 hours, so $25/hour = $52,000/year before taxes.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger"><span>What is $20 an hour annually?</span><span class="accordion-icon">+</span></button>
+            <div class="accordion-content"><p>At 40 hours per week for 52 weeks (2,080 hours), $20 per hour is about $41,600 per year before taxes.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger"><span>Does this account for paid time off?</span><span class="accordion-icon">+</span></button>
+            <div class="accordion-content"><p>It can. By default it assumes you're paid for all 52 weeks. Toggle the time-off option to reflect fewer paid weeks — useful when comparing a salaried role against an hourly contract with unpaid holidays.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger"><span>Is this calculator free and private?</span><span class="accordion-icon">+</span></button>
+            <div class="accordion-content"><p>Yes. Every calculation runs entirely in your browser. Nothing you type is sent to a server, stored, or shared, and there is no signup.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="related">
+    <h2>More free tools &amp; guides</h2>
+    <div class="related-grid">
+      <div class="related-card"><h3>💵 Salary to Hourly Calculator</h3><p>The reverse conversion — turn an annual salary into an hourly rate.</p><a href="/salary-to-hourly/">Use calculator →</a></div>
+      <div class="related-card"><h3>🧮 Meeting Cost Calculator</h3><p>See the real cost of any meeting once you know the hourly rate.</p><a href="/#calculator">Open calculator →</a></div>
+      <div class="related-card"><h3>📈 Meeting Cost Statistics</h3><p>The most-cited numbers on what meetings cost in time and money.</p><a href="/meeting-statistics/">See the data →</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <div class="footer-logo">MeetingCalc</div>
+          <p>Free tools to help teams understand the cost of their time and run more effective meetings.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Tools &amp; Guides</h3>
+          <ul>
+            <li><a href="/#calculator">Meeting Cost Calculator</a></li>
+            <li><a href="/salary-to-hourly/">Salary to Hourly Calculator</a></li>
+            <li><a href="/hourly-to-salary/">Hourly to Salary Calculator</a></li>
+            <li><a href="/meeting-statistics/">Meeting Statistics</a></li>
+            <li><a href="/resources/">All Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>About</h3>
+          <ul>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Use</a></li>
+            <li><a href="/privacy/#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright"><p>&copy; <span id="yr">2026</span> MeetingCalc. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    const SYM = { USD:'$', EUR:'€', GBP:'£', JPY:'¥', CAD:'C$', AUD:'A$', CHF:'Fr ', INR:'₹' };
+    document.addEventListener('DOMContentLoaded', function () {
+      const hourly = document.getElementById('hourly');
+      const currency = document.getElementById('currency');
+      const hpw = document.getElementById('hpw');
+      const wpy = document.getElementById('wpy');
+      const pto = document.getElementById('pto-toggle');
+      const out = {
+        annual: document.getElementById('annual'),
+        permonth: document.getElementById('permonth'),
+        perweek: document.getElementById('perweek'),
+        perday: document.getElementById('perday'),
+        perhour: document.getElementById('perhour')
+      };
+      function money(v, c, dp) {
+        try { return new Intl.NumberFormat(undefined, { style:'currency', currency:c, maximumFractionDigits: c==='JPY'?0:(dp===undefined?2:dp) }).format(v); }
+        catch (e) { return (SYM[c]||'$') + v.toFixed(dp===undefined?2:dp); }
+      }
+      function calc() {
+        const c = currency.value;
+        const rate = parseFloat(hourly.value) || 0;
+        const hours = parseFloat(hpw.value) || 0;
+        let weeks = parseFloat(wpy.value) || 0;
+        if (pto.checked) weeks = Math.min(weeks, 50);
+        const annual = rate * hours * weeks;
+        out.annual.textContent = money(annual, c, 0);
+        out.permonth.textContent = money(annual / 12, c, 0);
+        out.perweek.textContent = money(rate * hours, c, 0);
+        out.perday.textContent = money(rate * 8, c);
+        out.perhour.textContent = money(rate, c);
+      }
+      document.getElementById('calc-form').addEventListener('input', calc);
+      pto.addEventListener('change', calc);
+      calc();
+
+      document.querySelectorAll('.accordion-trigger').forEach(t => {
+        t.addEventListener('click', function () {
+          const content = this.nextElementSibling;
+          const icon = this.querySelector('.accordion-icon');
+          const open = !content.classList.contains('active');
+          content.classList.toggle('active', open);
+          if (icon) icon.textContent = open ? '−' : '+';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

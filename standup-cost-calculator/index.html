@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free daily standup cost calculator. See what your team's daily standup or scrum meeting really costs per day, week, month, and year. Adjust team size, length, and pay rate.">
+  <meta name="keywords" content="standup cost calculator, daily standup cost, scrum meeting cost, standup meeting calculator, cost of daily standup, agile meeting cost">
+  <meta name="theme-color" content="#3366cc">
+  <title>Daily Standup Cost Calculator | What Your Scrum Standup Really Costs | MeetingCalc</title>
+
+  <link rel="icon" href="https://www.meetingcalc.com/assets/images/icon48.png" sizes="48x48">
+  <link rel="apple-touch-icon" href="https://www.meetingcalc.com/assets/images/icon48.png">
+  <link rel="canonical" href="https://www.meetingcalc.com/standup-cost-calculator/">
+
+  <meta property="og:title" content="Daily Standup Cost Calculator | What Your Scrum Standup Really Costs">
+  <meta property="og:description" content="See what your team's daily standup really costs per day, week, month, and year. Free, private, no signup.">
+  <meta property="og:image" content="https://www.meetingcalc.com/assets/images/og-image.jpg">
+  <meta property="og:url" content="https://www.meetingcalc.com/standup-cost-calculator/">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Daily Standup Cost Calculator | What Your Scrum Standup Really Costs">
+  <meta name="twitter:description" content="See what your team's daily standup really costs per day, week, month, and year. Free, private, no signup.">
+  <meta name="twitter:image" content="https://www.meetingcalc.com/assets/images/og-image.jpg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ8E3R1SZR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NZ8E3R1SZR');
+  </script>
+
+  <!-- Structured Data: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Daily Standup Cost Calculator",
+    "url": "https://www.meetingcalc.com/standup-cost-calculator/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <!-- Structured Data: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.meetingcalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Daily Standup Cost Calculator", "item": "https://www.meetingcalc.com/standup-cost-calculator/" }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does a daily standup cost?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A 15-minute daily standup with 8 people earning an average loaded rate of $70/hour costs about $140 per day, roughly $700 per week and over $33,000 per year. The exact figure depends on team size, length, pay rates, and how many days a week you meet." }
+      },
+      {
+        "@type": "Question",
+        "name": "Are daily standups worth the cost?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Standups can be very worthwhile when they are short, focused on blockers, and kept to the people who need them. They become expensive when they drift into status theatre, run long, or include people who only listen. Use the annual figure to decide whether the format is earning its cost." }
+      },
+      {
+        "@type": "Question",
+        "name": "How can we make standups cheaper without losing value?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Keep them to 15 minutes or less, stand up (literally) to discourage rambling, move detailed discussions to a smaller follow-up, consider async written standups a few days a week, and only invite people who act on the information." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #3366cc; --primary-dark: #2952a3; --secondary: #f8f9fa;
+      --accent: #ffd700; --text: #1f2937; --light-text: #4b5563;
+      --border: #dee2e6; --surface: #ffffff; --success: #16a34a;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #6b9aff; --primary-dark: #4f7fe6; --secondary: #1f2937;
+        --text: #f3f4f6; --light-text: #d1d5db; --border: #374151; --surface: #111827;
+      }
+      body { background-color: #0b1220; }
+      header { background-color: #111827 !important; }
+      .feature-card, .results, .accordion-item, .related-card { background-color: #1f2937 !important; }
+      .accordion-trigger { background-color: #1f2937 !important; }
+      .calculator-container { background-color: #111827 !important; }
+      .form-group input, .form-group select { background-color: #0b1220; color: var(--text); border-color: var(--border); }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { color: var(--text); line-height: 1.6; background-color: var(--surface); }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: #fff; padding: 8px; z-index: 100; transition: top 0.3s; }
+    .skip-link:focus { top: 0; }
+    header { background-color: var(--surface); box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1rem; position: sticky; top: 0; z-index: 100; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+    nav ul { display: flex; list-style: none; flex-wrap: wrap; }
+    nav ul li { margin-left: 1.5rem; }
+    nav ul li a { text-decoration: none; color: var(--text); transition: color 0.3s; }
+    nav ul li a:hover { color: var(--primary); }
+    .breadcrumb { max-width: 1200px; margin: 0 auto; padding: 0.75rem 1rem; font-size: 0.9rem; color: var(--light-text); }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    .hero { background-color: var(--secondary); padding: 3rem 0 2.5rem; text-align: center; }
+    .hero h1 { font-size: 2.25rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.15rem; color: var(--light-text); max-width: 760px; margin: 0 auto; }
+    .calculator { padding: 2.5rem 0; }
+    .calculator-container { max-width: 760px; margin: 0 auto; padding: 2rem; background-color: var(--secondary); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .calculator-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 680px) { .calculator-form { grid-template-columns: 1fr; } }
+    .form-group label { display: block; margin-bottom: 0.4rem; font-weight: 500; }
+    .form-group input, .form-group select { width: 100%; padding: 0.7rem; border: 1px solid var(--border); border-radius: 4px; font-size: 1rem; background-color: var(--surface); color: var(--text); }
+    .results { margin-top: 1.75rem; padding: 1.5rem; background-color: var(--surface); border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .headline-rate { text-align: center; margin-bottom: 1.25rem; }
+    .headline-rate .big { font-size: 3rem; font-weight: 700; color: var(--primary); font-variant-numeric: tabular-nums; }
+    .headline-rate .lbl { color: var(--light-text); }
+    .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+    @media (max-width: 680px) { .results-grid { grid-template-columns: 1fr 1fr; } }
+    .result-item { background-color: var(--secondary); padding: 0.9rem; border-radius: 6px; text-align: center; }
+    .result-item .v { font-size: 1.2rem; font-weight: 700; color: var(--primary); display: block; margin-top: 0.25rem; font-variant-numeric: tabular-nums; }
+    .result-item .k { font-size: 0.85rem; color: var(--light-text); }
+    .cross-promo { max-width: 760px; margin: 1.5rem auto 0; padding: 1.5rem; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; border-radius: 8px; text-align: center; }
+    .cross-promo h3 { margin-bottom: 0.5rem; }
+    .cross-promo a { display: inline-block; margin-top: 0.75rem; background: #fff; color: var(--primary); padding: 0.6rem 1.3rem; border-radius: 4px; text-decoration: none; font-weight: 700; }
+    .prose { max-width: 760px; margin: 2.5rem auto; padding: 0 1rem; }
+    .prose h2 { margin: 1.75rem 0 0.75rem; }
+    .prose p { margin-bottom: 1rem; color: var(--text); }
+    .prose ul { margin: 0 0 1rem 1.25rem; }
+    .related { background-color: var(--secondary); padding: 2.5rem 0; }
+    .related h2 { text-align: center; margin-bottom: 1.5rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1000px; margin: 0 auto; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+    .related-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .related-card a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .accordion { max-width: 760px; margin: 0 auto; }
+    .accordion-item { margin-bottom: 0.75rem; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--surface); }
+    .accordion-trigger { background: var(--surface); padding: 1rem; cursor: pointer; display: flex; justify-content: space-between; width: 100%; text-align: left; border: none; font-size: 1rem; font-weight: 500; color: var(--text); }
+    .accordion-content { padding: 0 1rem; max-height: 0; overflow: hidden; transition: max-height 0.25s ease, padding 0.25s ease; }
+    .accordion-content.active { padding: 1rem; max-height: 400px; }
+    .faq { padding: 2.5rem 0; }
+    .faq h2 { text-align: center; margin-bottom: 1.5rem; }
+    footer { background-color: #1f2937; color: #fff; padding: 3rem 0; }
+    .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    @media (max-width: 768px) { .footer-content { grid-template-columns: 1fr; } }
+    .footer-logo { font-size: 1.8rem; font-weight: bold; margin-bottom: 1rem; }
+    .footer-links h3 { margin-bottom: 1rem; font-size: 1.2rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links ul li { margin-bottom: 0.5rem; }
+    .footer-links ul li a { text-decoration: none; color: #ddd; }
+    .footer-links ul li a:hover { color: #fff; }
+    .copyright { margin-top: 2rem; text-align: center; color: #ddd; font-size: 0.9rem; }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3842191947397990" crossorigin="anonymous"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">MeetingCalc</a>
+        <nav>
+          <ul>
+            <li><a href="/#calculator">Meeting Cost</a></li>
+            <li><a href="/salary-to-hourly/">Salary → Hourly</a></li>
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> &rsaquo; Daily Standup Cost Calculator
+  </nav>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container">
+        <h1>Daily Standup Cost Calculator</h1>
+        <p>That quick 15-minute standup happens every single day. Across a year, it adds up to real money. See exactly what your team's daily standup or scrum meeting costs per day, week, month, and year.</p>
+      </div>
+    </section>
+
+    <section class="calculator">
+      <div class="container">
+        <div class="calculator-container">
+          <form id="calc-form" class="calculator-form">
+            <div class="form-group">
+              <label for="team">Team Size (attendees)</label>
+              <input type="number" id="team" min="1" max="100" value="8" required>
+            </div>
+            <div class="form-group">
+              <label for="minutes">Standup Length (minutes)</label>
+              <input type="number" id="minutes" min="1" max="120" value="15" required>
+            </div>
+            <div class="form-group">
+              <label for="days">Days per Week</label>
+              <input type="number" id="days" min="1" max="7" value="5" required>
+            </div>
+            <div class="form-group">
+              <label for="rate">Average Hourly Rate</label>
+              <input type="number" id="rate" min="1" max="1000" value="50" required>
+            </div>
+            <div class="form-group">
+              <label for="currency">Currency</label>
+              <select id="currency">
+                <option value="USD" selected>USD ($)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="CAD">CAD (C$)</option>
+                <option value="AUD">AUD (A$)</option>
+                <option value="INR">INR (₹)</option>
+                <option value="JPY">JPY (¥)</option>
+                <option value="CHF">CHF (Fr)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="loaded">Loaded Cost Multiplier</label>
+              <select id="loaded">
+                <option value="1">None (1.0×) — base salary only</option>
+                <option value="1.25">Light (1.25×) — basic benefits</option>
+                <option value="1.4" selected>Standard (1.4×) — benefits + overhead</option>
+                <option value="1.6">Heavy (1.6×) — + opportunity cost</option>
+              </select>
+            </div>
+          </form>
+
+          <div class="results" aria-live="polite">
+            <div class="headline-rate">
+              <div class="big" id="per-year">$36,400</div>
+              <div class="lbl">per year</div>
+            </div>
+            <div class="results-grid">
+              <div class="result-item"><span class="k">Per standup</span><span class="v" id="per-standup">$140.00</span></div>
+              <div class="result-item"><span class="k">Per week</span><span class="v" id="per-week">$700.00</span></div>
+              <div class="result-item"><span class="k">Per month</span><span class="v" id="per-month">$3,033</span></div>
+              <div class="result-item"><span class="k">Staff hours / year</span><span class="v" id="hours-year">520</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cross-promo">
+          <h3>Run the numbers on every meeting, not just standups</h3>
+          <p>Use the full meeting cost calculator for one-off and recurring meetings, with a live ticker you can run during the call.</p>
+          <a href="/#calculator">Open the Meeting Cost Calculator →</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="prose">
+      <h2>How the standup cost is calculated</h2>
+      <p>The math is straightforward: <strong>cost per standup = (length in hours) × team size × average hourly rate × loaded multiplier</strong>. We then project that across your meeting days to show weekly, monthly, and annual totals. The loaded multiplier accounts for benefits, payroll taxes, and overhead, so the figure reflects what the standup actually costs the business rather than just take-home pay.</p>
+
+      <h2>Why a "quick" standup is more expensive than it feels</h2>
+      <p>Fifteen minutes feels trivial. But a daily standup runs roughly 260 times a year, and you are paying every attendee for every one of those sessions. An eight-person team can easily spend the equivalent of a junior salary on standups alone — before counting the context-switching cost of stopping focused work to attend.</p>
+
+      <h2>Making standups earn their cost</h2>
+      <ul>
+        <li>Keep them to 15 minutes — use a visible timer.</li>
+        <li>Focus on blockers and coordination, not status reports a tool could show.</li>
+        <li>Only invite people who act on what's said; everyone else can read notes.</li>
+        <li>Try async written standups two or three days a week and compare.</li>
+        <li>Move any deep discussion to a smaller, optional follow-up.</li>
+      </ul>
+      <p>For a deeper playbook, see our <a href="/reducing-meeting-costs/">guide to reducing meeting costs</a> and <a href="/meeting-optimization/">meeting optimization guide</a>.</p>
+    </div>
+
+    <section class="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger"><span>How much does a daily standup cost?</span><span class="accordion-icon">+</span></button>
+            <div class="accordion-content"><p>A 15-minute standup with 8 people at a $70/hour loaded rate costs about $140 per day — roughly $700 a week and over $33,000 a year. Adjust the inputs above for your exact team.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger"><span>Are daily standups worth the cost?</span><span class="accordion-icon">+</span></button>
+            <div class="accordion-content"><p>They can be, when they are short, focused on blockers, and limited to the people who need them. They get expensive when they run long, turn into status theatre, or include passive listeners. Use the annual figure to judge whether the format is earning its keep.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger"><span>How can we make standups cheaper without losing value?</span><span class="accordion-icon">+</span></button>
+            <div class="accordion-content"><p>Cap them at 15 minutes, literally stand up, move detail to a smaller follow-up, try async written updates a few days a week, and only invite people who act on the information.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="related">
+    <h2>More free tools &amp; guides</h2>
+    <div class="related-grid">
+      <div class="related-card"><h3>🧮 Meeting Cost Calculator</h3><p>The real cost of any meeting, with a live ticker and multi-currency support.</p><a href="/#calculator">Open calculator →</a></div>
+      <div class="related-card"><h3>💵 Salary to Hourly Calculator</h3><p>Convert any annual salary to an hourly rate to plug into your cost estimates.</p><a href="/salary-to-hourly/">Use calculator →</a></div>
+      <div class="related-card"><h3>💰 Reducing Meeting Costs</h3><p>A practical playbook for cutting meeting spend without hurting collaboration.</p><a href="/reducing-meeting-costs/">Read the guide →</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <div class="footer-logo">MeetingCalc</div>
+          <p>Free tools to help teams understand the cost of their time and run more effective meetings.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Tools &amp; Guides</h3>
+          <ul>
+            <li><a href="/#calculator">Meeting Cost Calculator</a></li>
+            <li><a href="/salary-to-hourly/">Salary to Hourly Calculator</a></li>
+            <li><a href="/standup-cost-calculator/">Standup Cost Calculator</a></li>
+            <li><a href="/reducing-meeting-costs/">Reducing Costs</a></li>
+            <li><a href="/resources/">All Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>About</h3>
+          <ul>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Use</a></li>
+            <li><a href="/privacy/#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright"><p>&copy; <span id="yr">2026</span> MeetingCalc. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    const SYM = { USD:'$', EUR:'€', GBP:'£', JPY:'¥', CAD:'C$', AUD:'A$', CHF:'Fr ', INR:'₹' };
+    document.addEventListener('DOMContentLoaded', function () {
+      const ids = ['team','minutes','days','rate','currency','loaded'];
+      const el = {};
+      ids.forEach(i => el[i] = document.getElementById(i));
+      const out = {
+        year: document.getElementById('per-year'),
+        standup: document.getElementById('per-standup'),
+        week: document.getElementById('per-week'),
+        month: document.getElementById('per-month'),
+        hours: document.getElementById('hours-year')
+      };
+      function money(v, c, dp) {
+        try { return new Intl.NumberFormat(undefined, { style:'currency', currency:c, maximumFractionDigits: c==='JPY'?0:(dp===undefined?2:dp) }).format(v); }
+        catch (e) { return (SYM[c]||'$') + v.toFixed(dp===undefined?2:dp); }
+      }
+      function calc() {
+        const c = el.currency.value;
+        const team = parseInt(el.team.value) || 0;
+        const mins = parseFloat(el.minutes.value) || 0;
+        const days = parseFloat(el.days.value) || 0;
+        const rate = parseFloat(el.rate.value) || 0;
+        const loaded = parseFloat(el.loaded.value) || 1;
+        const hours = mins / 60;
+        const effRate = rate * loaded;
+        const perStandup = hours * team * effRate;
+        const weeksPerYear = 52;
+        const perWeek = perStandup * days;
+        const perYear = perWeek * weeksPerYear;
+        const perMonth = perYear / 12;
+        const hoursYear = hours * team * days * weeksPerYear;
+        out.standup.textContent = money(perStandup, c);
+        out.week.textContent = money(perWeek, c);
+        out.month.textContent = money(perMonth, c, 0);
+        out.year.textContent = money(perYear, c, 0);
+        out.hours.textContent = Math.round(hoursYear).toLocaleString();
+      }
+      document.getElementById('calc-form').addEventListener('input', calc);
+      calc();
+
+      document.querySelectorAll('.accordion-trigger').forEach(t => {
+        t.addEventListener('click', function () {
+          const content = this.nextElementSibling;
+          const icon = this.querySelector('.accordion-icon');
+          const open = !content.classList.contains('active');
+          content.classList.toggle('active', open);
+          if (icon) icon.textContent = open ? '−' : '+';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

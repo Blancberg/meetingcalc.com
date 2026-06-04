@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free meeting ROI calculator. Compare what a meeting costs against the value it creates to see its return on investment, net value, and break-even point. No signup.">
+  <meta name="keywords" content="meeting ROI calculator, meeting return on investment, is this meeting worth it, meeting value calculator, meeting cost benefit, meeting break even">
+  <meta name="theme-color" content="#3366cc">
+  <title>Meeting ROI Calculator | Is This Meeting Worth It? | MeetingCalc</title>
+
+  <link rel="icon" href="https://www.meetingcalc.com/assets/images/icon48.png" sizes="48x48">
+  <link rel="apple-touch-icon" href="https://www.meetingcalc.com/assets/images/icon48.png">
+  <link rel="canonical" href="https://www.meetingcalc.com/meeting-roi-calculator/">
+
+  <meta property="og:title" content="Meeting ROI Calculator | Is This Meeting Worth It?">
+  <meta property="og:description" content="Compare what a meeting costs against the value it creates to see its return on investment. Free, private, no signup.">
+  <meta property="og:image" content="https://www.meetingcalc.com/assets/images/og-image.jpg">
+  <meta property="og:url" content="https://www.meetingcalc.com/meeting-roi-calculator/">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Meeting ROI Calculator | Is This Meeting Worth It?">
+  <meta name="twitter:description" content="Compare what a meeting costs against the value it creates to see its return on investment. Free, private, no signup.">
+  <meta name="twitter:image" content="https://www.meetingcalc.com/assets/images/og-image.jpg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ8E3R1SZR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NZ8E3R1SZR');
+  </script>
+
+  <!-- Structured Data: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Meeting ROI Calculator",
+    "url": "https://www.meetingcalc.com/meeting-roi-calculator/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <!-- Structured Data: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.meetingcalc.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Meeting ROI Calculator", "item": "https://www.meetingcalc.com/meeting-roi-calculator/" }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate the ROI of a meeting?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Meeting ROI = (value created − meeting cost) ÷ meeting cost, expressed as a percentage. The meeting cost is the loaded hourly cost of everyone attending for the duration. The value created is your honest estimate of the decisions, revenue, time saved, or risk avoided the meeting produced." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good ROI for a meeting?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Any positive ROI means the meeting created more value than it cost. Because value estimates are rough, aim comfortably above break-even — a meeting that only just pays for itself is a candidate to shorten, shrink, or replace with an async update." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I estimate the value a meeting creates?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Think in terms of outcomes: a decision that unblocks a project, revenue moved closer, hours of rework avoided, or risk reduced. Put a conservative dollar figure on it. If you genuinely cannot name any value, that is a strong signal the meeting could be an email." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #3366cc; --primary-dark: #2952a3; --secondary: #f8f9fa;
+      --accent: #ffd700; --text: #1f2937; --light-text: #4b5563;
+      --border: #dee2e6; --surface: #ffffff; --success: #16a34a; --danger: #dc2626;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #6b9aff; --primary-dark: #4f7fe6; --secondary: #1f2937;
+        --text: #f3f4f6; --light-text: #d1d5db; --border: #374151; --surface: #111827;
+        --success: #4ade80; --danger: #f87171;
+      }
+      body { background-color: #0b1220; }
+      header { background-color: #111827 !important; }
+      .feature-card, .results, .accordion-item, .related-card { background-color: #1f2937 !important; }
+      .accordion-trigger { background-color: #1f2937 !important; }
+      .calculator-container { background-color: #111827 !important; }
+      .form-group input, .form-group select { background-color: #0b1220; color: var(--text); border-color: var(--border); }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { color: var(--text); line-height: 1.6; background-color: var(--surface); }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: #fff; padding: 8px; z-index: 100; transition: top 0.3s; }
+    .skip-link:focus { top: 0; }
+    header { background-color: var(--surface); box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1rem; position: sticky; top: 0; z-index: 100; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+    nav ul { display: flex; list-style: none; flex-wrap: wrap; }
+    nav ul li { margin-left: 1.5rem; }
+    nav ul li a { text-decoration: none; color: var(--text); transition: color 0.3s; }
+    nav ul li a:hover { color: var(--primary); }
+    .breadcrumb { max-width: 1200px; margin: 0 auto; padding: 0.75rem 1rem; font-size: 0.9rem; color: var(--light-text); }
+    .breadcrumb a { color: var(--primary); text-decoration: none; }
+    .hero { background-color: var(--secondary); padding: 3rem 0 2.5rem; text-align: center; }
+    .hero h1 { font-size: 2.25rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.15rem; color: var(--light-text); max-width: 760px; margin: 0 auto; }
+    .calculator { padding: 2.5rem 0; }
+    .calculator-container { max-width: 760px; margin: 0 auto; padding: 2rem; background-color: var(--secondary); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .calculator-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 680px) { .calculator-form { grid-template-columns: 1fr; } }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label { display: block; margin-bottom: 0.4rem; font-weight: 500; }
+    .form-group .help { font-weight: 400; color: var(--light-text); font-size: 0.85rem; }
+    .form-group input, .form-group select { width: 100%; padding: 0.7rem; border: 1px solid var(--border); border-radius: 4px; font-size: 1rem; background-color: var(--surface); color: var(--text); }
+    .results { margin-top: 1.75rem; padding: 1.5rem; background-color: var(--surface); border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .headline-rate { text-align: center; margin-bottom: 1.25rem; }
+    .headline-rate .big { font-size: 3rem; font-weight: 700; color: var(--primary); font-variant-numeric: tabular-nums; }
+    .headline-rate .big.pos { color: var(--success); }
+    .headline-rate .big.neg { color: var(--danger); }
+    .headline-rate .lbl { color: var(--light-text); }
+    .verdict { text-align: center; font-weight: 600; margin-top: 0.25rem; }
+    .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+    @media (max-width: 680px) { .results-grid { grid-template-columns: 1fr; } }
+    .result-item { background-color: var(--secondary); padding: 0.9rem; border-radius: 6px; text-align: center; }
+    .result-item .v { font-size: 1.2rem; font-weight: 700; color: var(--primary); display: block; margin-top: 0.25rem; font-variant-numeric: tabular-nums; }
+    .result-item .k { font-size: 0.85rem; color: var(--light-text); }
+    .cross-promo { max-width: 760px; margin: 1.5rem auto 0; padding: 1.5rem; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; border-radius: 8px; text-align: center; }
+    .cross-promo h3 { margin-bottom: 0.5rem; }
+    .cross-promo a { display: inline-block; margin-top: 0.75rem; background: #fff; color: var(--primary); padding: 0.6rem 1.3rem; border-radius: 4px; text-decoration: none; font-weight: 700; }
+    .prose { max-width: 760px; margin: 2.5rem auto; padding: 0 1rem; }
+    .prose h2 { margin: 1.75rem 0 0.75rem; }
+    .prose p { margin-bottom: 1rem; color: var(--text); }
+    .prose ul { margin: 0 0 1rem 1.25rem; }
+    .related { background-color: var(--secondary); padding: 2.5rem 0; }
+    .related h2 { text-align: center; margin-bottom: 1.5rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1000px; margin: 0 auto; }
+    @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+    .related-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+    .related-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .related-card a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .accordion { max-width: 760px; margin: 0 auto; }
+    .accordion-item { margin-bottom: 0.75rem; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--surface); }
+    .accordion-trigger { background: var(--surface); padding: 1rem; cursor: pointer; display: flex; justify-content: space-between; width: 100%; text-align: left; border: none; font-size: 1rem; font-weight: 500; color: var(--text); }
+    .accordion-content { padding: 0 1rem; max-height: 0; overflow: hidden; transition: max-height 0.25s ease, padding 0.25s ease; }
+    .accordion-content.active { padding: 1rem; max-height: 400px; }
+    .faq { padding: 2.5rem 0; }
+    .faq h2 { text-align: center; margin-bottom: 1.5rem; }
+    footer { background-color: #1f2937; color: #fff; padding: 3rem 0; }
+    .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    @media (max-width: 768px) { .footer-content { grid-template-columns: 1fr; } }
+    .footer-logo { font-size: 1.8rem; font-weight: bold; margin-bottom: 1rem; }
+    .footer-links h3 { margin-bottom: 1rem; font-size: 1.2rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links ul li { margin-bottom: 0.5rem; }
+    .footer-links ul li a { text-decoration: none; color: #ddd; }
+    .footer-links ul li a:hover { color: #fff; }
+    .copyright { margin-top: 2rem; text-align: center; color: #ddd; font-size: 0.9rem; }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3842191947397990" crossorigin="anonymous"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">MeetingCalc</a>
+        <nav>
+          <ul>
+            <li><a href="/#calculator">Meeting Cost</a></li>
+            <li><a href="/salary-to-hourly/">Salary → Hourly</a></li>
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> &rsaquo; Meeting ROI Calculator
+  </nav>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container">
+        <h1>Meeting ROI Calculator</h1>
+        <p>A meeting is an investment of people's paid time. This tool weighs what it costs against the value it creates, so you can answer the real question: <em>was it worth it?</em></p>
+      </div>
+    </section>
+
+    <section class="calculator">
+      <div class="container">
+        <div class="calculator-container">
+          <form id="calc-form" class="calculator-form">
+            <div class="form-group">
+              <label for="attendees">Number of Attendees</label>
+              <input type="number" id="attendees" min="1" max="100" value="6" required>
+            </div>
+            <div class="form-group">
+              <label for="duration">Duration (minutes)</label>
+              <input type="number" id="duration" min="5" max="480" value="60" required>
+            </div>
+            <div class="form-group">
+              <label for="rate">Average Hourly Rate</label>
+              <input type="number" id="rate" min="1" max="1000" value="60" required>
+            </div>
+            <div class="form-group">
+              <label for="loaded">Loaded Cost Multiplier</label>
+              <select id="loaded">
+                <option value="1">None (1.0×)</option>
+                <option value="1.25">Light (1.25×)</option>
+                <option value="1.4" selected>Standard (1.4×)</option>
+                <option value="1.6">Heavy (1.6×)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="value">Estimated Value Created <span class="help">decisions, revenue, time saved, risk avoided</span></label>
+              <input type="number" id="value" min="0" step="50" value="1500" required>
+            </div>
+            <div class="form-group">
+              <label for="currency">Currency</label>
+              <select id="currency">
+                <option value="USD" selected>USD ($)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="CAD">CAD (C$)</option>
+                <option value="AUD">AUD (A$)</option>
+                <option value="INR">INR (₹)</option>
+                <option value="JPY">JPY (¥)</option>
+                <option value="CHF">CHF (Fr)</option>
+              </select>
+            </div>
+          </form>
+
+          <div class="results" aria-live="polite">
+            <div class="headline-rate">
+              <div class="big pos" id="roi">+114%</div>
+              <div class="lbl">return on investment</div>
+              <div class="verdict" id="verdict"></div>
+            </div>
+            <div class="results-grid">
+              <div class="result-item"><span class="k">Meeting cost</span><span class="v" id="cost">$700.00</span></div>
+              <div class="result-item"><span class="k">Net value</span><span class="v" id="net">$800.00</span></div>
+              <div class="result-item"><span class="k">Break-even value</span><span class="v" id="breakeven">$700.00</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cross-promo">
+          <h3>Need a precise cost figure first?</h3>
+          <p>Use the full meeting cost calculator for recurring meetings, annual totals, and a live ticker — then bring the number back here.</p>
+          <a href="/#calculator">Open the Meeting Cost Calculator →</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="prose">
+      <h2>How meeting ROI is calculated</h2>
+      <p>The formula mirrors any other investment: <strong>ROI = (value created − meeting cost) ÷ meeting cost</strong>, shown as a percentage. The <em>cost</em> is the loaded hourly cost of every attendee for the meeting's duration. The <em>value created</em> is your honest estimate of what the meeting actually produced.</p>
+      <p>A positive ROI means the meeting returned more than it cost. A negative ROI means the time would likely have been better spent elsewhere.</p>
+
+      <h2>How to estimate the value a meeting creates</h2>
+      <p>Value is the hard part, so think in concrete outcomes rather than vague benefit:</p>
+      <ul>
+        <li><strong>Decisions unblocked</strong> — what is the cost of the project sitting idle another week?</li>
+        <li><strong>Revenue moved forward</strong> — a deal closed sooner, a launch unblocked.</li>
+        <li><strong>Rework avoided</strong> — hours saved by aligning before building the wrong thing.</li>
+        <li><strong>Risk reduced</strong> — a mistake caught early, a compliance gap closed.</li>
+      </ul>
+      <p>Be conservative. If you cannot point to any of these, the meeting may belong in our <a href="/could-have-been-an-email/">"could this have been an email?" check</a>.</p>
+
+      <h2>Using ROI to improve meetings</h2>
+      <p>Run the calculator before scheduling a recurring meeting, and again a month later with real outcomes. Low or negative ROI is not a reason to feel guilty — it is a prompt to shorten the meeting, trim the invite list, or switch to an async update. See our <a href="/meeting-optimization/">meeting optimization guide</a> for tactics.</p>
+    </div>
+
+    <section class="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger"><span>How do you calculate the ROI of a meeting?</span><span class="accordion-icon">+</span></button>
+            <div class="accordion-content"><p>ROI = (value created − meeting cost) ÷ meeting cost, as a percentage. The cost is the loaded hourly cost of everyone attending for the duration; the value is your honest estimate of decisions, revenue, time saved, or risk avoided.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger"><span>What is a good ROI for a meeting?</span><span class="accordion-icon">+</span></button>
+            <div class="accordion-content"><p>Any positive ROI means it created more value than it cost. Because the value figure is an estimate, aim comfortably above break-even. A meeting that only just pays for itself is a candidate to shorten, shrink, or replace.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-trigger"><span>How do I estimate the value a meeting creates?</span><span class="accordion-icon">+</span></button>
+            <div class="accordion-content"><p>Think in outcomes: a decision that unblocks a project, revenue moved closer, hours of rework avoided, or risk reduced — then put a conservative dollar figure on it. If you cannot name any value, that is a strong sign it could be an email.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="related">
+    <h2>More free tools &amp; guides</h2>
+    <div class="related-grid">
+      <div class="related-card"><h3>🧮 Meeting Cost Calculator</h3><p>The real cost of any meeting, with a live ticker and multi-currency support.</p><a href="/#calculator">Open calculator →</a></div>
+      <div class="related-card"><h3>📧 Could This Be an Email?</h3><p>A 30-second check that tells you whether to keep the meeting or send a note.</p><a href="/could-have-been-an-email/">Take the check →</a></div>
+      <div class="related-card"><h3>📈 Meeting Optimization</h3><p>An 8-step process to make every meeting more effective and worth its cost.</p><a href="/meeting-optimization/">Read the guide →</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <div class="footer-logo">MeetingCalc</div>
+          <p>Free tools to help teams understand the cost of their time and run more effective meetings.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Tools &amp; Guides</h3>
+          <ul>
+            <li><a href="/#calculator">Meeting Cost Calculator</a></li>
+            <li><a href="/salary-to-hourly/">Salary to Hourly Calculator</a></li>
+            <li><a href="/meeting-roi-calculator/">Meeting ROI Calculator</a></li>
+            <li><a href="/reducing-meeting-costs/">Reducing Costs</a></li>
+            <li><a href="/resources/">All Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>About</h3>
+          <ul>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Use</a></li>
+            <li><a href="/privacy/#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright"><p>&copy; <span id="yr">2026</span> MeetingCalc. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    const SYM = { USD:'$', EUR:'€', GBP:'£', JPY:'¥', CAD:'C$', AUD:'A$', CHF:'Fr ', INR:'₹' };
+    document.addEventListener('DOMContentLoaded', function () {
+      const ids = ['attendees','duration','rate','loaded','value','currency'];
+      const el = {};
+      ids.forEach(i => el[i] = document.getElementById(i));
+      const roiEl = document.getElementById('roi');
+      const verdictEl = document.getElementById('verdict');
+      const costEl = document.getElementById('cost');
+      const netEl = document.getElementById('net');
+      const beEl = document.getElementById('breakeven');
+      function money(v, c) {
+        try { return new Intl.NumberFormat(undefined, { style:'currency', currency:c, maximumFractionDigits: c==='JPY'?0:2 }).format(v); }
+        catch (e) { return (SYM[c]||'$') + v.toFixed(2); }
+      }
+      function calc() {
+        const c = el.currency.value;
+        const attendees = parseInt(el.attendees.value) || 0;
+        const duration = parseFloat(el.duration.value) || 0;
+        const rate = parseFloat(el.rate.value) || 0;
+        const loaded = parseFloat(el.loaded.value) || 1;
+        const value = parseFloat(el.value.value) || 0;
+        const cost = (duration / 60) * attendees * rate * loaded;
+        const net = value - cost;
+        costEl.textContent = money(cost, c);
+        netEl.textContent = money(net, c);
+        beEl.textContent = money(cost, c);
+        let roi = cost > 0 ? (net / cost) * 100 : 0;
+        const sign = roi >= 0 ? '+' : '';
+        roiEl.textContent = sign + roi.toFixed(0) + '%';
+        roiEl.classList.toggle('pos', roi >= 0);
+        roiEl.classList.toggle('neg', roi < 0);
+        let v;
+        if (cost <= 0) v = 'Enter the meeting details to see ROI.';
+        else if (roi >= 200) v = '🟢 Strong return — this meeting clearly earns its place.';
+        else if (roi >= 0) v = '🟡 Positive, but thin. Could it be shorter or smaller?';
+        else v = '🔴 Negative return — consider an async update instead.';
+        verdictEl.textContent = v;
+      }
+      document.getElementById('calc-form').addEventListener('input', calc);
+      calc();
+
+      document.querySelectorAll('.accordion-trigger').forEach(t => {
+        t.addEventListener('click', function () {
+          const content = this.nextElementSibling;
+          const icon = this.querySelector('.accordion-icon');
+          const open = !content.classList.contains('active');
+          content.classList.toggle('active', open);
+          if (icon) icon.textContent = open ? '−' : '+';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
