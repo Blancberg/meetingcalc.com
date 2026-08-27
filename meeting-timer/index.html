@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A free, full-screen meeting timer to keep meetings on track. Set a time box, start the countdown, and get a clear visual when time's up. Optional live cost ticker. No signup.">
+  <meta name="description" content="Free online meeting timer and countdown clock. Set any time box from 60 seconds up, go full screen, and share it on your call. No signup, no ads in the way.">
   <meta name="keywords" content="meeting timer, online meeting timer, time box timer, agenda timer, countdown timer for meetings, presentation timer">
   <meta name="theme-color" content="#3366cc">
-  <title>Meeting Timer | Free Full-Screen Time-Box Countdown | MeetingCalc</title>
+  <title>Meeting Timer: Free Online Countdown Clock</title>
 
   <link rel="icon" href="https://meetingcalc.com/assets/images/icon48.png" sizes="48x48">
   <link rel="apple-touch-icon" href="https://meetingcalc.com/assets/images/icon48.png">
   <link rel="canonical" href="https://meetingcalc.com/meeting-timer/">
 
-  <meta property="og:title" content="Meeting Timer | Free Full-Screen Time-Box Countdown">
-  <meta property="og:description" content="Keep meetings on track with a free full-screen countdown timer. Optional live cost ticker. No signup.">
+  <meta property="og:title" content="Meeting Timer: Free Online Countdown Clock">
+  <meta property="og:description" content="Free online meeting timer and countdown clock. Any time box, full screen, shareable on your call. No signup.">
   <meta property="og:image" content="https://meetingcalc.com/assets/images/og-image.jpg">
   <meta property="og:url" content="https://meetingcalc.com/meeting-timer/">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Meeting Timer | Free Full-Screen Time-Box Countdown">
+  <meta name="twitter:title" content="Meeting Timer: Free Online Countdown Clock">
   <meta name="twitter:description" content="Keep meetings on track with a free full-screen countdown timer. Optional live cost ticker.">
   <meta name="twitter:image" content="https://meetingcalc.com/assets/images/og-image.jpg">
 
@@ -86,6 +86,9 @@
     .prose p { margin-bottom: 1rem; }
     .prose ul { margin: 0 0 1rem 1.25rem; }
     .prose a { color: var(--primary); }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .prose th, .prose td { border: 1px solid var(--border); padding: 0.6rem 0.8rem; text-align: left; }
+    .prose th { background-color: var(--secondary); }
     .related { background-color: var(--secondary); padding: 2.5rem 0; }
     .related h2 { text-align: center; margin-bottom: 1.5rem; }
     .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 1000px; margin: 0 auto; }
@@ -135,8 +138,8 @@
   <main id="main-content">
     <section class="hero">
       <div class="container">
-        <h1>Meeting Timer</h1>
-        <p>Keep meetings on track with a big, shareable countdown. Pick a time box, hit start, and let the clock do the gentle nudging. Free, no signup.</p>
+        <h1>Meeting Timer &amp; Countdown Clock</h1>
+        <p>A free online meeting timer with a big, shareable countdown clock. Pick a time box &mdash; anything from 60 seconds to four hours &mdash; hit start, and let the clock do the gentle nudging. No signup.</p>
       </div>
     </section>
 
@@ -145,6 +148,8 @@
         <div class="clock" id="clock">05:00</div>
         <div class="clock-label" id="label">Ready</div>
         <div class="presets">
+          <button type="button" class="preset" data-min="1">1 min</button>
+          <button type="button" class="preset" data-min="3">3 min</button>
           <button type="button" class="preset" data-min="5">5 min</button>
           <button type="button" class="preset" data-min="10">10 min</button>
           <button type="button" class="preset" data-min="15">15 min</button>
@@ -166,7 +171,7 @@
     </div>
 
     <div class="prose">
-      <h2>Why a visible timer makes meetings better</h2>
+      <h2>Why a visible meeting timer makes meetings better</h2>
       <p>Meetings expand to fill the time available — and then some. A countdown everyone can see creates light, shared time pressure that keeps discussion focused and signals when it's time to move on. Time-boxing each agenda item is one of the simplest, most effective ways to make meetings shorter without making them feel rushed.</p>
       <h2>How to use it</h2>
       <ul>
@@ -174,7 +179,28 @@
         <li>Share your screen so the whole room — including remote attendees — sees the clock.</li>
         <li>When it hits zero, explicitly decide: move on, or agree to extend. Don't drift.</li>
         <li>Use the 25-minute preset for a focused "meeting sprint" with a hard stop.</li>
+        <li>For a quick round of introductions or a lightning update, the 1-minute and 3-minute presets give each person the same slice.</li>
       </ul>
+      <h2>Common meeting timer settings</h2>
+      <p>Most meeting time boxes fall into a handful of lengths. Tap a preset, or type any number of minutes into the custom box &mdash; it accepts anything from 1 to 240.</p>
+      <table>
+        <thead><tr><th>Length</th><th>What it's good for</th></tr></thead>
+        <tbody>
+          <tr><td>60 seconds</td><td>One-minute updates in a standup, timed introductions, a round where everyone gets the same airtime.</td></tr>
+          <tr><td>3 minutes</td><td>Lightning talks, a per-person check-in, a strictly bounded tangent.</td></tr>
+          <tr><td>5&ndash;10 minutes</td><td>A single agenda item, a demo, or a focused discussion before a decision.</td></tr>
+          <tr><td>15 minutes</td><td>A daily standup, or a short one-to-one. See <a href="/how-to-run-a-standup/">how to run a standup</a>.</td></tr>
+          <tr><td>25 minutes</td><td>A "meeting sprint" with a hard stop &mdash; and five minutes back before the next call.</td></tr>
+          <tr><td>45&ndash;60 minutes</td><td>Workshops and longer working sessions, usually split into smaller timed blocks.</td></tr>
+        </tbody>
+      </table>
+      <h2>Using it as a countdown to meeting start &mdash; or a break clock</h2>
+      <p>The timer isn't only for agenda items. Two of the most useful ways to run it have nothing to do with the discussion itself:</p>
+      <ul>
+        <li><strong>Countdown to meeting start.</strong> Share your screen a few minutes early with the clock running down. Late joiners can see exactly how long they have, and the meeting starts on time without anyone having to police it.</li>
+        <li><strong>Break clock.</strong> In a long workshop, put a 10-minute countdown on the shared screen when you break. "Back in ten" is vague; a visible clock is not, and people return on time far more reliably.</li>
+      </ul>
+      <p>In a meeting room, cast the full-screen view to the room display so it works as a room timer everyone can glance at. On a video call, share the browser tab so remote attendees see the same clock as the people in the room &mdash; one of the small fairness fixes in our <a href="/hybrid-meetings/">hybrid meetings guide</a>.</p>
       <h2>Make every minute count</h2>
       <p>A timer keeps a meeting efficient, but the biggest savings come from holding fewer of them. See what your meetings cost with the <a href="/#calculator">meeting cost calculator</a>, or check whether one is needed at all with the <a href="/could-have-been-an-email/">"could this have been an email?" tool</a>.</p>
     </div>
@@ -186,6 +212,9 @@
           <div class="accordion-item"><button type="button" class="accordion-trigger"><span>How does a meeting timer help?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>A visible countdown creates gentle time pressure that keeps discussion focused and stops meetings overrunning. Time-boxing each item and showing the clock is one of the simplest ways to make meetings sharper.</p></div></div>
           <div class="accordion-item"><button type="button" class="accordion-trigger"><span>Is this meeting timer free?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Yes, completely free with no signup. It runs in your browser, so you can share your screen and the whole room sees the countdown.</p></div></div>
           <div class="accordion-item"><button type="button" class="accordion-trigger"><span>What is time-boxing in a meeting?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Giving each agenda item a fixed amount of time and stopping when it runs out — then moving on or explicitly deciding to extend. It stops one topic eating the whole meeting.</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-trigger"><span>Can I set a 60-second or 3-minute timer?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Yes — tap the 1 min or 3 min preset, or type any number of minutes from 1 to 240 into the custom box and press Set. Short timers are ideal for timed introductions and one-minute standup updates.</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-trigger"><span>Can I use it as a countdown clock to the meeting start?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Yes. Share your screen a few minutes early with the countdown running, or use it as a break clock in a long session so everyone can see exactly when you resume. Full screen makes it readable from across a meeting room.</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-trigger"><span>Does it work as a meeting room timer?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>It does. Open it on the room display or cast the full-screen view, and everyone in the room sees the same clock. On a video call, share the browser tab so remote attendees see it too.</p></div></div>
         </div>
       </div>
     </section>

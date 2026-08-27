@@ -1,0 +1,66 @@
+# MeetingCalc
+
+MeetingCalc is a free set of calculators and guides for working out what meetings actually cost and running fewer, better ones. The calculators turn attendee salaries and meeting length into a real hourly, weekly, and annual figure — no signup, nothing stored — and the guides cover the practical craft of meetings: writing agendas, facilitating, deciding, timing, and knowing when a meeting should have been a message.
+
+## Calculators & tools
+
+- [Meeting Cost Calculator](https://meetingcalc.com/): Work out what any meeting costs from attendee salaries and duration.
+- [Meeting Timer](https://meetingcalc.com/meeting-timer/): Free full-screen countdown clock for time-boxing agenda items, breaks, and meeting starts.
+- [Meeting Agenda Template & Builder](https://meetingcalc.com/meeting-agenda-template/): Build a timed agenda with owners and minutes, then copy it in one click.
+- [Weekly Meeting Cost Calculator](https://meetingcalc.com/weekly-meeting-cost-calculator/): Annualise the cost of a recurring weekly meeting.
+- [Standup Cost Calculator](https://meetingcalc.com/standup-cost-calculator/): What a daily standup costs a team over a year.
+- [All-Hands Meeting Cost Calculator](https://meetingcalc.com/all-hands-meeting-cost-calculator/): Price a company-wide meeting before you schedule it.
+- [Sprint Planning Cost Calculator](https://meetingcalc.com/sprint-planning-cost-calculator/): Cost of a sprint planning session across the team.
+- [Remote Team Meeting Cost Calculator](https://meetingcalc.com/remote-team-meeting-cost-calculator/): Meeting costs across a distributed team and multiple currencies.
+- [Interview Cost Calculator](https://meetingcalc.com/interview-cost-calculator/): The real cost of an interview loop in interviewer time.
+- [Meeting ROI Calculator](https://meetingcalc.com/meeting-roi-calculator/): Weigh a meeting's cost against the value it produces.
+- [Salary to Hourly Calculator](https://meetingcalc.com/salary-to-hourly/): Convert an annual salary into an hourly rate.
+- [Hourly to Salary Calculator](https://meetingcalc.com/hourly-to-salary/): Convert an hourly rate into an annual salary.
+- [Meeting Timezone Planner](https://meetingcalc.com/meeting-timezone-planner/): Find a meeting time that works across time zones.
+- [Could This Have Been an Email?](https://meetingcalc.com/could-have-been-an-email/): A 30-second check on whether a meeting is needed at all.
+- [Embed the Calculator](https://meetingcalc.com/embed/): Add the meeting cost calculator to your own site with one line of code.
+
+## Agendas
+
+- [How to Write a Meeting Agenda](https://meetingcalc.com/effective-meeting-agendas/): The seven-step method, plus templates, timing, and distribution.
+- [Meeting Agenda Examples](https://meetingcalc.com/meeting-agenda-examples/): Eight real agendas to copy — team meeting, standup, one-to-one, kickoff, retrospective, town hall, board.
+- [How to Take Meeting Minutes](https://meetingcalc.com/how-to-take-meeting-minutes/): Capturing decisions, owners, and dates so they survive the meeting.
+
+## Running better meetings
+
+- [Meeting Facilitation Skills](https://meetingcalc.com/meeting-facilitation-skills/): What a facilitator does and twelve techniques for keeping a group contributing.
+- [Decision-Making Meetings](https://meetingcalc.com/decision-making-meetings/): Frameworks for getting a group to an actual, recorded decision.
+- [Inclusive Meetings](https://meetingcalc.com/inclusive-meetings/): Evidence-based ways to even out participation across a diverse team.
+- [Remote Meetings](https://meetingcalc.com/remote-meeting-guide/): Virtual setup, audio and camera, engagement, and hybrid fixes.
+- [Hybrid Meetings](https://meetingcalc.com/hybrid-meetings/): Keeping remote attendees equal when half the room is in the room.
+- [Meetings Across Time Zones](https://meetingcalc.com/meetings-across-time-zones/): Scheduling fairly for distributed teams.
+- [Meeting Optimization](https://meetingcalc.com/meeting-optimization/): An eight-step process for improving a team's whole meeting load.
+- [Meeting Etiquette](https://meetingcalc.com/meeting-etiquette/): The norms that make meetings tolerable.
+- [Meeting Icebreakers](https://meetingcalc.com/meeting-icebreakers/): Openers that warm up a group without wasting its time.
+
+## Meeting types
+
+- [How to Run a Standup](https://meetingcalc.com/how-to-run-a-standup/): A 15-minute standup that stays 15 minutes.
+- [One-on-One Meetings](https://meetingcalc.com/one-on-one-meetings/): Structure and question prompts for a useful 1:1.
+- [Project Kickoff Meeting](https://meetingcalc.com/project-kickoff-meeting/): Setting scope, decision rights, and milestones on day one.
+- [Retrospective Meetings](https://meetingcalc.com/retrospective-meetings/): Retros that produce changes rather than complaints.
+- [Town Hall Meeting](https://meetingcalc.com/town-hall-meeting/): All-hands meetings people actually pay attention to.
+- [Creative Brainstorming Meetings](https://meetingcalc.com/creative-brainstorming-meetings/): Formats that produce more than the loudest person's idea.
+- [Walking Meetings](https://meetingcalc.com/walking-meetings/): When to take a meeting outside, and when not to.
+
+## Fewer meetings
+
+- [How to Decline a Meeting Politely](https://meetingcalc.com/how-to-decline-a-meeting/): Six email templates for saying no without damaging the relationship.
+- [Reducing Meeting Costs](https://meetingcalc.com/reducing-meeting-costs/): Practical ways to cut a team's meeting bill.
+- [How Much Do Meetings Cost?](https://meetingcalc.com/how-much-do-meetings-cost/): The numbers behind meeting spend.
+- [Meeting Statistics](https://meetingcalc.com/meeting-statistics/): Research and data on meeting time and waste.
+- [Meeting Fatigue](https://meetingcalc.com/meeting-fatigue/): Why back-to-back calls are exhausting and what to do about it.
+- [Meeting-Free Days](https://meetingcalc.com/meeting-free-days/): Protecting focus time at a team level.
+- [Async vs Meetings](https://meetingcalc.com/async-vs-meetings/): Choosing between a meeting and a written update.
+
+## About
+
+- [All Resources](https://meetingcalc.com/resources/): The full index of guides and tools.
+- [About MeetingCalc](https://meetingcalc.com/about/): Who makes this and why.
+- [Privacy Policy](https://meetingcalc.com/privacy/): What we do and don't collect.
+- [Terms of Use](https://meetingcalc.com/terms/): Terms for using the calculators and guides.
