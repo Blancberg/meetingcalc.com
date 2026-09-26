@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Free online meeting timer and countdown clock. Set any time box from 60 seconds up, go full screen, and share it on your call. No signup, no ads in the way.">
-  <meta name="keywords" content="meeting timer, online meeting timer, time box timer, agenda timer, countdown timer for meetings, presentation timer">
+  <meta name="description" content="Free online meeting timer and countdown clock. Add an on-screen message, count down to a start time or a break, go full screen and share a link. No signup.">
+  <meta name="keywords" content="meeting timer, online meeting timer, countdown timer for meetings, meeting break timer, meeting starts soon timer, meeting room timer, agenda timer">
   <meta name="theme-color" content="#3366cc">
-  <title>Meeting Timer: Free Online Countdown Clock</title>
+  <title>Meeting Timer: Free Online Countdown Clock (Full Screen)</title>
 
   <link rel="icon" href="https://meetingcalc.com/assets/images/icon48.png" sizes="48x48">
   <link rel="apple-touch-icon" href="https://meetingcalc.com/assets/images/icon48.png">
   <link rel="canonical" href="https://meetingcalc.com/meeting-timer/">
 
-  <meta property="og:title" content="Meeting Timer: Free Online Countdown Clock">
+  <meta property="og:title" content="Meeting Timer: Free Online Countdown Clock (Full Screen)">
   <meta property="og:description" content="Free online meeting timer and countdown clock. Any time box, full screen, shareable on your call. No signup.">
   <meta property="og:image" content="https://meetingcalc.com/assets/images/og-image.jpg">
   <meta property="og:url" content="https://meetingcalc.com/meeting-timer/">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Meeting Timer: Free Online Countdown Clock">
+  <meta name="twitter:title" content="Meeting Timer: Free Online Countdown Clock (Full Screen)">
   <meta name="twitter:description" content="Keep meetings on track with a free full-screen countdown timer. Optional live cost ticker.">
   <meta name="twitter:image" content="https://meetingcalc.com/assets/images/og-image.jpg">
 
@@ -42,6 +42,7 @@
   { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
     { "@type": "Question", "name": "How does a meeting timer help?", "acceptedAnswer": { "@type": "Answer", "text": "A visible countdown creates gentle time pressure that keeps discussion focused and stops meetings overrunning. Time-boxing each agenda item — and showing the clock to the room — is one of the simplest ways to make meetings shorter and sharper." } },
     { "@type": "Question", "name": "Is this meeting timer free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, completely free with no signup. It runs in your browser, so you can share your screen and the whole room sees the countdown." } },
+    { "@type": "Question", "name": "Can I show a message like \"Meeting starts soon\" or \"Break\"?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Type any message into the on-screen message box, or tap one of the quick buttons. The message shows above the countdown, stays visible in full screen, and is included when you copy a link to the timer." } },
     { "@type": "Question", "name": "What is time-boxing in a meeting?", "acceptedAnswer": { "@type": "Answer", "text": "Time-boxing means giving each agenda item a fixed amount of time and stopping when it runs out, moving on or explicitly deciding to extend. It prevents one topic from eating the whole meeting." } }
   ] }
   </script>
@@ -80,6 +81,20 @@
     .controls { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
     .controls button { padding: 0.65rem 1.6rem; border-radius: 4px; border: 2px solid #fff; background: #fff; color: var(--primary); font-weight: 700; cursor: pointer; font-size: 1rem; }
     .controls button.ghost { background: transparent; color: #fff; }
+    .clock-msg { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.75rem; min-height: 0; word-wrap: break-word; }
+    .clock-msg:empty { display: none; }
+    .opts { display: flex; gap: 0.5rem 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 1rem; font-size: 0.95rem; }
+    .opts input[type=text] { width: 260px; max-width: 100%; padding: 0.45rem 0.6rem; border-radius: 4px; border: none; font-size: 1rem; }
+    .opts input[type=time] { padding: 0.4rem; border-radius: 4px; border: none; font-size: 1rem; }
+    .opts label { display: inline-flex; align-items: center; gap: 0.35rem; cursor: pointer; }
+    .chips { display: flex; gap: 0.4rem; justify-content: center; flex-wrap: wrap; margin-top: 0.6rem; }
+    .chip { padding: 0.25rem 0.75rem; border: 1px solid rgba(255,255,255,0.55); background: transparent; color: #fff; border-radius: 999px; cursor: pointer; font-size: 0.85rem; }
+    .chip:hover { background: rgba(255,255,255,0.15); }
+    .timer-card:fullscreen { display: flex; flex-direction: column; justify-content: center; border-radius: 0; }
+    .timer-card:fullscreen .clock { font-size: 22vw; }
+    .timer-card:fullscreen .clock-msg { font-size: 5vw; }
+    .timer-card:fullscreen .presets, .timer-card:fullscreen .custom, .timer-card:fullscreen .opts, .timer-card:fullscreen .chips { display: none; }
+    .tools-row { text-align: center; }
     .fs-btn { margin-top: 0.75rem; background: none; border: none; color: var(--light-text); cursor: pointer; text-decoration: underline; font-size: 0.9rem; }
     .prose { max-width: 760px; margin: 2.5rem auto; padding: 0 1rem; }
     .prose h2 { margin: 2rem 0 0.75rem; font-size: 1.5rem; }
@@ -145,6 +160,7 @@
 
     <div class="timer-wrap">
       <div class="timer-card" id="card">
+        <div class="clock-msg" id="msg-display" aria-live="polite"></div>
         <div class="clock" id="clock">05:00</div>
         <div class="clock-label" id="label">Ready</div>
         <div class="presets">
@@ -160,6 +176,19 @@
         <div class="custom">
           <input type="number" id="custom-min" min="1" max="240" placeholder="min" aria-label="Custom minutes">
           <button type="button" class="preset" id="set-custom">Set</button>
+          <span style="opacity:0.85;">or count down to</span>
+          <input type="time" id="until" aria-label="Count down to a clock time">
+          <button type="button" class="preset" id="set-until">Set</button>
+        </div>
+        <div class="opts">
+          <input type="text" id="msg" maxlength="80" placeholder="On-screen message (optional)" aria-label="On-screen message">
+          <label><input type="checkbox" id="chime" checked> Chime at zero</label>
+        </div>
+        <div class="chips">
+          <button type="button" class="chip" data-msg="Meeting starts soon" data-min="5">Meeting starts soon</button>
+          <button type="button" class="chip" data-msg="Break &mdash; back in 10" data-min="10">10-min break</button>
+          <button type="button" class="chip" data-msg="Lunch break" data-min="45">Lunch break</button>
+          <button type="button" class="chip" data-msg="Questions" data-min="5">Q&amp;A</button>
         </div>
         <div class="controls">
           <button type="button" id="start">▶ Start</button>
@@ -167,7 +196,7 @@
           <button type="button" class="ghost" id="reset">↺ Reset</button>
         </div>
       </div>
-      <div style="text-align:center;"><button type="button" class="fs-btn" id="fs">⛶ Full screen</button></div>
+      <div class="tools-row"><button type="button" class="fs-btn" id="fs">⛶ Full screen</button> &nbsp; <button type="button" class="fs-btn" id="share">🔗 Copy link to this timer</button> &nbsp; <span class="fs-btn" style="text-decoration:none;cursor:default;">Space = start/pause</span></div>
     </div>
 
     <div class="prose">
@@ -200,6 +229,7 @@
         <li><strong>Countdown to meeting start.</strong> Share your screen a few minutes early with the clock running down. Late joiners can see exactly how long they have, and the meeting starts on time without anyone having to police it.</li>
         <li><strong>Break clock.</strong> In a long workshop, put a 10-minute countdown on the shared screen when you break. "Back in ten" is vague; a visible clock is not, and people return on time far more reliably.</li>
       </ul>
+      <p>Tap <strong>Meeting starts soon</strong> or <strong>10-min break</strong> to set the time and the message in one go, or type your own message &mdash; it appears above the clock in large text, including in full screen. To count down to a fixed start time instead of a duration, pick a clock time in the <em>count down to</em> box. <strong>Copy link to this timer</strong> gives you a URL with the time and message built in, so you can drop it in the chat or bookmark your usual setup.</p>
       <p>In a meeting room, cast the full-screen view to the room display so it works as a room timer everyone can glance at. On a video call, share the browser tab so remote attendees see the same clock as the people in the room &mdash; one of the small fairness fixes in our <a href="/hybrid-meetings/">hybrid meetings guide</a>.</p>
       <h2>Make every minute count</h2>
       <p>A timer keeps a meeting efficient, but the biggest savings come from holding fewer of them. See what your meetings cost with the <a href="/#calculator">meeting cost calculator</a>, or check whether one is needed at all with the <a href="/could-have-been-an-email/">"could this have been an email?" tool</a>.</p>
@@ -214,6 +244,7 @@
           <div class="accordion-item"><button type="button" class="accordion-trigger"><span>What is time-boxing in a meeting?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Giving each agenda item a fixed amount of time and stopping when it runs out — then moving on or explicitly deciding to extend. It stops one topic eating the whole meeting.</p></div></div>
           <div class="accordion-item"><button type="button" class="accordion-trigger"><span>Can I set a 60-second or 3-minute timer?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Yes — tap the 1 min or 3 min preset, or type any number of minutes from 1 to 240 into the custom box and press Set. Short timers are ideal for timed introductions and one-minute standup updates.</p></div></div>
           <div class="accordion-item"><button type="button" class="accordion-trigger"><span>Can I use it as a countdown clock to the meeting start?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Yes. Share your screen a few minutes early with the countdown running, or use it as a break clock in a long session so everyone can see exactly when you resume. Full screen makes it readable from across a meeting room.</p></div></div>
+          <div class="accordion-item"><button type="button" class="accordion-trigger"><span>Can I show a message like "Meeting starts soon" or "Break"?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>Yes. Type any message into the on-screen message box, or tap one of the quick buttons. The message shows above the countdown, stays visible in full screen, and is included when you copy a link to the timer.</p></div></div>
           <div class="accordion-item"><button type="button" class="accordion-trigger"><span>Does it work as a meeting room timer?</span><span class="accordion-icon">+</span></button><div class="accordion-content"><p>It does. Open it on the room display or cast the full-screen view, and everyone in the room sees the same clock. On a video call, share the browser tab so remote attendees see it too.</p></div></div>
         </div>
       </div>
@@ -262,31 +293,77 @@
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
     document.addEventListener('DOMContentLoaded', function () {
-      var totalMs = 5 * 60000, remainingMs = totalMs, startedAt = null, iv = null;
+      var totalMs = 5 * 60000, remainingMs = totalMs, startedAt = null, iv = null, chimed = false, baseTitle = document.title;
       var clock = document.getElementById('clock'), label = document.getElementById('label'), card = document.getElementById('card');
+      var msgIn = document.getElementById('msg'), msgOut = document.getElementById('msg-display'), chimeBox = document.getElementById('chime');
       function fmt(ms) {
         var over = ms < 0; ms = Math.abs(ms);
-        var s = Math.floor(ms / 1000), h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), ss = s % 60;
+        var s = over ? Math.floor(ms / 1000) : Math.ceil(ms / 1000), h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), ss = s % 60;
         var str = (h > 0 ? String(h).padStart(2, '0') + ':' : '') + String(m).padStart(2, '0') + ':' + String(ss).padStart(2, '0');
         return (over ? '+' : '') + str;
+      }
+      function chime() {
+        try {
+          var ctx = new (window.AudioContext || window.webkitAudioContext)();
+          [0, 0.35, 0.7].forEach(function (t) {
+            var o = ctx.createOscillator(), g = ctx.createGain();
+            o.frequency.value = 880; o.connect(g); g.connect(ctx.destination);
+            g.gain.setValueAtTime(0.0001, ctx.currentTime + t);
+            g.gain.exponentialRampToValueAtTime(0.3, ctx.currentTime + t + 0.02);
+            g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + t + 0.3);
+            o.start(ctx.currentTime + t); o.stop(ctx.currentTime + t + 0.32);
+          });
+        } catch (e) {}
       }
       function render() {
         var rem = remainingMs;
         if (startedAt !== null) rem = remainingMs - (Date.now() - startedAt);
         clock.textContent = fmt(rem);
-        if (rem < 0) { card.classList.add('over'); label.textContent = "Time's up — wrap it up or decide to extend"; }
-        else { card.classList.remove('over'); label.textContent = startedAt !== null ? 'Running' : 'Ready'; }
+        if (rem < 0) {
+          card.classList.add('over'); label.textContent = "Time's up — wrap it up or decide to extend";
+          if (!chimed && startedAt !== null) { chimed = true; if (chimeBox.checked) chime(); }
+        } else { card.classList.remove('over'); label.textContent = startedAt !== null ? 'Running' : 'Ready'; }
+        document.title = startedAt !== null ? fmt(rem) + ' · ' + (msgIn.value || 'Meeting Timer') : baseTitle;
       }
-      function setTime(min) { pause(); totalMs = min * 60000; remainingMs = totalMs; render(); }
-      function start() { if (startedAt !== null) return; startedAt = Date.now(); iv = setInterval(render, 200); label.textContent = 'Running'; render(); }
+      function setTime(min) { pause(); totalMs = Math.round(min * 60000); remainingMs = totalMs; chimed = false; render(); }
+      function start() { if (startedAt !== null) return; startedAt = Date.now(); iv = setInterval(render, 200); render(); }
       function pause() { if (startedAt === null) return; remainingMs -= (Date.now() - startedAt); startedAt = null; clearInterval(iv); render(); }
-      function reset() { pause(); remainingMs = totalMs; render(); }
+      function reset() { pause(); remainingMs = totalMs; chimed = false; render(); }
+      function setMsg(t) { msgIn.value = t; msgOut.textContent = t; }
+      function minutesUntil(hhmm) {
+        var p = hhmm.split(':'); if (p.length < 2) return 0;
+        var now = new Date(), t = new Date(now); t.setHours(+p[0], +p[1], 0, 0);
+        if (t <= now) t.setDate(t.getDate() + 1);
+        return (t - now) / 60000;
+      }
       document.querySelectorAll('.preset[data-min]').forEach(function (b) { b.addEventListener('click', function () { setTime(parseInt(b.getAttribute('data-min'))); }); });
-      document.getElementById('set-custom').addEventListener('click', function () { var v = parseInt(document.getElementById('custom-min').value); if (v > 0) setTime(v); });
+      document.getElementById('set-custom').addEventListener('click', function () { var v = parseFloat(document.getElementById('custom-min').value); if (v > 0) setTime(Math.min(v, 240)); });
+      document.getElementById('set-until').addEventListener('click', function () { var v = document.getElementById('until').value; if (v) { setTime(minutesUntil(v)); start(); } });
+      document.querySelectorAll('.chip').forEach(function (b) { b.addEventListener('click', function () { setMsg(b.getAttribute('data-msg')); setTime(parseInt(b.getAttribute('data-min'))); }); });
+      msgIn.addEventListener('input', function () { msgOut.textContent = msgIn.value; render(); });
       document.getElementById('start').addEventListener('click', start);
       document.getElementById('pause').addEventListener('click', pause);
       document.getElementById('reset').addEventListener('click', reset);
       document.getElementById('fs').addEventListener('click', function () { if (!document.fullscreenElement) { card.requestFullscreen && card.requestFullscreen(); } else { document.exitFullscreen(); } });
+      document.addEventListener('keydown', function (e) {
+        if (e.code !== 'Space' || /INPUT|TEXTAREA|BUTTON|SELECT/.test(e.target.tagName)) return;
+        e.preventDefault(); if (startedAt === null) start(); else pause();
+      });
+      document.getElementById('share').addEventListener('click', function () {
+        var btn = this, q = new URLSearchParams(), until = document.getElementById('until').value;
+        if (until) q.set('until', until); else q.set('min', String(Math.round(totalMs / 6000) / 10));
+        if (msgIn.value) q.set('msg', msgIn.value);
+        var url = location.origin + location.pathname + '?' + q.toString();
+        var done = function () { btn.textContent = '✓ Link copied'; setTimeout(function () { btn.textContent = '🔗 Copy link to this timer'; }, 2000); };
+        if (navigator.clipboard) navigator.clipboard.writeText(url).then(done, function () { prompt('Copy this link:', url); });
+        else prompt('Copy this link:', url);
+      });
+      (function fromUrl() {
+        var q = new URLSearchParams(location.search), m = parseFloat(q.get('min')), u = q.get('until'), t = q.get('msg');
+        if (t) setMsg(t.slice(0, 80));
+        if (u && /^\d{1,2}:\d{2}$/.test(u)) { document.getElementById('until').value = u.padStart(5, '0'); setTime(minutesUntil(u)); start(); }
+        else if (m > 0) setTime(Math.min(m, 240));
+      })();
       render();
       document.querySelectorAll('.accordion-trigger').forEach(function (t) { t.addEventListener('click', function () { var c = this.nextElementSibling; var i = this.querySelector('.accordion-icon'); var o = !c.classList.contains('active'); c.classList.toggle('active', o); if (i) i.textContent = o ? '−' : '+'; }); });
     });
